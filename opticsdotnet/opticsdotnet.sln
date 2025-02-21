@@ -5,6 +5,8 @@ VisualStudioVersion = 17.13.35818.85 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "opticsdotnet", "opticsdotnet\opticsdotnet.csproj", "{D942E80E-2017-49D2-9F68-6CE1CFAE98C8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "opticsdotnet.Lib", "opticsdotnet.Lib\opticsdotnet.Lib.csproj", "{DE38A6F8-46F3-4CB0-9F80-223A10C671D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{D942E80E-2017-49D2-9F68-6CE1CFAE98C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D942E80E-2017-49D2-9F68-6CE1CFAE98C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D942E80E-2017-49D2-9F68-6CE1CFAE98C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE38A6F8-46F3-4CB0-9F80-223A10C671D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE38A6F8-46F3-4CB0-9F80-223A10C671D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE38A6F8-46F3-4CB0-9F80-223A10C671D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE38A6F8-46F3-4CB0-9F80-223A10C671D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
