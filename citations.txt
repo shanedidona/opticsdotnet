@@ -1,4 +1,0 @@
-https://stackoverflow.com/questions/54777335/connecting-github-account-and-sourcetree-with-ssh
-https://community.atlassian.com/t5/Sourcetree-questions/SourceTree-error-The-server-s-host-key-is-not-cached-in-the/qaq-p/1410001
-https://community.atlassian.com/t5/Sourcetree-questions/Re-SourceTree-error-The-server-s-host-key-is-not-cached/qaq-p/2156617/comment-id/42353#M42353
-https://docs.github.com/en/authentication/troubleshooting-ssh/error-permission-denied-publickey
