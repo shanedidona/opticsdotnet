@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Citations.txt = Citations.txt
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "opticsdotnet.Testing", "opticsdotnet.Testing\opticsdotnet.Testing.csproj", "{C99EA9B8-345F-469B-92EF-B1FD00BB692E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{DE38A6F8-46F3-4CB0-9F80-223A10C671D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE38A6F8-46F3-4CB0-9F80-223A10C671D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE38A6F8-46F3-4CB0-9F80-223A10C671D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C99EA9B8-345F-469B-92EF-B1FD00BB692E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C99EA9B8-345F-469B-92EF-B1FD00BB692E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C99EA9B8-345F-469B-92EF-B1FD00BB692E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C99EA9B8-345F-469B-92EF-B1FD00BB692E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
