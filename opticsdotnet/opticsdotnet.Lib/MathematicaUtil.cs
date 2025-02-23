@@ -14,6 +14,13 @@ namespace opticsdotnet.Lib
             return RenderMathematicaAssumeAlreadyMathematica(items.Select(x => x.RenderMathematica()).ToArray());
         }
 
+
+
+
+
+
+
+
         public static string RenderMathematicaAssumeAlreadyMathematica(params string[] renderedItems)
         {
             var sb1 = new StringBuilder();
