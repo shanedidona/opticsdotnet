@@ -11,4 +11,10 @@
     <ProjectReference Include="..\opticsdotnet.Lib\opticsdotnet.Lib.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="settings.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
