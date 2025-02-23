@@ -7,11 +7,13 @@
 
         public override string RenderMathematica()
         {
-            return MathematicaUtil.RenderMathematicaFunction(
-                    "Circle",
-                    MathematicaUtil.Render(Center.X, Center.Y),
-                    new DoubleMathematicaAdapter(R).RenderMathematica()
-                );
+            return new MathematicaRenderableMathematicaAdapter(
+                        new MathematicaRenderableMathematicaAdapter(
+                                new DoubleMathematicaAdapter(Center.X),
+                                new DoubleMathematicaAdapter(Center.Y)
+                            ),
+                            new DoubleMathematicaAdapter(R)
+                        ).RenderMathematicaFunction("Circle");
         }
     }
 }
