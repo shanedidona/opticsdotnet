@@ -4,11 +4,6 @@ namespace opticsdotnet.Lib
 {
     public static class MathematicaUtil
     {
-        public static string Render(double double1)
-        {
-            return double1.ToString().Replace("E", "*10^");   
-        }
-
         public static string RenderMathematica(params double[] doubles)
         {
             return RenderMathematicaAssumeAlreadyMathematica(doubles.Select(Render).ToArray());
