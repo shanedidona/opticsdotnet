@@ -11,7 +11,7 @@
 
         public string RenderMathematica()
         {
-            throw new NotImplementedException();
+            return Value1.ToString().Replace("E", "*10^");
         }
     }
 }
