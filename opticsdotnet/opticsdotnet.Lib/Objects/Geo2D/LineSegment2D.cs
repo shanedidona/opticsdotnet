@@ -1,6 +1,6 @@
 ﻿namespace opticsdotnet.Lib
 {
-    public class LineSegment2D : Geo2D
+    public sealed class LineSegment2D : Geo2D
     {
     }
 }
