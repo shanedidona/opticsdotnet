@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            ODN1.ODN1.ODN1_1();
         }
     }
 }
