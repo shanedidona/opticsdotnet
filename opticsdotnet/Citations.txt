@@ -9,3 +9,6 @@ todo: find old geo and optics repo where Shane did Geo2D
 
 Mathematica Documentation, and running Mathematica
 
+https://learn.microsoft.com/en-us/dotnet/api/system.double.isnegativeinfinity?view=net-9.0
+
+
