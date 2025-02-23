@@ -9,10 +9,6 @@ namespace opticsdotnet.Lib
             return double1.ToString().Replace("E", "*10^");   
         }
 
-        public static string RenderMathematica(IEnumerable<double> doubles)
-        {
-            return RenderMathematicaAssumeAlreadyMathematica(doubles.Select(RenderMathematica));
-        }
         public static string RenderMathematica(params double[] doubles)
         {
             return RenderMathematicaAssumeAlreadyMathematica(doubles.Select(RenderMathematica));
