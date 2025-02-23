@@ -1,6 +1,6 @@
 ﻿namespace opticsdotnet.Lib
 {
-    interface IMathematicaRenderable
+    public interface IMathematicaRenderable
     {
         string RenderMathematica();
     }
