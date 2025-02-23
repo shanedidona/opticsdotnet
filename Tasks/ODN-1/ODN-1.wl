@@ -9,3 +9,4 @@ List1*2
 
 
 
+Get["C:\\Users\\shane\\opticsdotnet\\Tasks\\ODN-1\\ODN1_1.txt"]
