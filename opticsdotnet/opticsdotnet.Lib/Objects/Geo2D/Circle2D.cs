@@ -5,6 +5,14 @@
         public Point2D Center { get; set; }
         public double R { get; set; }
 
+
+        public Circle2D(double xC, double yC, double r)
+        {
+            Center = new Point2D(xC, yC);
+            R = r;
+        }
+
+
         public override string RenderMathematica()
         {
             return new MathematicaRenderableMathematicaAdapter(
