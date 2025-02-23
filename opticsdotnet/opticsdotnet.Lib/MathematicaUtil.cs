@@ -35,12 +35,12 @@ namespace opticsdotnet.Lib
             return sb1.ToString();
         }
 
-        public static string RenderMathematicaFunction(string name, params string[] args)
+        public static string RenderMathematicaFunction(string name, params IMathematicaRenderable[] args)
         {
             var sb1 = new StringBuilder();
             sb1.Append(name);
             sb1.Append("[");
-            sb1.Append(string.Join(",", args));
+            sb1.Append(string.Join(",", args.Select(x => x.RenderMathematica())));
             sb1.Append("]");
 
             return sb1.ToString();
