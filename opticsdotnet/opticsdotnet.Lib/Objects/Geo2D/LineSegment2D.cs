@@ -31,5 +31,15 @@
                                 )
                         ).RenderMathematicaFunction("Line");
         }
+
+        public Line2D ToLine2D()
+        {
+            double theta = Math.Atan2(
+                    Y2 - Y1,
+                    X2 - X1
+                );
+
+            return new Line2D(X1, Y1, theta);
+        }
     }
 }
