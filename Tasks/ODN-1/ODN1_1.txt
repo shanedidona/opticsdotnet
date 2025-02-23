@@ -1,1 +1,1 @@
-Graphics[Circle[{2,3},2],Line[{{2,3},{4,3.4}}],Point[{1,2}]]
+Graphics[{Circle[{2,3},2],Line[{{2,3},{4,3.4}}],Point[{1,2}]}]

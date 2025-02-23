@@ -11,9 +11,11 @@ namespace opticsdotnet.Testing.ODN1
 
             string string1 = MathematicaUtil.RenderMathematicaFunction(
                     "Graphics",
-                    (new Circle2D() { Center = new Point2D() { X = 2, Y = 3 }, R = 2 }).RenderMathematica(),
-                    (new LineSegment2D() { X1 = 2, Y1 = 3, X2 = 4, Y2 = 3.4 }).RenderMathematica(),
-                    (new Point2D() { X = 1, Y = 2}).RenderMathematica()
+                    MathematicaUtil.RenderMathematicaAssumeAlreadyMathematica(
+                        (new Circle2D() { Center = new Point2D() { X = 2, Y = 3 }, R = 2 }).RenderMathematica(),
+                        (new LineSegment2D() { X1 = 2, Y1 = 3, X2 = 4, Y2 = 3.4 }).RenderMathematica(),
+                        (new Point2D() { X = 1, Y = 2}).RenderMathematica()
+                    )
                 );
 
             File.WriteAllText(Path.Combine(saveDir, "ODN1_1.txt"), string1);
