@@ -13,3 +13,6 @@ https://learn.microsoft.com/en-us/dotnet/api/system.double.isnegativeinfinity?vi
 
 https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/method-parameters#params-modifier
 
+https://stackoverflow.com/questions/6930739/can-an-interface-be-added-to-existing-net-types
+
+Claude 3.5 Sonnet
