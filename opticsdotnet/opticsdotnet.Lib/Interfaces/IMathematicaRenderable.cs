@@ -2,5 +2,6 @@
 {
     interface IMathematicaRenderable
     {
+        string RenderMathematica();
     }
 }
