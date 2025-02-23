@@ -6,7 +6,7 @@ namespace opticsdotnet.Lib
     {
         readonly IMathematicaRenderable[] Array1;
 
-        public MathematicaRenderableMathematicaAdapter(IMathematicaRenderable[] array)
+        public MathematicaRenderableMathematicaAdapter(params IMathematicaRenderable[] array)
         {
             Array1 = array;
         }
