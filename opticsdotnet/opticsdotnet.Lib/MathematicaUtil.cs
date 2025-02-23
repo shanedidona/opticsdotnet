@@ -18,5 +18,15 @@ namespace opticsdotnet.Lib
 
             return sb1.ToString();
         }
+
+        public static string RenderMathematicaAssumeAlreadyMathematica(IEnumerable<string> renderedItems)
+        {
+            var sb1 = new StringBuilder();
+            sb1.Append("{");
+            sb1.Append(string.Join(",", renderedItems));
+            sb1.Append("}");
+
+            return sb1.ToString();
+        }
     }
 }
