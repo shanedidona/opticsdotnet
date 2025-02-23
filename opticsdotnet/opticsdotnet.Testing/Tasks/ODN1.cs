@@ -13,26 +13,13 @@ namespace opticsdotnet.Testing.ODN1
             LineSegment2D lineSegment2D = new LineSegment2D() { X1 = 2, Y1 = 3, X2 = 4, Y2 = 3.4 };
             Point2D point2D = new Point2D() { X = 1, Y = 2 };
 
-
-
-
-
-
-
-
-
-            string string1 = MathematicaUtil.RenderMathematicaFunction(
-                    "Graphics",
-                    MathematicaUtil.RenderMathematicaAssumeAlreadyMathematica(
-                        (new Circle2D() { Center = new Point2D() { X = 2, Y = 3 }, R = 2 }).RenderMathematica(),
-                        (new LineSegment2D() { X1 = 2, Y1 = 3, X2 = 4, Y2 = 3.4 }).RenderMathematica(),
-                        (new Point2D() { X = 1, Y = 2}).RenderMathematica()
-                    )
-                );
+            string string1 = new MathematicaRenderableMathematicaAdapter(
+                    new MathematicaRenderableMathematicaAdapter(
+                            circle2D, lineSegment2D, point2D
+                        )
+                ).RenderMathematicaFunction("Graphics");
 
             File.WriteAllText(Path.Combine(saveDir, "ODN1_1.txt"), string1);
-
-
         }
     }
 }
