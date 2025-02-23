@@ -10,7 +10,13 @@
 
         public override string RenderMathematica()
         {
-            throw new NotImplementedException();
+            return MathematicaUtil.RenderMathematicaFunction(
+                    "Line",
+                    MathematicaUtil.RenderMathematicaAssumeAlreadyMathematica(
+                            MathematicaUtil.RenderMathematica(X1, Y1),
+                            MathematicaUtil.RenderMathematica(X2, Y2)
+                        )
+                );
         }
     }
 }
