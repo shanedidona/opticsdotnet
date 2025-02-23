@@ -4,5 +4,10 @@
     {
         public Point2D Center { get; set; }
         public double R { get; set; }
+
+        public override string RenderMathematica()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
