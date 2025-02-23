@@ -9,11 +9,6 @@ namespace opticsdotnet.Lib
             return new MathematicaRenderableMathematicaAdapter(doubles.Select(x => new DoubleMathematicaAdapter(x)).ToArray()).RenderMathematica();
         }
 
-        public static string Render(params IMathematicaRenderable[] items)
-        {
-            return RenderMathematicaAssumeAlreadyMathematica(items.Select(x => x.RenderMathematica()).ToArray());
-        }
-
 
 
 
