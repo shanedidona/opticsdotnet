@@ -13,8 +13,8 @@
             return MathematicaUtil.RenderMathematicaFunction(
                     "Line",
                     MathematicaUtil.RenderMathematicaAssumeAlreadyMathematica(
-                            MathematicaUtil.RenderMathematica(X1, Y1),
-                            MathematicaUtil.RenderMathematica(X2, Y2)
+                            MathematicaUtil.Render(X1, Y1),
+                            MathematicaUtil.Render(X2, Y2)
                         )
                 );
         }

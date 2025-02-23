@@ -7,7 +7,7 @@
 
         public override string RenderMathematica()
         {
-            return MathematicaUtil.RenderMathematicaFunction("Point", MathematicaUtil.RenderMathematica(X, Y));
+            return MathematicaUtil.RenderMathematicaFunction("Point", MathematicaUtil.Render(X, Y));
         }
     }
 }
