@@ -16,3 +16,5 @@ https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/meth
 https://stackoverflow.com/questions/6930739/can-an-interface-be-added-to-existing-net-types
 
 Claude 3.5 Sonnet
+
+https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/configuring-commit-squashing-for-pull-requests
