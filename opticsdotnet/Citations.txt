@@ -7,4 +7,5 @@ https://docs.github.com/en/authentication/troubleshooting-ssh/error-permission-d
 
 todo: find old geo and optics repo where Shane did Geo2D
 
+Mathematica Documentation
 
