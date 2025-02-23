@@ -10,7 +10,7 @@
             return MathematicaUtil.RenderMathematicaFunction(
                     "Circle",
                     MathematicaUtil.RenderMathematica(Center.X, Center.Y),
-                    MathematicaUtil.RenderMathematica(R)
+                    MathematicaUtil.Render(R)
                 );
         }
     }
