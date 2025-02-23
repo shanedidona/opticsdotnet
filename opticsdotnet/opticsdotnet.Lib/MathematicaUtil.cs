@@ -14,7 +14,7 @@ namespace opticsdotnet.Lib
             return RenderMathematicaAssumeAlreadyMathematica(doubles.Select(RenderMathematica));
         }
 
-        public static string RenderMathematicaAssumeAlreadyMathematica(IEnumerable<string> renderedItems)
+        public static string RenderMathematicaAssumeAlreadyMathematica(params string[] renderedItems)
         {
             var sb1 = new StringBuilder();
             sb1.Append("{");
