@@ -6,7 +6,7 @@ namespace opticsdotnet.Lib
     {
         public static string RenderMathematica(params double[] doubles)
         {
-            return RenderMathematicaAssumeAlreadyMathematica(doubles.Select(Render).ToArray());
+            return RenderMathematicaAssumeAlreadyMathematica(doubles.Select(x => new DoubleMathematicaAdapter(x).RenderMathematica()).ToArray());
         }
 
         public static string RenderMathematica(params IMathematicaRenderable[] items)
