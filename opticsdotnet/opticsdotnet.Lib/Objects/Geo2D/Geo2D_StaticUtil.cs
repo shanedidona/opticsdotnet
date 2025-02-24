@@ -2,7 +2,7 @@
 {
     public abstract partial class Geo2D : IMathematicaRenderable
     {
-        public Line2DPoint2DDistanceResult LinePointDistanceCalc(double x0, double y0, double theta, double xp, double yp)
+        public static Line2DPoint2DDistanceResult LinePointDistanceCalc(double x0, double y0, double theta, double xp, double yp)
         {
             double aMin = (-x0 + xp) * Math.Cos(theta) + (-y0 + yp) * Math.Sin(theta);
 
