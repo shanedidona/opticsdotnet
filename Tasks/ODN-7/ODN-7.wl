@@ -10,7 +10,7 @@ dDistSquared=D[distSquared,a]
 FullSimplify[Solve[dDistSquared==0,a]]
 aMin=a/.FullSimplify[Solve[dDistSquared==0,a]][[1,1]]
 
-dMin=FullSimplify[distSquared/.a->aMin]
+dMin=FullSimplify[Sqrt[FullSimplify[distSquared/.a->aMin]]]
 
 
 
