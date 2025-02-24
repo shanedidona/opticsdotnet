@@ -21,6 +21,8 @@ namespace opticsdotnet.Testing.ODN1
                 ).RenderMathematicaFunction("Graphics");
 
             File.WriteAllText(Path.Combine(saveDir, "ODN1_1.txt"), string1);
+
+            Line2D line2D1 = lineSegment2D.ToLine2D();
         }
     }
 }
