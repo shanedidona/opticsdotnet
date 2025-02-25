@@ -14,3 +14,4 @@ dMin=FullSimplify[Sqrt[FullSimplify[distSquared/.a->aMin]]]
 
 
 
+Get["C:\\Users\\shane\\opticsdotnet\\Tasks\\ODN-7\\ODN7_1.txt"]
