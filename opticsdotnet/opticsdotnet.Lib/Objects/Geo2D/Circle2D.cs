@@ -20,10 +20,10 @@
         public override string RenderMathematica()
         {
             return new MathematicaRenderableMathematicaAdapter(
-                        new MathematicaRenderableMathematicaAdapter(
-                                new DoubleMathematicaAdapter(Center.X),
-                                new DoubleMathematicaAdapter(Center.Y)
-                            ),
+                            new MathematicaRenderableMathematicaAdapter(
+                                    new DoubleMathematicaAdapter(Center.X),
+                                    new DoubleMathematicaAdapter(Center.Y)
+                                ),
                             new DoubleMathematicaAdapter(R)
                         ).RenderMathematicaFunction("Circle");
         }
