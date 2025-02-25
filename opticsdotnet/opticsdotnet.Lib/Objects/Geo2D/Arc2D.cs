@@ -24,7 +24,11 @@
                                     new DoubleMathematicaAdapter(Center.X),
                                     new DoubleMathematicaAdapter(Center.Y)
                                 ),
-                            new DoubleMathematicaAdapter(R)
+                            new DoubleMathematicaAdapter(R),
+                            new MathematicaRenderableMathematicaAdapter(
+                                    new DoubleMathematicaAdapter(Theta1),
+                                    new DoubleMathematicaAdapter(Theta2)
+                                )
                         ).RenderMathematicaFunction("Circle");
         }
     }
