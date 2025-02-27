@@ -13,6 +13,11 @@
 
         public double? AbsorptionCoefficient(double wavelength)
         {
+            
+        }
+
+        public double? IndexOfRefraction(double wavelength)
+        {
             if (wavelength < 300)
             {
                 return null;
@@ -24,11 +29,6 @@
             }
 
             return PhysicsUtil.SellmeierEvaluate(wavelength, B1, B2, B3, C1, C2, C3);
-        }
-
-        public double? IndexOfRefraction(double wavelength)
-        {
-            
         }
     }
 }
