@@ -8,7 +8,7 @@
         {
             BaseSaveDir = File.ReadAllLines("settings.txt")[0];
 
-            ODN7.ODN7.ODN7_1();
+            ODN1.ODN1.ODN1_1();
         }
     }
 }
