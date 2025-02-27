@@ -18,3 +18,6 @@ https://stackoverflow.com/questions/6930739/can-an-interface-be-added-to-existin
 Claude 3.5 Sonnet
 
 https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/configuring-commit-squashing-for-pull-requests
+
+https://en.wikipedia.org/wiki/Beer%E2%80%93Lambert_law
+https://en.wikipedia.org/wiki/Mathematical_descriptions_of_opacity#Attenuation_coefficient
