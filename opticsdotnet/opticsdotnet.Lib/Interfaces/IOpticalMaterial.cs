@@ -1,4 +1,4 @@
-﻿namespace opticsdotnet.Lib.Interfaces
+﻿namespace opticsdotnet.Lib
 {
     public interface IOpticalMaterial
     {
