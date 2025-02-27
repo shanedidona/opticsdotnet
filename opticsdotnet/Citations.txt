@@ -21,3 +21,7 @@ https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-
 
 https://en.wikipedia.org/wiki/Beer%E2%80%93Lambert_law
 https://en.wikipedia.org/wiki/Mathematical_descriptions_of_opacity#Attenuation_coefficient
+
+Idea that some materials have some property interfaces is from COMSOL?
+
+
