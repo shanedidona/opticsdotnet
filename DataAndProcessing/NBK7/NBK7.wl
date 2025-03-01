@@ -17,7 +17,7 @@ AttenuationCoeffs=Table[
 ,{f,Data1}]
 
 Export["C:\\Users\\shane\\opticsdotnet\\opticsdotnet\\opticsdotnet.Lib\\Data\\NBK7\\NBK7_AttenuationCoeffs.csv",AttenuationCoeffs]
-
+Export["C:\\Users\\shane\\opticsdotnet\\opticsdotnet\\opticsdotnet.Lib\\Data\\NBK7\\Test1.csv",{{0.0000000001}}]
 
 
 
