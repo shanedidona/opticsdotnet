@@ -2,6 +2,7 @@
 
 Data1=Import["C:\\Users\\shane\\opticsdotnet\\DataAndProcessing\\NBK7\\Uncoated_N-BK7_Transmission_4microns.xlsx"];
 Data1=Data1[[1]][[3;;-1]][[All,3;;4]]
+Data1=Data1[[2;;-1]](*TODO: remove this fudge*)
 Data1[[All,2]]=Data1[[All,2]]/100.0;
 Solve[Exp[-a*0.01]==t1,a]
 Exp1=a/.Solve[Exp[-a*0.01]==t1,a][[1]]
