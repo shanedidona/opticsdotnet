@@ -1,4 +1,6 @@
-﻿namespace opticsdotnet.Testing
+﻿using opticsdotnet.Lib;
+
+namespace opticsdotnet.Testing
 {
     internal class Program
     {
@@ -9,6 +11,8 @@
             BaseSaveDir = File.ReadAllLines("settings.txt")[0];
 
             ODN1.ODN1.ODN1_1();
+
+            var nbk7 = new NBK7();
         }
     }
 }
