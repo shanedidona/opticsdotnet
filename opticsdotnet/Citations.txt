@@ -28,3 +28,6 @@ https://en.wikipedia.org/wiki/Sellmeier_equation
 
 https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=6973&tabname=N-BK7
 
+See citations for all nuget packages.
+MathNet.Numerics uses MIT license
+
