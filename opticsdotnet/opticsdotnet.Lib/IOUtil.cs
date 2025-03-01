@@ -44,62 +44,6 @@
             }
 
             return (xs, ys);
-
-
-
-
-
-
-
-
-
-            var out1 = new double[splitLines.Length, 2];
-
-            for (int i = 0; i < splitLines.Length; i++)
-            {
-                out1[i, 0] = double.Parse(splitLines[i][0]);
-
-
-
-
-
-
-
-
-            }
-
-
-
-
-
-
-
-            foreach (string[] splitLine in splitLines)
-            {
-                ou
-
-
-
-
-
-
-
-
-            }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         }
     }
 }
