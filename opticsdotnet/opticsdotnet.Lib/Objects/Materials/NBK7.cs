@@ -3,6 +3,8 @@
     public sealed class NBK7 : IOpticalMaterial
     {
         //https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=6973&tabname=N-BK7
+        //https://www.thorlabs.com/images/TabImages/Uncoated_N-BK7_Transmission_4microns.xlsx
+
         const double B1 = 1.03961212;
         const double B2 = 0.231792344;
         const double B3 = 1.01046945;
