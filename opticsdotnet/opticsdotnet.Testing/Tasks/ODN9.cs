@@ -11,6 +11,10 @@ namespace opticsdotnet.Testing.ODN9
 
 
 
+            var nbk7 = new NBK7();
+            var v1 = nbk7.AbsorptionCoefficient(400);
+            var v2 = nbk7.AbsorptionCoefficient(-400);
+
 
 
 

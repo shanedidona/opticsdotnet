@@ -10,11 +10,7 @@ namespace opticsdotnet.Testing
         {
             BaseSaveDir = File.ReadAllLines("settings.txt")[0];
 
-            ODN1.ODN1.ODN1_1();
-
-            var nbk7 = new NBK7();
-            var v1 = nbk7.AbsorptionCoefficient(400);
-            var v2 = nbk7.AbsorptionCoefficient(-400);
+            ODN9.ODN9.ODN9_1();
         }
     }
 }
