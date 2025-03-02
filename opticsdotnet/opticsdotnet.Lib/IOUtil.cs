@@ -50,9 +50,13 @@
         {
             MathNet.Numerics.LinearAlgebra.Matrix<double> mat1 = MathNet.Numerics.Data.Text.DelimitedReader.Read<double>(path, false, ",", false);
 
-            //int numRows = mat1.RowCount;
-
             double[] xs = mat1.Column(0).ToArray();
+
+            if (!Compare.ValidateIncreasing(xs))
+            {
+                throw new NotSupportedException("!Compare.ValidateIncreasing(xs) for " + path);
+            }
+
             double[] ys = mat1.Column(1).ToArray();
 
             return MathNet.Numerics.Interpolation.LinearSpline.InterpolateSorted(xs, ys);
