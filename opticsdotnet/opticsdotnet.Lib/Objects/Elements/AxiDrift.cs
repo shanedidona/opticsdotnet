@@ -3,9 +3,11 @@
     public sealed class AxiDrift : IMathematicaRenderable
     {
         readonly double Length1;
+        readonly IOpticalMaterial OpticalMaterial;
 
-        public AxiDrift(double length)
+        public AxiDrift(IOpticalMaterial opticalMaterial, double length)
         {
+            OpticalMaterial = opticalMaterial;
             Length1 = length;
         }
 
