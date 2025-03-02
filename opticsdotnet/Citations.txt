@@ -31,5 +31,6 @@ https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=6973&tabname=N-BK7
 See citations for all nuget packages.
 MathNet.Numerics uses MIT license
 MathNet.Numerics.Data.Text uses MIT license
+ScottPlot uses MIT license
 
 https://numerics.mathdotnet.com/CSV
