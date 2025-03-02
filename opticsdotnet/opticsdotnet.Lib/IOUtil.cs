@@ -2,7 +2,7 @@
 {
     public static class IOUtil
     {
-        public static MathNet.Numerics.Interpolation.LinearSpline LinearSplineFromCSVFile(string path)
+        public static LinearSplineWithMinMax LinearSplineWithMinMaxFromCSVFile(string path)
         {
             MathNet.Numerics.LinearAlgebra.Matrix<double> mat1 = MathNet.Numerics.Data.Text.DelimitedReader.Read<double>(path, false, ",", false);
 
@@ -15,7 +15,11 @@
 
             double[] ys = mat1.Column(1).ToArray();
 
-            return MathNet.Numerics.Interpolation.LinearSpline.InterpolateSorted(xs, ys);
+            return new LinearSplineWithMinMax(
+                    MathNet.Numerics.Interpolation.LinearSpline.InterpolateSorted(xs, ys),
+                    xs.First(),
+                    xs.Last()
+                );
         }
     }
 }
