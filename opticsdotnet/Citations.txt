@@ -37,3 +37,5 @@ https://numerics.mathdotnet.com/CSV
 
 https://scottplot.net/
 
+https://www.mathworks.com/help/matlab/ref/double.linspace.html
+
