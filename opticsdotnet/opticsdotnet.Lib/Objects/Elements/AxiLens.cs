@@ -2,33 +2,42 @@
 {
     public sealed class AxiLens : IMathematicaRenderable
     {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        readonly double Length1;
+        readonly double CenterThickness;
+        readonly double OuterRadius;
+        readonly double? Radius1;
+        readonly double? Radius2;
         readonly IOpticalMaterial OpticalMaterial;
 
-        public AxiDrift(IOpticalMaterial opticalMaterial, double length)
+        public AxiLens(IOpticalMaterial opticalMaterial, double centerThickness, double outerRadius, double? radius1, double? radius2)
         {
+            CenterThickness = centerThickness;
+            OuterRadius = outerRadius;
+            Radius1 = radius1;
+            Radius2 = radius2;
             OpticalMaterial = opticalMaterial;
-            Length1 = length;
-        }
+        }        
 
         public string RenderMathematica()
         {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             return MathematicaUtil.Nothing;
         }
     }
