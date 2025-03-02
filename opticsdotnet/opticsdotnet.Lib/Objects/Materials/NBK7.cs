@@ -24,7 +24,16 @@
 
         public double? AbsorptionCoefficient(double wavelength)
         {
-            //var wooo = MathNet.Numerics.Interpolation.LinearSpline.Interpolate
+            if (wavelength < AbsorptionCoefficientMinWavelength)
+            {
+                return null;
+            }
+
+            if (AbsorptionCoefficientMaxWavelength < wavelength)
+            {
+                return null;
+            }
+
             return AbsorptionCoefficientLinearSplineWithMinMax.LinearSpline1.Interpolate(wavelength);
         }
 
