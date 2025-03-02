@@ -40,6 +40,7 @@ namespace opticsdotnet.Lib
                 Plot indexOfRefractionPlot = multiplot.GetPlot(0);
                 indexOfRefractionPlot.Add.Scatter(wavelengths, indicesOfRefraction);
                 indexOfRefractionPlot.XLabel("λ (nm)");
+                indexOfRefractionPlot.YLabel("Index Of Refraction");
                 indexOfRefractionPlot.Axes.SetLimitsX(minWavelength, maxWavelength);
             }
 
@@ -50,6 +51,7 @@ namespace opticsdotnet.Lib
                 Plot absorptionCoefficientPlot = multiplot.GetPlot(1);
                 absorptionCoefficientPlot.Add.Scatter(wavelengths, absorptionCoefficients);
                 absorptionCoefficientPlot.XLabel("λ (nm)");
+                absorptionCoefficientPlot.YLabel("Absorption Coefficient (1/m)");
                 absorptionCoefficientPlot.Axes.SetLimitsX(minWavelength, maxWavelength);
             }
 
