@@ -15,6 +15,14 @@
         //MathNet.Numerics.Interpolation.LinearSpline woo = MathNet.Numerics.Interpolation.LinearSpline.InterpolateSorted()
         MathNet.Numerics.Interpolation.LinearSpline AbsorptionCoefficientSpline = IOUtil.LinearSplineFromCSVFile("Data//NBK7//NBK7_AttenuationCoeffs.csv");
 
+        public double IndexOfRefractionMinWavelength => throw new NotImplementedException();
+
+        public double IndexOfRefractionMaxWavelength => throw new NotImplementedException();
+
+        public double AbsorptionCoefficientMinWavelength => throw new NotImplementedException();
+
+        public double AbsorptionCoefficientMaxWavelength => throw new NotImplementedException();
+
         public double? AbsorptionCoefficient(double wavelength)
         {
             //var wooo = MathNet.Numerics.Interpolation.LinearSpline.Interpolate
