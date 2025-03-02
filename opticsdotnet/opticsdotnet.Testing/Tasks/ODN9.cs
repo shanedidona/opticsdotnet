@@ -15,7 +15,7 @@ namespace opticsdotnet.Testing.ODN9
             var v1 = nbk7.AbsorptionCoefficient(400);
             var v2 = nbk7.AbsorptionCoefficient(-400);
 
-
+            PhysicsUtil.OpticalMaterialPlot(nbk7, Path.Combine(saveDir, "ODN9_1.png"), 1000);
 
 
         }
