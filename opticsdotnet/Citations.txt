@@ -41,3 +41,5 @@ https://www.mathworks.com/help/matlab/ref/double.linspace.html
 
 Claude (Gen AI)
 
+https://en.wikipedia.org/wiki/Greek_alphabet
+
