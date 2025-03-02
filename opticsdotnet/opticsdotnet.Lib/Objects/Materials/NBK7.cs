@@ -12,20 +12,20 @@
         const double C2 = 0.0200179144;
         const double C3 = 103.560653;
 
-        static readonly MathNet.Numerics.Interpolation.LinearSpline AbsorptionCoefficientSpline = IOUtil.LinearSplineFromCSVFile("Data//NBK7//NBK7_AttenuationCoeffs.csv");
+        static readonly LinearSplineWithMinMax AbsorptionCoefficientLinearSplineWithMinMax = IOUtil.LinearSplineWithMinMaxFromCSVFile("Data//NBK7//NBK7_AttenuationCoeffs.csv");
 
         public double? IndexOfRefractionMinWavelength => 300;
 
         public double? IndexOfRefractionMaxWavelength => 2500;
 
-        public double? AbsorptionCoefficientMinWavelength => throw new NotImplementedException();
+        public double? AbsorptionCoefficientMinWavelength => AbsorptionCoefficientLinearSplineWithMinMax.MinIndep;
 
-        public double? AbsorptionCoefficientMaxWavelength => throw new NotImplementedException();
+        public double? AbsorptionCoefficientMaxWavelength => AbsorptionCoefficientLinearSplineWithMinMax.MaxIndep;
 
         public double? AbsorptionCoefficient(double wavelength)
         {
             //var wooo = MathNet.Numerics.Interpolation.LinearSpline.Interpolate
-            return AbsorptionCoefficientSpline.Interpolate(wavelength);
+            return AbsorptionCoefficientLinearSplineWithMinMax.LinearSpline1.Interpolate(wavelength);
         }
 
         public double? IndexOfRefraction(double wavelength)
