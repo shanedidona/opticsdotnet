@@ -2,33 +2,6 @@
 {
     public static class IOUtil
     {
-        static (double[] Xs, double?[] Ys) ParsePhysicalData(string[][] splitLines)
-        {
-            double[] xs = new double[splitLines.Length];
-            double?[] ys = new double?[splitLines.Length];
-
-            for (int i = 0; i < splitLines.Length; i++)
-            {
-                xs[i] = double.Parse(splitLines[i][0]);
-
-                if (i != 0 && xs[i - 1] >= xs[i])
-                {
-                    throw new NotSupportedException("Xs are not in order in ParsePhysicalData");
-                }
-
-                if (double.TryParse(splitLines[i][1], out double double1))
-                {
-                    ys[i] = double1;
-                }
-                else
-                {
-                    ys[i] = null;
-                }
-            }
-
-            return (xs, ys);
-        }
-
         public static MathNet.Numerics.Interpolation.LinearSpline LinearSplineFromCSVFile(string path)
         {
             MathNet.Numerics.LinearAlgebra.Matrix<double> mat1 = MathNet.Numerics.Data.Text.DelimitedReader.Read<double>(path, false, ",", false);
