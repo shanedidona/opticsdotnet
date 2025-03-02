@@ -12,7 +12,7 @@
         const double C2 = 0.0200179144;
         const double C3 = 103.560653;
 
-        MathNet.Numerics.Interpolation.LinearSpline AbsorptionCoefficientSpline = IOUtil.LinearSplineFromCSVFile("Data//NBK7//NBK7_AttenuationCoeffs.csv");
+        static readonly MathNet.Numerics.Interpolation.LinearSpline AbsorptionCoefficientSpline = IOUtil.LinearSplineFromCSVFile("Data//NBK7//NBK7_AttenuationCoeffs.csv");
 
         public double? IndexOfRefractionMinWavelength => 300;
 
