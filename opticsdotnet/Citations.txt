@@ -34,3 +34,6 @@ MathNet.Numerics.Data.Text uses MIT license
 ScottPlot uses MIT license
 
 https://numerics.mathdotnet.com/CSV
+
+https://scottplot.net/
+
