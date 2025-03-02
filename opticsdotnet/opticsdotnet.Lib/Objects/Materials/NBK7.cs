@@ -14,9 +14,9 @@
 
         MathNet.Numerics.Interpolation.LinearSpline AbsorptionCoefficientSpline = IOUtil.LinearSplineFromCSVFile("Data//NBK7//NBK7_AttenuationCoeffs.csv");
 
-        public double IndexOfRefractionMinWavelength => throw new NotImplementedException();
+        public double IndexOfRefractionMinWavelength => 300;
 
-        public double IndexOfRefractionMaxWavelength => throw new NotImplementedException();
+        public double IndexOfRefractionMaxWavelength => 2500;
 
         public double AbsorptionCoefficientMinWavelength => throw new NotImplementedException();
 
@@ -30,12 +30,12 @@
 
         public double? IndexOfRefraction(double wavelength)
         {
-            if (wavelength < 300)
+            if (wavelength < IndexOfRefractionMinWavelength)
             {
                 return null;
             }
 
-            if (2500 < wavelength)
+            if (IndexOfRefractionMaxWavelength < wavelength)
             {
                 return null;
             }
