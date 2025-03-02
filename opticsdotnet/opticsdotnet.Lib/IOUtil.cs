@@ -2,17 +2,6 @@
 {
     public static class IOUtil
     {
-
-
-
-
-
-
-
-
-
-
-
         public static string[][] ParseCSV(string path)//TODO: replace with a library for edge cases
         {
             var out1 = new List<string[]>();
