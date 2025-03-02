@@ -6,4 +6,16 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MathNet.Numerics" Version="5.0.0" />
+    <PackageReference Include="MathNet.Numerics.Data.Text" Version="5.0.0" />
+    <PackageReference Include="ScottPlot" Version="5.0.54" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Data\NBK7\NBK7_AttenuationCoeffs.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
