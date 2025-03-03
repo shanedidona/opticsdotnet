@@ -1,4 +1,6 @@
-﻿namespace opticsdotnet.Lib
+﻿using static opticsdotnet.Lib.MathUtil;
+
+namespace opticsdotnet.Lib
 {
     public abstract partial class Geo2D : IMathematicaRenderable
     {
@@ -19,6 +21,55 @@
                 DMin = dMin,
                 ClosestPoint = closestPoint
             };
+        }
+
+        public static Point2D[] LineIntersectCircle(Line2D line2D, Circle2D circle2D)
+        {
+            Line2DPoint2DDistanceResult line2DPoint2DDistanceResult = LinePointDistanceCalc(
+                    line2D.Point0.X,
+                    line2D.Point0.Y,
+                    line2D.Theta,
+                    circle2D.Center.X,
+                    circle2D.Center.Y
+                );
+
+            double rCircle = circle2D.R;
+
+            if (rCircle < line2DPoint2DDistanceResult.DMin)
+            {
+                return new Point2D[0];
+            }
+
+            if (rCircle == line2DPoint2DDistanceResult.DMin)
+            {
+                return new Point2D[] { line2DPoint2DDistanceResult.ClosestPoint };
+            }
+
+            double x0 = line2D.Point0.X;
+            double y0 = line2D.Point0.Y;
+            double xc = circle2D.Center.X;
+            double yc = circle2D.Center.Y;
+
+            (double sinTheta, double cosTheta) = Math.SinCos(line2D.Theta);
+
+            double firstPart = -x0 * cosTheta + xc * cosTheta - y0 * sinTheta + yc * sinTheta;
+
+            double sqrtTerm = Math.Sqrt(Sq(rCircle) - Sq(x0 - xc) - Sq(y0 - yc) + Sq((x0 - xc) * cosTheta + (y0 - yc) * sinTheta));
+
+            double a1 = firstPart - sqrtTerm;
+            double a2 = firstPart + sqrtTerm;
+
+            Point2D point1 = new Point2D(
+                    x0 + a1 * cosTheta,
+                    y0 + a1 * sinTheta
+                );
+
+            Point2D point2 = new Point2D(
+                    x0 + a2 * cosTheta,
+                    y0 + a2 * sinTheta
+                );
+
+            return new Point2D[] { point1, point2 };
         }
     }
 }
