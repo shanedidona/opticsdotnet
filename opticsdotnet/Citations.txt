@@ -43,3 +43,5 @@ Claude (Gen AI)
 
 https://en.wikipedia.org/wiki/Greek_alphabet
 
+public sealed class Random_Extensions name from MathNet.Numerics.Random.RandomExtensions or saw it after?
+
