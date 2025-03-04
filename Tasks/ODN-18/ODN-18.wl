@@ -14,4 +14,6 @@ FullSimplify[Solve[derror==0,a]]
 ]
 
 
-
+Table[
+	Get[f,Method->"String"]
+,{f,StringSplit[Import["C:\\Users\\shane\\opticsdotnet\\Tasks\\ODN-18\\ODN18_1.txt"]]}]
