@@ -42,6 +42,18 @@ namespace opticsdotnet.Testing.ODN18
                     lines[i] = new Line2D(1.5,2, Math.PI / 2);
                 }
 
+                if (i == 2)
+                {
+                    circles[i] = new Circle2D(0, 1, 1.5);
+                    lines[i] = new Line2D(0.1, 0.2, 0);
+                }
+
+                if (i == 3)
+                {
+                    circles[i] = new Circle2D(0, 1, 1.5);
+                    lines[i] = new Line2D(0.1, 0.2, Math.PI * 2);
+                }
+
                 intersectionPoints[i] = Geo2D.LineIntersectCircle(lines[i], circles[i]);
 
                 var items = new List<IMathematicaRenderable>();
