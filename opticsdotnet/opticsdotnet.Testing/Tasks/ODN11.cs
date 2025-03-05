@@ -9,15 +9,42 @@ namespace opticsdotnet.Testing.ODN11
             string saveDir = Path.Combine(Program.BaseSaveDir, "ODN-11");
             Directory.CreateDirectory(saveDir);
 
-            AxiLens axiLens = new AxiLens(
-                     new NBK7(),
-                     0.02,
-                     0.05,
-                     0.3,
-                     0.4
+            var axiLenses = new List<AxiLens>();
+
+            axiLenses.Add(
+                    new AxiLens(
+                         new NBK7(),
+                         0.02,
+                         0.05,
+                         0.3,
+                         0.4
+                    )
                 );
 
-            File.WriteAllText(Path.Combine(saveDir, "ODN11_1.txt"), axiLens.RenderMathematica());
+            string[] linesOut = axiLenses.Select(axiLens =>
+                    new MathematicaRenderableMathematicaAdapter(axiLens).RenderMathematicaFunction("Graphics")
+
+                ).ToArray();
+
+            File.WriteAllLines(Path.Combine(saveDir, "ODN11_1.txt"), linesOut);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            //File.WriteAllText(Path.Combine(saveDir, "ODN11_1.txt"), axiLens.RenderMathematica());
 
 
 
