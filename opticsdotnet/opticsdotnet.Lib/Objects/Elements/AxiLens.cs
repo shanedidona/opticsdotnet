@@ -4,8 +4,8 @@
     {
         readonly double CenterThickness;
         readonly double OuterRadius;
-        readonly double? Radius1;//Null means flat, positive is concave, and negative is convex
-        readonly double? Radius2;//Null means flat, positive is concave, and negative is convex
+        readonly double? Radius1;//Null means flat, positive is convex, and negative is concave
+        readonly double? Radius2;//Null means flat, positive is convex, and negative is concave
         readonly IOpticalMaterial OpticalMaterial;
 
         public AxiLens(IOpticalMaterial opticalMaterial, double centerThickness, double outerRadius, double? radius1, double? radius2)
