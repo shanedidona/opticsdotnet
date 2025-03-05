@@ -27,57 +27,6 @@ namespace opticsdotnet.Testing.ODN11
                 ).ToArray();
 
             File.WriteAllLines(Path.Combine(saveDir, "ODN11_1.txt"), linesOut);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            //File.WriteAllText(Path.Combine(saveDir, "ODN11_1.txt"), axiLens.RenderMathematica());
-
-
-
-
-
-
-
-            return;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            var nbk7 = new NBK7();
-            var v1 = nbk7.AbsorptionCoefficient(400);
-            var v2 = nbk7.AbsorptionCoefficient(-400);
-
-            PhysicsUtil.OpticalMaterialPlot(nbk7, Path.Combine(saveDir, "ODN9_1.png"), 1000);
-
-
         }
     }
 }
