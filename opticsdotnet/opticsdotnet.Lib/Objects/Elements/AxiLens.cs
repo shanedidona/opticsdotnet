@@ -26,9 +26,22 @@
             IMathematicaRenderable leftSurface;
             if (Radius1.HasValue)
             {
-                Circle2D circle = new Circle2D(-Radius1.Value, 0, Radius1.Value);
+                if (0 < Radius1.Value)
+                {
+                    //Convex
 
-                leftSurface = circle;
+                    Circle2D circle = new Circle2D(Radius1.Value, 0, Radius1.Value);
+
+                    leftSurface = circle;
+                }
+                else
+                {
+                    //Concave
+
+                    Circle2D circle = new Circle2D(-Radius1.Value, 0, Radius1.Value);
+
+                    leftSurface = circle;
+                }   
             }
             else
             {
@@ -38,9 +51,22 @@
             IMathematicaRenderable rightSurface;
             if (Radius2.HasValue)
             {
-                Circle2D circle = new Circle2D(CenterThickness + Radius2.Value, 0, Radius2.Value);
+                if (0 < Radius1.Value)
+                {
+                    //Convex
 
-                rightSurface = circle;
+                    Circle2D circle = new Circle2D(CenterThickness - Radius2.Value, 0, Radius2.Value);
+
+                    rightSurface = circle;
+                }
+                else
+                {
+                    //Concave
+
+                    Circle2D circle = new Circle2D(CenterThickness + Radius2.Value, 0, Radius2.Value);
+
+                    rightSurface = circle;
+                }
             }
             else
             {
