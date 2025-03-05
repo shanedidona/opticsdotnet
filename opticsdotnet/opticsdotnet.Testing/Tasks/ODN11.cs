@@ -11,7 +11,7 @@ namespace opticsdotnet.Testing.ODN11
 
             AxiLens axiLens = new AxiLens(
                      new NBK7(),
-                     0.01,
+                     0.02,
                      0.05,
                      0.3,
                      0.4
