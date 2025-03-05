@@ -4,8 +4,8 @@
     {
         readonly double CenterThickness;
         readonly double OuterRadius;
-        readonly double? Radius1;
-        readonly double? Radius2;
+        readonly double? Radius1;//Null means flat
+        readonly double? Radius2;//Null means flat
         readonly IOpticalMaterial OpticalMaterial;
 
         public AxiLens(IOpticalMaterial opticalMaterial, double centerThickness, double outerRadius, double? radius1, double? radius2)
