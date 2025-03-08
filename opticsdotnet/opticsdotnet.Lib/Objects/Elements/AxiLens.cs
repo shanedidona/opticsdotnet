@@ -45,7 +45,7 @@
                 {
                     //Concave
 
-                    Circle2D circle = new Circle2D(-Radius1.Value, 0, Radius1.Value);
+                    Circle2D circle = new Circle2D(-Radius1.Value, 0, Math.Abs(Radius1.Value));
 
                     Point2D lowerPoint = Geo2D.LineIntersectCircle(lowerEdge, circle).RightMost();
                     Point2D upperPoint = Geo2D.LineIntersectCircle(upperEdge, circle).RightMost();
@@ -82,7 +82,7 @@
                 {
                     //Concave
 
-                    Circle2D circle = new Circle2D(CenterThickness + Radius2.Value, 0, Radius2.Value);
+                    Circle2D circle = new Circle2D(CenterThickness + Radius2.Value, 0, Math.Abs(Radius2.Value));
 
                     Point2D lowerPoint = Geo2D.LineIntersectCircle(lowerEdge, circle).LeftMost();
                     Point2D upperPoint = Geo2D.LineIntersectCircle(upperEdge, circle).LeftMost();
