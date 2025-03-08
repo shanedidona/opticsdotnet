@@ -98,7 +98,14 @@
                 rightSurface = new LineSegment2D(CenterThickness, -OuterRadius, 0, OuterRadius);
             }
 
-            return new MathematicaRenderableMathematicaAdapter(lowerEdge, upperEdge, leftSurface, rightSurface).RenderMathematica();
+            var objectsToRender = new List<IMathematicaRenderable>();
+            objectsToRender.AddRange(diagObjects);
+            objectsToRender.AddRange(lowerEdge);
+            objectsToRender.AddRange(upperEdge);
+            objectsToRender.AddRange(leftSurface);
+            objectsToRender.AddRange(rightSurface);
+
+            return new MathematicaRenderableMathematicaAdapter(objectsToRender.ToArray()).RenderMathematica();
         }
     }
 }
