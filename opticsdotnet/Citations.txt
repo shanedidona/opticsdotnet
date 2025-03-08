@@ -48,4 +48,6 @@ public sealed class Random_Extensions name from MathNet.Numerics.Random.RandomEx
 https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=4847
 https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=256
 
+https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/operator-overloading
+
 
