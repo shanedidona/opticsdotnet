@@ -64,7 +64,7 @@
             IMathematicaRenderable rightSurface;
             if (Radius2.HasValue)
             {
-                if (0 < Radius1.Value)
+                if (0 < Radius2.Value)
                 {
                     //Convex
 
