@@ -12,6 +12,11 @@
             R = r;
         }
 
+        public Arc2D GetArc(double theta1, double theta2)
+        {
+            return new Arc2D(Center.X, Center.Y, R, theta1, theta2);
+        }
+
 
         public override string RenderMathematica()
         {
