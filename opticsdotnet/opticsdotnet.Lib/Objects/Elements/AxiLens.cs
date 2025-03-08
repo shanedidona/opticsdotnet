@@ -58,7 +58,12 @@
                     diagObjects.Add(lowerPoint);
                     diagObjects.Add(upperPoint);
 
-                    leftSurface = circle;
+                    Arc2D arc = circle.GetArc(
+                            (upperPoint - circle.Center).Theta(),
+                            (lowerPoint - circle.Center).Theta()
+                        );
+
+                    leftSurface = arc;
                 }   
             }
             else
