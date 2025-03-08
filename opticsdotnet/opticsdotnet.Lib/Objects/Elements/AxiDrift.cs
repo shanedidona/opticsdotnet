@@ -11,6 +11,8 @@
             Length1 = length;
         }
 
+        public double CenterLength => Length1;
+
         public string RenderMathematica()
         {
             return MathematicaUtil.Nothing;
