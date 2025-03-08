@@ -2,5 +2,6 @@
 {
     public interface IAxiOpticalElement : IMathematicaRenderable
     {
+        public double CenterLength { get; }
     }
 }
