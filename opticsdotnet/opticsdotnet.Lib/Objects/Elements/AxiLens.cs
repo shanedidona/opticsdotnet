@@ -70,9 +70,6 @@
                 leftSurface = new LineSegment2D(lowerLeftPoint, upperLeftPoint);
             }
 
-            diagObjects.Add(lowerLeftPoint);
-            diagObjects.Add(upperLeftPoint);
-
             IMathematicaRenderable rightSurface;
             Point2D lowerRightPoint;
             Point2D upperRightPoint;
@@ -119,6 +116,8 @@
                 rightSurface = new LineSegment2D(lowerRightPoint, upperRightPoint);
             }
 
+            diagObjects.Add(lowerLeftPoint);
+            diagObjects.Add(upperLeftPoint);
             diagObjects.Add(lowerRightPoint);
             diagObjects.Add(upperRightPoint);
 
