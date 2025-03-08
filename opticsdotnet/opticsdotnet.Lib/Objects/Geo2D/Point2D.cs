@@ -23,4 +23,27 @@
                     ).RenderMathematicaFunction("Point");
         }
     }
+
+    public static class Point2D_Extensions
+    {
+        public static Point2D TopMost(this Point2D[] points)
+        {
+            return points.OrderBy(point => point.Y).Last();
+        }
+
+        public static Point2D BottomMost(this Point2D[] points)
+        {
+            return points.OrderBy(point => point.Y).First();
+        }
+
+        public static Point2D LeftMost(this Point2D[] points)
+        {
+            return points.OrderBy(point => point.X).First();
+        }
+
+        public static Point2D RightMost(this Point2D[] points)
+        {
+            return points.OrderBy(point => point.X).Last();
+        }
+    }
 }
