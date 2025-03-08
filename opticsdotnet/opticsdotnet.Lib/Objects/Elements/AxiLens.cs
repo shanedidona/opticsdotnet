@@ -33,15 +33,15 @@
 
                     Circle2D circle = new Circle2D(Radius1.Value, 0, Radius1.Value);
 
-                    Point2D lowerPoint = Geo2D.LineIntersectCircle(lowerEdge, circle).LeftMost();
-                    Point2D upperPoint = Geo2D.LineIntersectCircle(upperEdge, circle).LeftMost();
+                    Point2D lowerLeftPoint = Geo2D.LineIntersectCircle(lowerEdge, circle).LeftMost();
+                    Point2D upperLeftPoint = Geo2D.LineIntersectCircle(upperEdge, circle).LeftMost();
 
-                    diagObjects.Add(lowerPoint);
-                    diagObjects.Add(upperPoint);
+                    diagObjects.Add(lowerLeftPoint);
+                    diagObjects.Add(upperLeftPoint);
 
                     Arc2D arc = circle.GetArc(
-                            (upperPoint - circle.Center).Theta(),
-                            (lowerPoint - circle.Center).Theta() + 2 * Math.PI
+                            (upperLeftPoint - circle.Center).Theta(),
+                            (lowerLeftPoint - circle.Center).Theta() + 2 * Math.PI
                         );
 
                     leftSurface = arc;
@@ -52,15 +52,15 @@
 
                     Circle2D circle = new Circle2D(-Math.Abs(Radius1.Value), 0, Math.Abs(Radius1.Value));
 
-                    Point2D lowerPoint = Geo2D.LineIntersectCircle(lowerEdge, circle).RightMost();
-                    Point2D upperPoint = Geo2D.LineIntersectCircle(upperEdge, circle).RightMost();
+                    Point2D lowerLeftPoint = Geo2D.LineIntersectCircle(lowerEdge, circle).RightMost();
+                    Point2D upperLeftPoint = Geo2D.LineIntersectCircle(upperEdge, circle).RightMost();
 
-                    diagObjects.Add(lowerPoint);
-                    diagObjects.Add(upperPoint);
+                    diagObjects.Add(lowerLeftPoint);
+                    diagObjects.Add(upperLeftPoint);
 
                     Arc2D arc = circle.GetArc(
-                            (upperPoint - circle.Center).Theta(),
-                            (lowerPoint - circle.Center).Theta()
+                            (upperLeftPoint - circle.Center).Theta(),
+                            (lowerLeftPoint - circle.Center).Theta()
                         );
 
                     leftSurface = arc;
