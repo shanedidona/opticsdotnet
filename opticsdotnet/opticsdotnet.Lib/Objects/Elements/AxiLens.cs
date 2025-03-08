@@ -77,6 +77,8 @@
             }
 
             IMathematicaRenderable rightSurface;
+            Point2D lowerRightPoint;
+            Point2D upperRightPoint;
             if (Radius2.HasValue)
             {
                 if (0 < Radius2.Value)
@@ -85,8 +87,8 @@
 
                     Circle2D circle = new Circle2D(CenterThickness - Radius2.Value, 0, Radius2.Value);
 
-                    Point2D lowerRightPoint = Geo2D.LineIntersectCircle(lowerEdge, circle).RightMost();
-                    Point2D upperRightPoint = Geo2D.LineIntersectCircle(upperEdge, circle).RightMost();
+                    lowerRightPoint = Geo2D.LineIntersectCircle(lowerEdge, circle).RightMost();
+                    upperRightPoint = Geo2D.LineIntersectCircle(upperEdge, circle).RightMost();
 
                     diagObjects.Add(lowerRightPoint);
                     diagObjects.Add(upperRightPoint);
@@ -104,8 +106,8 @@
 
                     Circle2D circle = new Circle2D(CenterThickness + Math.Abs(Radius2.Value), 0, Math.Abs(Radius2.Value));
 
-                    Point2D lowerRightPoint = Geo2D.LineIntersectCircle(lowerEdge, circle).LeftMost();
-                    Point2D upperRightPoint = Geo2D.LineIntersectCircle(upperEdge, circle).LeftMost();
+                    lowerRightPoint = Geo2D.LineIntersectCircle(lowerEdge, circle).LeftMost();
+                    upperRightPoint = Geo2D.LineIntersectCircle(upperEdge, circle).LeftMost();
 
                     diagObjects.Add(lowerRightPoint);
                     diagObjects.Add(upperRightPoint);
@@ -120,8 +122,8 @@
             }
             else
             {
-                Point2D lowerRightPoint = new Point2D(CenterThickness, -OuterRadius);
-                Point2D upperRightPoint = new Point2D(CenterThickness, OuterRadius);
+                lowerRightPoint = new Point2D(CenterThickness, -OuterRadius);
+                upperRightPoint = new Point2D(CenterThickness, OuterRadius);
 
                 rightSurface = new LineSegment2D(lowerRightPoint, upperRightPoint);
             }
