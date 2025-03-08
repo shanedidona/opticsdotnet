@@ -1,6 +1,6 @@
 ﻿namespace opticsdotnet.Lib
 {
-    public sealed class AxiLens : IMathematicaRenderable
+    public sealed class AxiLens : IAxiOpticalElement
     {
         readonly double CenterThickness;
         readonly double OuterRadius;
@@ -15,7 +15,9 @@
             Radius1 = radius1;
             Radius2 = radius2;
             OpticalMaterial = opticalMaterial;
-        }        
+        }
+
+        public double CenterLength => CenterThickness;
 
         public string RenderMathematica()
         {
