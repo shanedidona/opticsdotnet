@@ -24,6 +24,7 @@
             Line2D upperEdge = new Line2D(0, OuterRadius, 0);
 
             IMathematicaRenderable leftSurface;
+            var diagObjects = new List<IMathematicaRenderable>();
             if (Radius1.HasValue)
             {
                 if (0 < Radius1.Value)
@@ -32,6 +33,12 @@
 
                     Circle2D circle = new Circle2D(Radius1.Value, 0, Radius1.Value);
 
+                    Point2D lowerPoint = Geo2D.LineIntersectCircle(lowerEdge, circle).LeftMost();
+                    Point2D upperPoint = Geo2D.LineIntersectCircle(upperEdge, circle).LeftMost();
+
+                    diagObjects.Add(lowerPoint);
+                    diagObjects.Add(upperPoint);
+
                     leftSurface = circle;
                 }
                 else
@@ -39,6 +46,12 @@
                     //Concave
 
                     Circle2D circle = new Circle2D(-Radius1.Value, 0, Radius1.Value);
+
+                    Point2D lowerPoint = Geo2D.LineIntersectCircle(lowerEdge, circle).RightMost();
+                    Point2D upperPoint = Geo2D.LineIntersectCircle(upperEdge, circle).RightMost();
+
+                    diagObjects.Add(lowerPoint);
+                    diagObjects.Add(upperPoint);
 
                     leftSurface = circle;
                 }   
@@ -57,6 +70,12 @@
 
                     Circle2D circle = new Circle2D(CenterThickness - Radius2.Value, 0, Radius2.Value);
 
+                    Point2D lowerPoint = Geo2D.LineIntersectCircle(lowerEdge, circle).RightMost();
+                    Point2D upperPoint = Geo2D.LineIntersectCircle(upperEdge, circle).RightMost();
+
+                    diagObjects.Add(lowerPoint);
+                    diagObjects.Add(upperPoint);
+
                     rightSurface = circle;
                 }
                 else
@@ -64,6 +83,12 @@
                     //Concave
 
                     Circle2D circle = new Circle2D(CenterThickness + Radius2.Value, 0, Radius2.Value);
+
+                    Point2D lowerPoint = Geo2D.LineIntersectCircle(lowerEdge, circle).LeftMost();
+                    Point2D upperPoint = Geo2D.LineIntersectCircle(upperEdge, circle).LeftMost();
+
+                    diagObjects.Add(lowerPoint);
+                    diagObjects.Add(upperPoint);
 
                     rightSurface = circle;
                 }
