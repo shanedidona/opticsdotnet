@@ -118,7 +118,10 @@
             }
             else
             {
-                rightSurface = new LineSegment2D(CenterThickness, -OuterRadius, CenterThickness, OuterRadius);
+                Point2D lowerRightPoint = new Point2D(CenterThickness, -OuterRadius);
+                Point2D upperRightPoint = new Point2D(CenterThickness, OuterRadius);
+
+                rightSurface = new LineSegment2D(lowerRightPoint, upperRightPoint);
             }
 
             var objectsToRender = new List<IMathematicaRenderable>();
