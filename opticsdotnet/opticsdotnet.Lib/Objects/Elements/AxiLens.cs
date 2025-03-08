@@ -25,6 +25,8 @@
 
             IMathematicaRenderable leftSurface;
             var diagObjects = new List<IMathematicaRenderable>() { new Point2D(0, 0) };
+            Point2D lowerLeftPoint;
+            Point2D upperLeftPoint;
             if (Radius1.HasValue)
             {
                 if (0 < Radius1.Value)
@@ -33,8 +35,8 @@
 
                     Circle2D circle = new Circle2D(Radius1.Value, 0, Radius1.Value);
 
-                    Point2D lowerLeftPoint = Geo2D.LineIntersectCircle(lowerEdge, circle).LeftMost();
-                    Point2D upperLeftPoint = Geo2D.LineIntersectCircle(upperEdge, circle).LeftMost();
+                    lowerLeftPoint = Geo2D.LineIntersectCircle(lowerEdge, circle).LeftMost();
+                    upperLeftPoint = Geo2D.LineIntersectCircle(upperEdge, circle).LeftMost();
 
                     diagObjects.Add(lowerLeftPoint);
                     diagObjects.Add(upperLeftPoint);
@@ -52,8 +54,8 @@
 
                     Circle2D circle = new Circle2D(-Math.Abs(Radius1.Value), 0, Math.Abs(Radius1.Value));
 
-                    Point2D lowerLeftPoint = Geo2D.LineIntersectCircle(lowerEdge, circle).RightMost();
-                    Point2D upperLeftPoint = Geo2D.LineIntersectCircle(upperEdge, circle).RightMost();
+                    lowerLeftPoint = Geo2D.LineIntersectCircle(lowerEdge, circle).RightMost();
+                    upperLeftPoint = Geo2D.LineIntersectCircle(upperEdge, circle).RightMost();
 
                     diagObjects.Add(lowerLeftPoint);
                     diagObjects.Add(upperLeftPoint);
@@ -68,8 +70,8 @@
             }
             else
             {
-                Point2D lowerLeftPoint = new Point2D(0, -OuterRadius);
-                Point2D upperLeftPoint = new Point2D(0, OuterRadius);
+                lowerLeftPoint = new Point2D(0, -OuterRadius);
+                upperLeftPoint = new Point2D(0, OuterRadius);
 
                 leftSurface = new LineSegment2D(lowerLeftPoint, upperLeftPoint);
             }
