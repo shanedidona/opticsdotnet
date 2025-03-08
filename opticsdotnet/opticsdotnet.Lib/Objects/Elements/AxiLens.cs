@@ -24,7 +24,7 @@
             Line2D upperEdge = new Line2D(0, OuterRadius, 0);
 
             IMathematicaRenderable leftSurface;
-            var diagObjects = new List<IMathematicaRenderable>();
+            var diagObjects = new List<IMathematicaRenderable>() { new Point2D(0, 0) };
             if (Radius1.HasValue)
             {
                 if (0 < Radius1.Value)
@@ -104,7 +104,6 @@
             objectsToRender.AddRange(upperEdge);
             objectsToRender.AddRange(leftSurface);
             objectsToRender.AddRange(rightSurface);
-            objectsToRender.Add(new Point2D(0, 0));
 
             return new MathematicaRenderableMathematicaAdapter(objectsToRender.ToArray()).RenderMathematica();
         }
