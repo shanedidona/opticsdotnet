@@ -19,7 +19,6 @@
 
         public string RenderMathematica()
         {
-
             Line2D lowerEdge = new Line2D(0, -OuterRadius, 0);
             Line2D upperEdge = new Line2D(0, OuterRadius, 0);
 
