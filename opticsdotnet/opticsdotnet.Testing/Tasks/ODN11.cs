@@ -21,6 +21,36 @@ namespace opticsdotnet.Testing.ODN11
                     )
                 );
 
+            axiLenses.Add(
+                    new AxiLens(
+                         new NBK7(),
+                         0.02,
+                         0.05,
+                         -0.3,
+                         0.4
+                    )
+                );
+
+            axiLenses.Add(
+                    new AxiLens(
+                         new NBK7(),
+                         0.02,
+                         0.05,
+                         0.3,
+                         -0.4
+                    )
+                );
+
+            axiLenses.Add(
+                    new AxiLens(
+                         new NBK7(),
+                         0.02,
+                         0.05,
+                         -0.3,
+                         -0.4
+                    )
+                );
+
             string[] linesOut = axiLenses.Select(axiLens =>
                     new MathematicaRenderableMathematicaAdapter(axiLens).RenderMathematicaFunction("Graphics")
 
