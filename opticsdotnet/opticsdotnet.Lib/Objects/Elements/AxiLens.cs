@@ -24,7 +24,6 @@
             Line2D upperEdge = new Line2D(0, OuterRadius, 0);
 
             IMathematicaRenderable leftSurface;
-            var diagObjects = new List<IMathematicaRenderable>() { new Point2D(0, 0) };
             Point2D lowerLeftPoint;
             Point2D upperLeftPoint;
             if (Radius1.HasValue)
@@ -115,7 +114,7 @@
 
                 rightSurface = new LineSegment2D(lowerRightPoint, upperRightPoint);
             }
-
+            var diagObjects = new List<IMathematicaRenderable>() { new Point2D(0, 0) };
             diagObjects.Add(lowerLeftPoint);
             diagObjects.Add(upperLeftPoint);
             diagObjects.Add(lowerRightPoint);
