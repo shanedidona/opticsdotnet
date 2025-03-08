@@ -104,6 +104,7 @@
             objectsToRender.AddRange(upperEdge);
             objectsToRender.AddRange(leftSurface);
             objectsToRender.AddRange(rightSurface);
+            objectsToRender.Add(new Point2D(0, 0));
 
             return new MathematicaRenderableMathematicaAdapter(objectsToRender.ToArray()).RenderMathematica();
         }
