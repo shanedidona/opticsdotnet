@@ -68,7 +68,10 @@
             }
             else
             {
-                leftSurface = new LineSegment2D(0, -OuterRadius, 0, OuterRadius);
+                Point2D lowerLeftPoint = new Point2D(0, -OuterRadius);
+                Point2D upperLeftPoint = new Point2D(0, OuterRadius);
+
+                leftSurface = new LineSegment2D(lowerLeftPoint, upperLeftPoint);
             }
 
             IMathematicaRenderable rightSurface;
