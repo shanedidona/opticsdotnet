@@ -1,6 +1,6 @@
 ﻿namespace opticsdotnet.Lib
 {
-    public interface IAxiOpticalElement
+    public interface IAxiOpticalElement : IMathematicaRenderable
     {
     }
 }
