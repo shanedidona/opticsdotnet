@@ -114,6 +114,10 @@
 
                 rightSurface = new LineSegment2D(lowerRightPoint, upperRightPoint);
             }
+
+            LineSegment2D bottomSurface = new LineSegment2D(lowerLeftPoint, lowerRightPoint);
+            LineSegment2D topSurface = new LineSegment2D(upperLeftPoint, upperRightPoint);
+
             var diagObjects = new List<IMathematicaRenderable>() { new Point2D(0, 0) };
             diagObjects.Add(lowerLeftPoint);
             diagObjects.Add(upperLeftPoint);
@@ -122,8 +126,8 @@
 
             var objectsToRender = new List<IMathematicaRenderable>();
             objectsToRender.AddRange(diagObjects);
-            objectsToRender.AddRange(lowerEdge);
-            objectsToRender.AddRange(upperEdge);
+            objectsToRender.AddRange(bottomSurface);
+            objectsToRender.AddRange(topSurface);
             objectsToRender.AddRange(leftSurface);
             objectsToRender.AddRange(rightSurface);
 
