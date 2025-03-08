@@ -125,7 +125,7 @@
             diagObjects.Add(upperRightPoint);
 
             var objectsToRender = new List<IMathematicaRenderable>();
-            objectsToRender.AddRange(diagObjects);
+            //objectsToRender.AddRange(diagObjects);
             objectsToRender.AddRange(bottomSurface);
             objectsToRender.AddRange(topSurface);
             objectsToRender.AddRange(leftSurface);
