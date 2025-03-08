@@ -16,6 +16,14 @@
             Y2 = y2;
         }
 
+        public LineSegment2D(Point2D point1, Point2D point2)
+        {
+            X1 = point1.X;
+            Y1 = point1.Y;
+            X2 = point2.X;
+            Y2 = point2.Y;
+        }
+
         public override string RenderMathematica()
         {
             return new MathematicaRenderableMathematicaAdapter(
