@@ -115,7 +115,7 @@
             }
             else
             {
-                rightSurface = new LineSegment2D(CenterThickness, -OuterRadius, 0, OuterRadius);
+                rightSurface = new LineSegment2D(CenterThickness, -OuterRadius, CenterThickness, OuterRadius);
             }
 
             var objectsToRender = new List<IMathematicaRenderable>();
