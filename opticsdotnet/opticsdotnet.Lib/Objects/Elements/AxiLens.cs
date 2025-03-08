@@ -38,9 +38,6 @@
                     lowerLeftPoint = Geo2D.LineIntersectCircle(lowerEdge, circle).LeftMost();
                     upperLeftPoint = Geo2D.LineIntersectCircle(upperEdge, circle).LeftMost();
 
-                    diagObjects.Add(lowerLeftPoint);
-                    diagObjects.Add(upperLeftPoint);
-
                     Arc2D arc = circle.GetArc(
                             (upperLeftPoint - circle.Center).Theta(),
                             (lowerLeftPoint - circle.Center).Theta() + 2 * Math.PI
@@ -57,9 +54,6 @@
                     lowerLeftPoint = Geo2D.LineIntersectCircle(lowerEdge, circle).RightMost();
                     upperLeftPoint = Geo2D.LineIntersectCircle(upperEdge, circle).RightMost();
 
-                    diagObjects.Add(lowerLeftPoint);
-                    diagObjects.Add(upperLeftPoint);
-
                     Arc2D arc = circle.GetArc(
                             (upperLeftPoint - circle.Center).Theta(),
                             (lowerLeftPoint - circle.Center).Theta()
@@ -73,11 +67,11 @@
                 lowerLeftPoint = new Point2D(0, -OuterRadius);
                 upperLeftPoint = new Point2D(0, OuterRadius);
 
-                diagObjects.Add(lowerLeftPoint);
-                diagObjects.Add(upperLeftPoint);
-
                 leftSurface = new LineSegment2D(lowerLeftPoint, upperLeftPoint);
             }
+
+            diagObjects.Add(lowerLeftPoint);
+            diagObjects.Add(upperLeftPoint);
 
             IMathematicaRenderable rightSurface;
             Point2D lowerRightPoint;
