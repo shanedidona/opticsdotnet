@@ -73,6 +73,9 @@
                 lowerLeftPoint = new Point2D(0, -OuterRadius);
                 upperLeftPoint = new Point2D(0, OuterRadius);
 
+                diagObjects.Add(lowerLeftPoint);
+                diagObjects.Add(upperLeftPoint);
+
                 leftSurface = new LineSegment2D(lowerLeftPoint, upperLeftPoint);
             }
 
@@ -124,6 +127,9 @@
             {
                 lowerRightPoint = new Point2D(CenterThickness, -OuterRadius);
                 upperRightPoint = new Point2D(CenterThickness, OuterRadius);
+
+                diagObjects.Add(lowerRightPoint);
+                diagObjects.Add(upperRightPoint);
 
                 rightSurface = new LineSegment2D(lowerRightPoint, upperRightPoint);
             }
