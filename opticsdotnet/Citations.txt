@@ -52,3 +52,5 @@ https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/ope
 
 https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=112
 
+Google AI overview
+
