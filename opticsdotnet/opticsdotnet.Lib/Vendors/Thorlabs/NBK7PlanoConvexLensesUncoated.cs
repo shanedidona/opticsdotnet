@@ -15,5 +15,8 @@
         public static AxiLens LA1470() => new AxiLens(new NBK7(), 0.0023, 0.003, 0.0062, null);
         public static AxiLens LA1222() => new AxiLens(new NBK7(), 0.0021, 0.003, 0.0077, null);
         public static AxiLens LA1700() => new AxiLens(new NBK7(), 0.0018, 0.003, 0.0155, null);
+
+        public static AxiLens LA1576() => new AxiLens(new NBK7(), 0.034, 0.045, 0.0062, null);
+        public static AxiLens LA1472() => new AxiLens(new NBK7(), 0.025, 0.045, 0.0103, null);
     }
 }
