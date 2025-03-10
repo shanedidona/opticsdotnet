@@ -7,5 +7,8 @@
 
         public static AxiLens LA1024() => new AxiLens(new NBK7(), 0.001, 0.001, 0.0021, null);
         public static AxiLens LA1026() => new AxiLens(new NBK7(), 0.001, 0.001, 0.0031, null);
+
+        public static AxiLens LA1036() => new AxiLens(new NBK7(), 0.0015, 0.0015, 0.0031, null);
+        public static AxiLens LA1039() => new AxiLens(new NBK7(), 0.0015, 0.0015, 0.0047, null);
     }
 }
