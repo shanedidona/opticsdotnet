@@ -10,7 +10,7 @@ namespace opticsdotnet.Testing
         {
             BaseSaveDir = File.ReadAllLines("settings.txt")[0];
 
-            ThorlabsCatalog.ThorlabsCatalog.ThorlabsCatalog_1();
+            ODN31.ODN31.ODN31_1();
         }
     }
 }
