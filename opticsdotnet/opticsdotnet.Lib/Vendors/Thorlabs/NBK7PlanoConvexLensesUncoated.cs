@@ -89,5 +89,10 @@
         public static AxiLens LA1380() => new AxiLens(new NBK7(), 0.0043, 0.0254, 0.2575, null);
         public static AxiLens LA1727() => new AxiLens(new NBK7(), 0.0038, 0.0254, 0.3863, null);
         public static AxiLens LA1779() => new AxiLens(new NBK7(), 0.0036, 0.0254, 0.5151, null);
+
+        public static AxiLens LA1740() => new AxiLens(new NBK7(), 0.0242, 0.0375, 0.0438, null);
+        public static AxiLens LA1238() => new AxiLens(new NBK7(), 0.0192, 0.0375, 0.0515, null);
+        public static AxiLens LA1002() => new AxiLens(new NBK7(), 0.0127, 0.0375, 0.0773, null);
+        public static AxiLens LA1353() => new AxiLens(new NBK7(), 0.0101, 0.0375, 0.103, null);
     }
 }
