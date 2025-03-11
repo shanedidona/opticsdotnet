@@ -17,5 +17,15 @@
         {
             return MathematicaUtil.Nothing;
         }
+
+        public void AxiRayTrace(double thisZ0, AxiRay axiRay)
+        {
+
+
+
+
+
+
+        }
     }
 }
