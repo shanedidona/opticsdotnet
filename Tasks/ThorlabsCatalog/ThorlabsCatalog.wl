@@ -1,9 +1,9 @@
 (* ::Package:: *)
 
-TableForm[Sort[
-Table[
+Table1=Table[
 	Table[
 		Get[f1,Method->"String"]
 	,{f1,StringSplit[Import[f]]}]
-,{f,FileNames["*.txt","C:\\Users\\shane\\opticsdotnet\\Tasks\\ThorlabsCatalog"]}]
-]]
+,{f,FileNames["*.txt","C:\\Users\\shane\\opticsdotnet\\Tasks\\ThorlabsCatalog"]}];
+
+TableForm[Sort[Table1,#1[[1]]<#2[[1]]&]]
