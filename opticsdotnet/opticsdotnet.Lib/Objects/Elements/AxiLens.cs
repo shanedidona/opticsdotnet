@@ -19,6 +19,8 @@
 
         public double CenterLength => CenterThickness;
 
+        public AxiLens ReturnFlipped() => new AxiLens(OpticalMaterial, CenterThickness, OuterRadius, Radius2, Radius1);
+
         public string RenderMathematica()
         {
             Line2D lowerEdge = new Line2D(0, -OuterRadius, 0);
