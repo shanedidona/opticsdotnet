@@ -42,6 +42,27 @@ namespace opticsdotnet.Testing.ThorlabsCatalog
                 opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1472()
             });
 
+            diameters.Add(0.0127);
+            lenses.Add(new AxiLens[]
+            {
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1540(),
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1074(),
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1560(),
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1289(),
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1304(),
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1213(),
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1207()
+            });
+
+            diameters.Add(0.018);
+            lenses.Add(new AxiLens[]
+            {
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1859(),
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1270(),
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1085(),
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1119()
+            });
+
             for (int i = 0; i < diameters.Count; i++)
             {
                 var linesOut = new List<string>();
