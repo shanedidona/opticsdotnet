@@ -31,5 +31,11 @@
         public static AxiLens LA1270() => new AxiLens(new NBK7(), 0.0055, 0.009, 0.0129, null);
         public static AxiLens LA1085() => new AxiLens(new NBK7(), 0.0047, 0.009, 0.0155, null);
         public static AxiLens LA1119() => new AxiLens(new NBK7(), 0.0034, 0.009, 0.0258, null);
+
+        public static AxiLens LA1252() => new AxiLens(new NBK7(), 0.0117, 0.0125, 0.0254, null);
+        public static AxiLens LA1255() => new AxiLens(new NBK7(), 0.0053, 0.0125, 0.0501, null);
+        public static AxiLens LA1257() => new AxiLens(new NBK7(), 0.00410, 0.0125, 0.0749, null);
+        public static AxiLens LA1251() => new AxiLens(new NBK7(), 0.00360, 0.0125, 0.1000, null);
+        public static AxiLens LA1253() => new AxiLens(new NBK7(), 0.00280, 0.0125, 0.2000, null);
     }
 }
