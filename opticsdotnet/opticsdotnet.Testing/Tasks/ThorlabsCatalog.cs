@@ -63,6 +63,42 @@ namespace opticsdotnet.Testing.ThorlabsCatalog
                 opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1119()
             });
 
+            diameters.Add(0.025);
+            lenses.Add(new AxiLens[]
+            {
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1252(),
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1255(),
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1257(),
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1251(),
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1253()
+            });
+
+            diameters.Add(0.0254);
+            lenses.Add(new AxiLens[]
+            {
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1951(),
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1805(),
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1027(),
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1422(),
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1131(),
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1134(),
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1608(),
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1509(),
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1986(),
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1433(),
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1229(),
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1708(),
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1461(),
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1484(),
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1172(),
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1908(),
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1978(),
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1464(),
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1254(),
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1258(),
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1259()
+            });
+
             for (int i = 0; i < diameters.Count; i++)
             {
                 var linesOut = new List<string>();
