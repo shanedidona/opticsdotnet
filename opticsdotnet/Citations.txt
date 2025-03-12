@@ -54,3 +54,5 @@ https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=112
 
 Google AI overview
 
+SIMION-like grouping enumerables for ray starting conditions
+
