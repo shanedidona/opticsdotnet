@@ -1,6 +1,6 @@
 ﻿namespace opticsdotnet.Lib
 {
-    public sealed class AxiDrift : IAxiOpticalElement
+    public sealed class AxiDrift
     {
         readonly double Length1;
         readonly IOpticalMaterial OpticalMaterial;
