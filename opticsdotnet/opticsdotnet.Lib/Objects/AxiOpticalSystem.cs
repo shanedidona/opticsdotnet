@@ -3,9 +3,9 @@
     public sealed class AxiOpticalSystem : IMathematicaRenderable
     {
         readonly IAxiRaySource AxiRaySource;
-        readonly AxiDrift[] Drifts;
-        readonly IAxiOpticalElement[] Elements;
-        readonly IAxiRayTerminator RayTerminator;
+        readonly AxiDrift[] AxiDrifts;
+        readonly IAxiOpticalElement[] AxiElements;
+        readonly IAxiRayTerminator AxiRayTerminator;
 
 
 
