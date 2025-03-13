@@ -7,6 +7,10 @@
         readonly IAxiOpticalElement[] AxiElements;
         readonly IAxiRayTerminator AxiRayTerminator;
 
+        readonly int NumOpticalElements;
+        readonly double[] AxiElementOffsets;
+        readonly double AxiRayTerminatorOffset;
+
         public AxiOpticalSystem(
                 IAxiRaySource axiRaySource,
                 AxiDrift[] axiDrifts,
@@ -28,6 +32,23 @@
             {
                 throw new NotSupportedException("axiDrifts.Length != (axiElements.Length + 1)");
             }
+
+            NumOpticalElements = AxiElements.Length;
+            AxiElementOffsets = new double[NumOpticalElements];
+
+            for (int i = 0; i < NumOpticalElements; i++)
+            {
+                if (i == 0)
+                {
+                    AxiElementOffsets[0] = AxiDrifts[0].Length1;
+                }
+                else
+                {
+                    AxiElementOffsets[i] = AxiElementOffsets[i - 1] + AxiElements[i - 1].CenterLength + AxiDrifts[i].Length1;
+                }
+            }
+
+            AxiRayTerminatorOffset = AxiElementOffsets.Last() + AxiDrifts.Last().Length1;
         }
 
         public string RenderMathematica()
