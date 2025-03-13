@@ -1,4 +1,4 @@
-﻿namespace opticsdotnet.Lib.Objects
+﻿namespace opticsdotnet.Lib
 {
     public sealed class AxiOpticalSystem : IMathematicaRenderable
     {
