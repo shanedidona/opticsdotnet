@@ -44,7 +44,7 @@
 
         public string RenderMathematica()
         {
-            return MathematicaUtil.Nothing;
+            return new Point2D(0, 0).RenderMathematica();
         }
     }
 }
