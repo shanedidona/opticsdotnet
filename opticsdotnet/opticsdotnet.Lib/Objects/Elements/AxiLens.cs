@@ -17,6 +17,19 @@
             OpticalMaterial = opticalMaterial;
         }
 
+        public void AxiRayTrace(double thisZ0, AxiDrift previousDrift, AxiDrift nextDrift, AxiRay[] axiRays)
+        {
+
+
+
+
+
+
+
+
+
+        }
+
         public double CenterLength => CenterThickness;
 
         public AxiLens ReturnFlipped() => new AxiLens(OpticalMaterial, CenterThickness, OuterRadius, Radius2, Radius1);
