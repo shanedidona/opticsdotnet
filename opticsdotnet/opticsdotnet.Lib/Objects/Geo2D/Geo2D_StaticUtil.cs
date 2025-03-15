@@ -71,5 +71,28 @@ namespace opticsdotnet.Lib
 
             return new Point2D[] { point1, point2 };
         }
+
+        public static Point2D LineIntersectLine(Line2D line1, Line2D line2)
+        {
+            double angleDiffForTest = Math.Abs(line1.Theta - line2.Theta);
+            angleDiffForTest = angleDiffForTest - Math.Floor(angleDiffForTest);
+
+            if (angleDiffForTest < SmallAngle)
+            {
+                return null;
+            }
+
+            double x10 = line1.Point0.X;
+            double y10 = line1.Point0.Y;
+            double x20 = line2.Point0.X;
+            double y20 = line2.Point0.Y;
+
+            double a2Min = -((y10 - y20) * Math.Cos(line1.Theta) + (-x10 + x20) * Math.Sin(line1.Theta)) / Math.Sin(line1.Theta - line2.Theta);
+
+            return new Point2D(
+                        line2.Point0.X + a2Min * Math.Cos(line2.Theta),
+                        line2.Point0.Y + a2Min * Math.Sin(line2.Theta)
+                    );
+        }
     }
 }
