@@ -39,7 +39,7 @@
             Line2D lowerEdge = new Line2D(0, -OuterRadius, 0);
             Line2D upperEdge = new Line2D(0, OuterRadius, 0);
 
-            IMathematicaRenderable leftSurface;
+            Geo2D leftSurface;
             Point2D lowerLeftPoint;
             Point2D upperLeftPoint;
             if (Radius1.HasValue)
@@ -85,7 +85,7 @@
                 leftSurface = new LineSegment2D(lowerLeftPoint, upperLeftPoint);
             }
 
-            IMathematicaRenderable rightSurface;
+            Geo2D rightSurface;
             Point2D lowerRightPoint;
             Point2D upperRightPoint;
             if (Radius2.HasValue)
