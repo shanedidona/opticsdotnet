@@ -74,8 +74,9 @@ namespace opticsdotnet.Lib
 
         public static Point2D LineIntersectLine(Line2D line1, Line2D line2)
         {
-            double angleDiffForTest = Math.Abs(line1.Theta - line2.Theta);
+            double angleDiffForTest = Math.Abs(line1.Theta - line2.Theta) / Math.PI;
             angleDiffForTest = angleDiffForTest - Math.Floor(angleDiffForTest);
+            angleDiffForTest = angleDiffForTest * Math.PI;
 
             if (angleDiffForTest < SmallAngle)
             {
