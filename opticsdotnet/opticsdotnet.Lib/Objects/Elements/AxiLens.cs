@@ -35,6 +35,7 @@
         public AxiLens ReturnFlipped() => new AxiLens(OpticalMaterial, CenterThickness, OuterRadius, Radius2, Radius1);
 
         Circle2D LeftConvexCircle() => new Circle2D(Radius1.Value, 0, Radius1.Value);
+        Circle2D LeftConcaveCircle() => new Circle2D(-Math.Abs(Radius1.Value), 0, Math.Abs(Radius1.Value));
 
         public string RenderMathematica()
         {
@@ -64,7 +65,7 @@
                 {
                     //Concave
 
-                    Circle2D circle = new Circle2D(-Math.Abs(Radius1.Value), 0, Math.Abs(Radius1.Value));
+                    Circle2D circle = LeftConcaveCircle();
 
                     lowerLeftPoint = Geo2D.LineIntersectCircle(lowerEdge, circle).RightMost();
                     upperLeftPoint = Geo2D.LineIntersectCircle(upperEdge, circle).RightMost();
