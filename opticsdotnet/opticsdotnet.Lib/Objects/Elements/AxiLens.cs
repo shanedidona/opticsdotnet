@@ -53,12 +53,10 @@
                     lowerLeftPoint = Geo2D.LineIntersectCircle(lowerEdge, circle).LeftMost();
                     upperLeftPoint = Geo2D.LineIntersectCircle(upperEdge, circle).LeftMost();
 
-                    Arc2D arc = circle.GetArc(
+                    leftSurface = circle.GetArc(
                             (upperLeftPoint - circle.Center).Theta(),
                             (lowerLeftPoint - circle.Center).Theta() + 2 * Math.PI
                         );
-
-                    leftSurface = arc;
                 }
                 else
                 {
@@ -69,12 +67,10 @@
                     lowerLeftPoint = Geo2D.LineIntersectCircle(lowerEdge, circle).RightMost();
                     upperLeftPoint = Geo2D.LineIntersectCircle(upperEdge, circle).RightMost();
 
-                    Arc2D arc = circle.GetArc(
+                    leftSurface = circle.GetArc(
                             (upperLeftPoint - circle.Center).Theta(),
                             (lowerLeftPoint - circle.Center).Theta()
                         );
-
-                    leftSurface = arc;
                 }   
             }
             else
@@ -99,12 +95,10 @@
                     lowerRightPoint = Geo2D.LineIntersectCircle(lowerEdge, circle).RightMost();
                     upperRightPoint = Geo2D.LineIntersectCircle(upperEdge, circle).RightMost();
 
-                    Arc2D arc = circle.GetArc(
+                    rightSurface = circle.GetArc(
                             (upperRightPoint - circle.Center).Theta(),
                             (lowerRightPoint - circle.Center).Theta()
                         );
-
-                    rightSurface = arc;
                 }
                 else
                 {
@@ -115,12 +109,10 @@
                     lowerRightPoint = Geo2D.LineIntersectCircle(lowerEdge, circle).LeftMost();
                     upperRightPoint = Geo2D.LineIntersectCircle(upperEdge, circle).LeftMost();
 
-                    Arc2D arc = circle.GetArc(
+                    rightSurface = circle.GetArc(
                             (upperRightPoint - circle.Center).Theta(),
                             (lowerRightPoint - circle.Center).Theta() + 2 * Math.PI
                         );
-
-                    rightSurface = arc;
                 }
             }
             else
