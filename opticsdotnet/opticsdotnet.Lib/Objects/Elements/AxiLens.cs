@@ -19,6 +19,28 @@
 
         public void AxiRayTrace(double thisZ0, AxiDrift previousDrift, AxiDrift nextDrift, AxiRay[] axiRays)
         {
+            //Ray Hitting Front Surface or nothing
+            foreach (AxiRay axiRay in axiRays)
+            {
+                AxiRayState currentState = axiRay.GetCurrentState();
+
+                if (!currentState.Intensity.HasValue)
+                {
+                    continue;
+                }
+
+                Line2D line2DRelToThis = new Line2D(currentState.Z0 - thisZ0, currentState.R0, currentState.Theta);
+
+                if (Radius1.HasValue)
+                {
+                    if (0 < Radius1.Value)
+                    {
+                        //Convex
+                        Circle2D circle = LeftConvexCircle();
+
+                        Point2D[] intersectionPoints = Geo2D.LineIntersectCircle(line2DRelToThis, circle);
+
+                        //if 
 
 
 
@@ -28,6 +50,40 @@
 
 
 
+                    }
+                    else
+                    {
+                        //Concave
+                        Circle2D circle = LeftConcaveCircle();
+
+                        Point2D[] intersectionPoints = Geo2D.LineIntersectCircle(line2DRelToThis, circle);
+
+                    }
+                }
+                else
+                {
+                    //Flat
+
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+            }
+
+            foreach (AxiRay axiRay in axiRays)
+            {
+
+            }
         }
 
         public double CenterLength => CenterThickness;
