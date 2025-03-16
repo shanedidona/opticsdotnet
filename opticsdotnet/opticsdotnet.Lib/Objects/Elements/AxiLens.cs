@@ -65,7 +65,15 @@
                         {
                             Point2D point = intersectionPoints.LeftMost();
 
-                            axiRay.AddRange(new AxiRayState(point.X + thisZ0, point.Y, currentState.Theta, currentState.WaveLength, null));//TODO
+                            if (OuterRadius <= Math.Abs(point.Y))
+                            {
+                                //Hits circle but is outside or on the outerradius
+                                axiRay.AddRange(new AxiRayState(point.X + thisZ0, point.Y, currentState.Theta, currentState.WaveLength, null));
+                            }
+                            else
+                            {
+                                axiRay.AddRange(new AxiRayState(point.X + thisZ0, point.Y, currentState.Theta, currentState.WaveLength, null));//TODO
+                            }
 
                             continue;
                         }
