@@ -39,6 +39,8 @@ namespace opticsdotnet.Testing.ODN36
                     axiDenseSource, axiDrifts, axiElements, axiRayTerminator
                 );
 
+            axiOpticalSystem.RayTrace();
+
             string string1 = axiOpticalSystem.RenderMathematica();
 
             File.WriteAllText(Path.Combine(saveDir, "ODN36_1.txt"), string1);
