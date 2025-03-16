@@ -89,7 +89,7 @@
             objectsToRender.Add(AxiRayTerminator);
             offsetsForRender.Add(new double[] { AxiRayTerminatorOffset, 0 });
 
-            var alreadyMathematicaRenderedMathematicaAdapters = new List<AlreadyMathematicaRenderedMathematicaAdapter>();
+            var mathematicaRenderables = new List<IMathematicaRenderable>();
             for (int i = 0; i < objectsToRender.Count; i++)
             {
                 var renderableOffset = new MathematicaRenderableMathematicaAdapter(
@@ -99,10 +99,10 @@
 
                 string renderedTranslated = new MathematicaRenderableMathematicaAdapter(objectsToRender[i], renderableOffset).RenderMathematicaFunction("Translate");
 
-                alreadyMathematicaRenderedMathematicaAdapters.Add(new AlreadyMathematicaRenderedMathematicaAdapter(renderedTranslated));
+                mathematicaRenderables.Add(new AlreadyMathematicaRenderedMathematicaAdapter(renderedTranslated));
             }
 
-            return new MathematicaRenderableMathematicaAdapter(alreadyMathematicaRenderedMathematicaAdapters.ToArray()).RenderMathematica();
+            return new MathematicaRenderableMathematicaAdapter(mathematicaRenderables.ToArray()).RenderMathematica();
         }
     }
 }
