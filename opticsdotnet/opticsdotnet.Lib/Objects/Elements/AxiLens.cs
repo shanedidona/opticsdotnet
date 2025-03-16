@@ -1,6 +1,4 @@
-﻿using System.Drawing;
-
-namespace opticsdotnet.Lib
+﻿namespace opticsdotnet.Lib
 {
     public sealed class AxiLens : IAxiOpticalElement
     {
