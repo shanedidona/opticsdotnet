@@ -11,6 +11,8 @@
         readonly double[] AxiElementOffsets;
         readonly double AxiRayTerminatorOffset;
 
+        AxiRay[] AxiRays;
+
         public AxiOpticalSystem(
                 IAxiRaySource axiRaySource,
                 AxiDrift[] axiDrifts,
@@ -49,6 +51,25 @@
             }
 
             AxiRayTerminatorOffset = AxiElementOffsets.Last() + AxiDrifts.Last().Length1;
+        }
+
+        public void RayTrace()
+        {
+            if (AxiRays != null)
+            {
+                throw new NotSupportedException("AxiRays != null");
+            }
+
+            AxiRays = AxiRaySource.AxiRays().ToArray();
+
+            AxiElements[0].AxiRayTrace(AxiElementOffsets[0], AxiDrifts[0], AxiDrifts[1], AxiRays);
+
+
+
+
+
+
+
         }
 
         public string RenderMathematica()
