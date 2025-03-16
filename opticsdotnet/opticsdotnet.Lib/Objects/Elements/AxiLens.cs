@@ -1,4 +1,6 @@
-﻿namespace opticsdotnet.Lib
+﻿using System.Drawing;
+
+namespace opticsdotnet.Lib
 {
     public sealed class AxiLens : IAxiOpticalElement
     {
@@ -35,21 +37,42 @@
                 {
                     if (0 < Radius1.Value)
                     {
-                        //Convex
+                        #region Convex Left Surface
                         Circle2D circle = LeftConvexCircle();
 
                         Point2D[] intersectionPoints = Geo2D.LineIntersectCircle(line2DRelToThis, circle);
 
-                        //if 
+                        if (intersectionPoints.Length == 0)
+                        {
+                            //line does not intersect circle
+                            Line2D flatSurface = new Line2D(0, 0, Math.PI / 2);
 
+                            Point2D point = Geo2D.LineIntersectLine(line2DRelToThis, flatSurface);
 
+                            axiRay.AddRange(new AxiRayState(point.X + thisZ0, point.Y, currentState.Theta, currentState.WaveLength, null));
 
+                            continue;
+                        }
 
+                        if (intersectionPoints.Length == 1)
+                        {
+                            Point2D point = intersectionPoints[0];
 
+                            axiRay.AddRange(new AxiRayState(point.X + thisZ0, point.Y, currentState.Theta, currentState.WaveLength, null));
 
+                            continue;
+                        }
 
+                        //intersectionPoints.Length == 2
+                        {
+                            Point2D point = intersectionPoints.LeftMost();
 
+                            axiRay.AddRange(new AxiRayState(point.X + thisZ0, point.Y, currentState.Theta, currentState.WaveLength, null));//TODO
 
+                            continue;
+                        }
+
+                        #endregion
                     }
                     else
                     {
@@ -63,6 +86,9 @@
                 else
                 {
                     //Flat
+
+                    Line2D flatSurface = new Line2D(0, 0, Math.PI / 2);
+
 
                 }
 
