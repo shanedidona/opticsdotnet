@@ -56,3 +56,6 @@ Google AI overview
 
 SIMION-like grouping enumerables for ray starting conditions
 
+https://en.wikipedia.org/wiki/Total_internal_reflection
+
+

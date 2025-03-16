@@ -17,7 +17,7 @@
             OpticalMaterial = opticalMaterial;
         }
 
-        public void AxiRayTrace(double thisZ0, AxiDrift previousDrift, AxiDrift nextDrift, AxiRay[] axiRays)
+        public void AxiRayTrace(double thisZ0, AxiDrift previousDrift, AxiDrift nextDrift, AxiRay[] axiRays)//TODO: support total internal reflection
         {
             //Ray Hitting Front Surface or nothing
             foreach (AxiRay axiRay in axiRays)
