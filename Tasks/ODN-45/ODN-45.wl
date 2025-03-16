@@ -54,3 +54,6 @@ a1/.FullSimplify[Solve[dDist1Squared==0,a1]][[1,1]]
 
 
 
+Table[
+	Get[f,Method->"String"]
+,{f,StringSplit[Import["C:\\Users\\shane\\opticsdotnet\\Tasks\\ODN-45\\ODN45_1.txt"]]}]
