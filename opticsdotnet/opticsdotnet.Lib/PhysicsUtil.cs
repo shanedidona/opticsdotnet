@@ -66,12 +66,12 @@ namespace opticsdotnet.Lib
                 double normalThetaIntoRight//Relative to +X axis
             )
         {
-            if ((0.5 * Math.PI) <= Math.Abs(thetaIn))
+            if (PiOver2 <= Math.Abs(thetaIn))
             {
                 throw new NotSupportedException("(0.5 * Math.PI) <= Math.Abs(thetaIn)");
             }
 
-            if ((0.5 * Math.PI) <= Math.Abs(normalThetaIntoRight))
+            if (PiOver2 <= Math.Abs(normalThetaIntoRight))
             {
                 throw new NotSupportedException("(0.5 * Math.PI) <= Math.Abs(normalThetaIntoRight)");
             }
