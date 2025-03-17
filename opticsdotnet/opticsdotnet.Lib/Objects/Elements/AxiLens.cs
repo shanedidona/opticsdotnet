@@ -1,4 +1,6 @@
-﻿namespace opticsdotnet.Lib
+﻿using static opticsdotnet.Lib.MathUtil;
+
+namespace opticsdotnet.Lib
 {
     public sealed class AxiLens : IAxiOpticalElement
     {
@@ -68,11 +70,23 @@
                             if (OuterRadius <= Math.Abs(point.Y))
                             {
                                 //Hits circle but is outside or on the outerradius
+
                                 axiRay.AddRange(new AxiRayState(point.X + thisZ0, point.Y, currentState.Theta, currentState.WaveLength, null));
                             }
                             else
                             {
-                                axiRay.AddRange(new AxiRayState(point.X + thisZ0, point.Y, currentState.Theta, currentState.WaveLength, null));//TODO
+                                double driftLength = Math.Sqrt(Sq((point.X + thisZ0) - currentState.Z0) + Sq(point.Y - currentState.R0));
+
+                                double? absorptionCoefficient = previousDrift.OpticalMaterial.AbsorptionCoefficient(currentState.WaveLength);
+
+                                double? newIntensity = null;
+
+                                if (absorptionCoefficient.HasValue)
+                                {
+                                    newIntensity = currentState.Intensity * Math.Exp(-driftLength * previousDrift.OpticalMaterial.AbsorptionCoefficient(currentState.WaveLength).Value);
+                                }
+
+                                axiRay.AddRange(new AxiRayState(point.X + thisZ0, point.Y, currentState.Theta, currentState.WaveLength, newIntensity));//TODO Angle
                             }
 
                             continue;
