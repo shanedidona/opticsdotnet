@@ -26,12 +26,17 @@ namespace opticsdotnet.Lib
             {
                 AxiRayState currentState = axiRay.GetCurrentState();
 
+                if (!currentState.Theta.HasValue)
+                {
+                    continue;
+                }
+
                 if (!currentState.Intensity.HasValue)
                 {
                     continue;
                 }
 
-                Line2D line2DRelToThis = new Line2D(currentState.Z0 - thisZ0, currentState.R0, currentState.Theta);
+                Line2D line2DRelToThis = new Line2D(currentState.Z0 - thisZ0, currentState.R0, currentState.Theta.Value);
 
                 if (Radius1.HasValue)
                 {
