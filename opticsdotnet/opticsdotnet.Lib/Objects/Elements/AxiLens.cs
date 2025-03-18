@@ -91,7 +91,39 @@ namespace opticsdotnet.Lib
                                     newIntensity = currentState.Intensity * Math.Exp(-driftLength * previousDrift.OpticalMaterial.AbsorptionCoefficient(currentState.WaveLength).Value);
                                 }
 
-                                axiRay.AddRange(new AxiRayState(point.X + thisZ0, point.Y, currentState.Theta, currentState.WaveLength, newIntensity));//TODO Angle
+                                double? newTheta = null;
+
+                                double? n1 = previousDrift.OpticalMaterial.IndexOfRefraction(currentState.WaveLength);
+                                double? n2 = OpticalMaterial.IndexOfRefraction(currentState.WaveLength);
+                                double normalThetaIntoRight = Math.Asin(-point.Y / Radius1.Value);
+
+                                if (n1.HasValue && n2.HasValue)
+                                {
+                                    newTheta = PhysicsUtil.SnellsLawThetaOut(
+                                            currentState.Theta.Value,
+                                            n1.Value,
+                                            n2.Value,
+                                            normalThetaIntoRight
+                                        );
+                                }
+
+
+
+
+
+
+                                //var woooo = PhysicsUtil.SnellsLawThetaOut(
+                                //    currentState.Theta.Value,
+                                //    previousDrift.OpticalMaterial.IndexOfRefraction(currentState.WaveLength),
+                                //    OpticalMaterial.IndexOfRefraction(currentState.WaveLength),
+                                //    0);
+
+
+
+
+
+
+                                axiRay.AddRange(new AxiRayState(point.X + thisZ0, point.Y, newTheta, currentState.WaveLength, newIntensity));
                             }
 
                             continue;
