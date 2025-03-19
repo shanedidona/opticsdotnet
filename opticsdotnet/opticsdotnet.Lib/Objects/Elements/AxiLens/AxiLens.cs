@@ -136,9 +136,6 @@ namespace opticsdotnet.Lib
 
         public AxiLens ReturnFlipped() => new AxiLens(OpticalMaterial, CenterThickness, OuterRadius, Radius2, Radius1);
 
-        Circle2D LeftConvexCircle() => new Circle2D(Radius1.Value, 0, Radius1.Value);
-        Circle2D LeftConcaveCircle() => new Circle2D(-Math.Abs(Radius1.Value), 0, Math.Abs(Radius1.Value));
-
         public string RenderMathematica()
         {
             Line2D lowerEdge = new Line2D(0, -OuterRadius, 0);
