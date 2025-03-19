@@ -61,11 +61,21 @@ namespace opticsdotnet.Lib
 
         public static double? SnellsLawThetaOut(
                 double thetaIn,//Relative to +X axis
-                double nLeft,
-                double nRight,
+                double? nLeft,
+                double? nRight,
                 double normalThetaIntoRight//Relative to +X axis
             )
         {
+            if (!nLeft.HasValue)
+            {
+                return null;
+            }
+
+            if (!nRight.HasValue)
+            {
+                return null;
+            }
+
             if (PiOver2 <= Math.Abs(thetaIn))
             {
                 throw new NotSupportedException("(0.5 * Math.PI) <= Math.Abs(thetaIn)");
