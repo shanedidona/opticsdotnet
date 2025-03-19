@@ -98,23 +98,6 @@ namespace opticsdotnet.Lib
                                         Math.Asin(-point.Y / Radius1.Value)
                                     );
                                 
-
-
-
-
-
-
-                                //var woooo = PhysicsUtil.SnellsLawThetaOut(
-                                //    currentState.Theta.Value,
-                                //    previousDrift.OpticalMaterial.IndexOfRefraction(currentState.WaveLength),
-                                //    OpticalMaterial.IndexOfRefraction(currentState.WaveLength),
-                                //    0);
-
-
-
-
-
-
                                 axiRay.AddRange(new AxiRayState(point.X + thisZ0, point.Y, newTheta, currentState.WaveLength, newIntensity));
                             }
 
