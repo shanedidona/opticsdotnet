@@ -91,15 +91,11 @@ namespace opticsdotnet.Lib
                                     newIntensity = currentState.Intensity * Math.Exp(-driftLength * previousDrift.OpticalMaterial.AbsorptionCoefficient(currentState.WaveLength).Value);
                                 }
 
-                                double? n1 = previousDrift.OpticalMaterial.IndexOfRefraction(currentState.WaveLength);
-                                double? n2 = OpticalMaterial.IndexOfRefraction(currentState.WaveLength);
-                                double normalThetaIntoRight = Math.Asin(-point.Y / Radius1.Value);
-
                                 double? newTheta = PhysicsUtil.SnellsLawThetaOut(
                                         currentState.Theta.Value,
-                                        n1,
-                                        n2,
-                                        normalThetaIntoRight
+                                        previousDrift.OpticalMaterial.IndexOfRefraction(currentState.WaveLength),
+                                        OpticalMaterial.IndexOfRefraction(currentState.WaveLength),
+                                        Math.Asin(-point.Y / Radius1.Value)
                                     );
                                 
 
