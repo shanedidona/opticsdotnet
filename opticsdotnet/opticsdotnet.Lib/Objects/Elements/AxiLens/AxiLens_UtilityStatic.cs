@@ -14,9 +14,9 @@
         {
             AxiRayState currentState = axiRay.GetCurrentState();
 
-            if (!currentState.Theta.HasValue) { continue; }
+            if (!currentState.Theta.HasValue) { return; }
 
-            if (!currentState.Intensity.HasValue) { continue; }
+            if (!currentState.Intensity.HasValue) { return; }
 
 
 
