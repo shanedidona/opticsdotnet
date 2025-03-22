@@ -80,20 +80,31 @@ namespace opticsdotnet.Lib
                     newIntensity = currentState.Intensity * Math.Exp(-driftLength * absorptionCoefficientLeft.Value);
                 }
 
+                double? newTheta;
+                if (openingRight)
+                {
+                    newTheta = PhysicsUtil.SnellsLawThetaOut(
+                                         currentState.Theta.Value,
+                                         nLeft,
+                                         nRight,
+                                         Math.Asin(-point.Y / circleRadius)
+                                     );
+                }
+                else
+                {
+                    newTheta = PhysicsUtil.SnellsLawThetaOut(
+                                         currentState.Theta.Value,
+                                         nLeft,
+                                         nRight,
+                                         Math.Asin(point.Y / circleRadius)
+                                     );
+                }
 
+                axiRay.AddRange(new AxiRayState(point.X + circleIntersectionWithAxisAbsolute, point.Y, newTheta, currentState.WaveLength, newIntensity));
 
-
-
-
-
+                return;
                 #endregion
             }
-
-
-
-
-
-
         }
     }
 }
