@@ -12,8 +12,7 @@ namespace opticsdotnet.Lib
                 bool openingRight,//For left surface this means convex, for right surface this means concave
                 double circleIntersectionWithAxisAbsolute,//The intersection that the circle makes with the axis for the part that we care about, in absolute coords, not relative to the axi lens
                 double outerRadius,
-                double? absorptionCoefficientLeft,
-                double? absorptionCoefficientRight
+                double? absorptionCoefficientLeft
             )
         {
             if (circleRadius <= 0)
@@ -75,10 +74,11 @@ namespace opticsdotnet.Lib
                                                     Sq(point.Y - currentState.R0)
                                                 );
 
-                double? absorptionCoefficient = previousDrift.OpticalMaterial.AbsorptionCoefficient(currentState.WaveLength);
-
-
-
+                double? newIntensity = null;
+                if (absorptionCoefficientLeft.HasValue)
+                {
+                    newIntensity = currentState.Intensity * Math.Exp(-driftLength * absorptionCoefficientLeft.Value);
+                }
 
 
 
