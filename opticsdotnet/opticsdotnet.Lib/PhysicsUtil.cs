@@ -90,7 +90,7 @@ namespace opticsdotnet.Lib
             {
                 //Total Internal Reflection Check
 
-                double criticalAngle = Math.Asin(nRight / nLeft);
+                double criticalAngle = Math.Asin(nRight.Value / nLeft.Value);
 
                 if (criticalAngle <= Math.Abs(thetaIn))
                 {
@@ -98,7 +98,7 @@ namespace opticsdotnet.Lib
                 }
             }
 
-            double absRelThetaOut = Math.Asin(Math.Sin(Math.Abs(thetaIn - normalThetaIntoRight)) * nLeft / nRight);//Order does not matter since abs
+            double absRelThetaOut = Math.Asin(Math.Sin(Math.Abs(thetaIn - normalThetaIntoRight)) * nLeft.Value / nRight.Value);//Order does not matter since abs
 
             double thetaOut = normalThetaIntoRight + Math.Sign(thetaIn - normalThetaIntoRight) * absRelThetaOut;
 
