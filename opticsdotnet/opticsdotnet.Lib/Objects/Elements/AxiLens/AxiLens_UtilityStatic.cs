@@ -1,4 +1,6 @@
-﻿namespace opticsdotnet.Lib
+﻿using static opticsdotnet.Lib.MathUtil;
+
+namespace opticsdotnet.Lib
 {
     public sealed partial class AxiLens : IAxiOpticalElement
     {
@@ -24,12 +26,66 @@
             if (!currentState.Intensity.HasValue) { return; }
 
             //Relative to the point we care about where this circle intersects the axis
-            Line2D line2DRelToAxiIntercept = new Line2D(currentState.Z0 - circleIntersectionWithAxisAbsolute, currentState.R0, currentState.Theta.Value);
+            Line2D incomingLine = new Line2D(currentState.Z0 - circleIntersectionWithAxisAbsolute, currentState.R0, currentState.Theta.Value);
 
-            Point2D[] intersectionPoints = Geo2D.LineIntersectCircle(line2DRelToAxiIntercept, new Circle2D(,0,circleRadius));
+            Circle2D circle2D = openingRight ? new Circle2D(circleRadius, 0, circleRadius) : new Circle2D(-circleRadius, 0, circleRadius);
+
+            Point2D[] intersectionPoints = Geo2D.LineIntersectCircle(incomingLine, circle2D);
+
+            if (intersectionPoints.Length == 0)
+            {
+                #region Line does not intersect circle
+                Point2D point = Geo2D.LineIntersectLine(incomingLine, new Line2D(0, 0, Math.PI / 2));//Intersect with a fake flat surface
+
+                axiRay.AddRange(new AxiRayState(point.X + circleIntersectionWithAxisAbsolute, point.Y, currentState.Theta, currentState.WaveLength, null));
+
+                return;
+                #endregion
+            }
+
+            if (intersectionPoints.Length == 1)
+            {
+                #region Line intersects circle at one point
+                Point2D point = intersectionPoints[0];
+
+                axiRay.AddRange(new AxiRayState(point.X + circleIntersectionWithAxisAbsolute, point.Y, currentState.Theta, currentState.WaveLength, null));
+
+                return;
+                #endregion
+            }
+
+            {
+                #region Line intersects the circle at two points
+
+                Point2D point = openingRight ? intersectionPoints.LeftMost() : intersectionPoints.RightMost();
+
+                if (outerRadius <= Math.Abs(point.Y))
+                {
+                    //Hits circle but is outside or on the outerRadius
+
+                    axiRay.AddRange(new AxiRayState(point.X + circleIntersectionWithAxisAbsolute, point.Y, currentState.Theta, currentState.WaveLength, null));
+                    return;
+                }
+
+                //Hits circle inside outerRadius
+                double driftLength = Math.Sqrt(
+                                                    Sq((point.X + circleIntersectionWithAxisAbsolute) - currentState.Z0) +
+                                                    Sq(point.Y - currentState.R0)
+                                                );
+
+                double? absorptionCoefficient = previousDrift.OpticalMaterial.AbsorptionCoefficient(currentState.WaveLength);
 
 
 
+
+
+
+
+
+
+
+                #endregion
+            }
 
 
 
