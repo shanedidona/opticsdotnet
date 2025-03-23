@@ -18,6 +18,16 @@ namespace opticsdotnet.Lib
             //Ray Hitting Front Surface or nothing
             foreach (AxiRay axiRay in axiRays)
             {
+
+
+
+
+
+
+
+
+
+
                 AxiRayState currentState = axiRay.GetCurrentState();
 
                 if (!currentState.Theta.HasValue) { continue; }
