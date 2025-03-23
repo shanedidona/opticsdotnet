@@ -18,7 +18,22 @@ namespace opticsdotnet.Lib
             //Ray Hitting Front Surface or nothing
             foreach (AxiRay axiRay in axiRays)
             {
+                if (Radius1.HasValue)
+                {
+                    AxiRayTraceCircle(
+                            axiRay,
+                            previousDrift.OpticalMaterial,
+                            OpticalMaterial,
+                            Math.Abs(Radius1.Value),
+                            0 < Radius1.Value,
+                            0,
+                            OuterRadius
+                        );
+                }
+                else
+                {
 
+                }
 
 
 
