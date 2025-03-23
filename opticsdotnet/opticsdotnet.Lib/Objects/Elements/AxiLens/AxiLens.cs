@@ -35,11 +35,7 @@ namespace opticsdotnet.Lib
 
                 }
 
-
-
-
-
-
+                continue;
 
 
 
