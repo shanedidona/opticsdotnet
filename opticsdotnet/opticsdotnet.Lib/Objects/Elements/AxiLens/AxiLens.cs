@@ -34,21 +34,6 @@ namespace opticsdotnet.Lib
                 {
 
                 }
-
-                continue;
-
-
-
-
-
-
-
-
-
-
-
-
-
             }
 
             foreach (AxiRay axiRay in axiRays)
