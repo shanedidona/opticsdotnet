@@ -26,7 +26,7 @@ namespace opticsdotnet.Lib
                             OpticalMaterial,
                             Math.Abs(Radius1.Value),
                             0 < Radius1.Value,
-                            0,
+                            thisZ0,
                             OuterRadius
                         );
                 }
