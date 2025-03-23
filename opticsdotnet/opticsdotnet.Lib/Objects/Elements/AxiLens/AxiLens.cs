@@ -15,7 +15,7 @@ namespace opticsdotnet.Lib
 
         public void AxiRayTrace(double thisZ0, AxiDrift previousDrift, AxiDrift nextDrift, AxiRay[] axiRays)//TODO: support total internal reflection
         {
-            //Ray Hitting Front Surface or nothing
+            //Rays Hitting Left Surface or nothing
             foreach (AxiRay axiRay in axiRays)
             {
                 if (Radius1.HasValue)
@@ -36,6 +36,7 @@ namespace opticsdotnet.Lib
                 }
             }
 
+            //Rays Hitting Right Surface or Nothing
             foreach (AxiRay axiRay in axiRays)
             {
 
