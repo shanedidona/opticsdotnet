@@ -6,8 +6,8 @@ namespace opticsdotnet.Lib
     {
         public static void AxiRayTraceCircle(
                 AxiRay axiRay,
-                double? nLeft,
-                double? nRight,
+                IOpticalMaterial opticalMaterialLeft,
+                IOpticalMaterial opticalMaterialRight,
                 double circleRadius,
                 bool openingRight,//For left surface this means convex, for right surface this means concave
                 double circleIntersectionWithAxisAbsolute,//The intersection that the circle makes with the axis for the part that we care about, in absolute coords, not relative to the axi lens
@@ -82,8 +82,8 @@ namespace opticsdotnet.Lib
 
                 double? newTheta = PhysicsUtil.SnellsLawThetaOut(
                                          currentState.Theta.Value,
-                                         nLeft,
-                                         nRight,
+                                         opticalMaterialLeft.IndexOfRefraction(currentState.WaveLength),
+                                         opticalMaterialRight.IndexOfRefraction(currentState.WaveLength),
                                          openingRight ? Math.Asin(-point.Y / circleRadius) : Math.Asin(point.Y / circleRadius)
                                      );
 
