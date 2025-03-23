@@ -80,6 +80,11 @@ namespace opticsdotnet.Lib
                     newIntensity = currentState.Intensity * Math.Exp(-driftLength * absorptionCoefficientLeft.Value);
                 }
 
+
+
+
+
+
                 double? newTheta;
                 if (openingRight)
                 {
