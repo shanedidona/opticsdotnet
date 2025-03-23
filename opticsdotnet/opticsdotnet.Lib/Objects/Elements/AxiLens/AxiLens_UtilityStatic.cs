@@ -8,10 +8,10 @@ namespace opticsdotnet.Lib
                 AxiRay axiRay,
                 IOpticalMaterial opticalMaterialLeft,
                 IOpticalMaterial opticalMaterialRight,
-                double circleRadius,
-                bool openingRight,//For left surface this means convex, for right surface this means concave
                 double circleIntersectionWithAxisAbsolute,//The intersection that the circle makes with the axis for the part that we care about, in absolute coords, not relative to the axi lens
-                double outerRadius
+                double outerRadius,
+                double circleRadius,
+                bool openingRight//For left surface this means convex, for right surface this means concave
             )
         {
             if (circleRadius <= 0)

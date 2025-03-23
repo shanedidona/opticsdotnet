@@ -24,10 +24,10 @@ namespace opticsdotnet.Lib
                             axiRay,
                             previousDrift.OpticalMaterial,
                             OpticalMaterial,
-                            Math.Abs(Radius1.Value),
-                            0 < Radius1.Value,
                             thisZ0,
-                            OuterRadius
+                            OuterRadius,
+                            Math.Abs(Radius1.Value),
+                            0 < Radius1.Value
                         );
                 }
                 else
