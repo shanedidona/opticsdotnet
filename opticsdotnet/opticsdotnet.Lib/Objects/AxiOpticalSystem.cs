@@ -62,7 +62,24 @@
 
             AxiRays = AxiRaySource.AxiRays().ToArray();
 
-            AxiElements[0].AxiRayTrace(AxiElementOffsets[0], AxiDrifts[0], AxiDrifts[1], AxiRays);
+            for (int i = 0; i < NumOpticalElements; i++)
+            {
+                AxiElements[i].AxiRayTrace(AxiElementOffsets[i], AxiDrifts[i], AxiDrifts[i + 1], AxiRays);
+
+
+
+
+            }
+
+
+
+
+
+
+
+
+
+            //AxiElements[0].AxiRayTrace(AxiElementOffsets[0], AxiDrifts[0], AxiDrifts[1], AxiRays);
 
 
 
