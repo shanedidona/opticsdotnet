@@ -96,7 +96,7 @@ namespace opticsdotnet.Lib
         }
 
         public static void AxiRayTraceFlat(
-            AxiRay axiRay,
+                AxiRay axiRay,
                 IOpticalMaterial opticalMaterialLeft,
                 IOpticalMaterial opticalMaterialRight,
                 double flatIntersectionWithAxisAbsolute,//The intersection that the surface makes with the axis for the part that we care about, in absolute coords, not relative to the axi lens
