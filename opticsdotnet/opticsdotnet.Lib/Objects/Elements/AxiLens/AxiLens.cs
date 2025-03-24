@@ -54,7 +54,7 @@ namespace opticsdotnet.Lib
                             thisZ0 + CenterThickness,
                             OuterRadius,
                             Math.Abs(Radius2.Value),
-                            Radius1.Value < 0
+                            Radius2.Value < 0
                         );
                 }
                 else
