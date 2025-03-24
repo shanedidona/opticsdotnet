@@ -1,5 +1,4 @@
-﻿using System.Drawing;
-using static opticsdotnet.Lib.MathUtil;
+﻿using static opticsdotnet.Lib.MathUtil;
 
 namespace opticsdotnet.Lib
 {
