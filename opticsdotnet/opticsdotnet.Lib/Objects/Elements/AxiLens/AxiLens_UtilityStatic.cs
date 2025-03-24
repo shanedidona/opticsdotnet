@@ -1,4 +1,5 @@
-﻿using static opticsdotnet.Lib.MathUtil;
+﻿using System.Drawing;
+using static opticsdotnet.Lib.MathUtil;
 
 namespace opticsdotnet.Lib
 {
@@ -92,6 +93,66 @@ namespace opticsdotnet.Lib
 
                 return;
                 #endregion
+            }
+        }
+
+        public static void AxiRayTraceFlat(
+            AxiRay axiRay,
+                IOpticalMaterial opticalMaterialLeft,
+                IOpticalMaterial opticalMaterialRight,
+                double flatIntersectionWithAxisAbsolute,//The intersection that the surface makes with the axis for the part that we care about, in absolute coords, not relative to the axi lens
+                double outerRadius
+            )
+        {
+            AxiRayState currentState = axiRay.GetCurrentState();
+
+            if (!currentState.Theta.HasValue) { return; }
+
+            if (!currentState.Intensity.HasValue) { return; }
+
+            //Relative to the point we care about where this flat intersects the axis
+            Line2D incomingLine = new Line2D(currentState.Z0 - flatIntersectionWithAxisAbsolute, currentState.R0, currentState.Theta.Value);
+
+            Line2D infiniteSurface = new Line2D(0, 0, Math.PI / 2);
+
+            Point2D intersectionPoint = Geo2D.LineIntersectLine(incomingLine, infiniteSurface);
+
+            if (intersectionPoint == null)
+            {
+                axiRay.AddRange(new AxiRayState(currentState.Z0, currentState.R0, null, currentState.WaveLength, null));
+                return;
+            }
+
+            if (outerRadius < Math.Abs(intersectionPoint.Y))
+            {
+                //Intersects surface but too far out
+                axiRay.AddRange(new AxiRayState(intersectionPoint.X + flatIntersectionWithAxisAbsolute, intersectionPoint.Y, null, currentState.WaveLength, null));
+                return;
+            }
+
+            {
+                double? absorptionCoefficientLeft = opticalMaterialLeft.AbsorptionCoefficient(currentState.WaveLength);
+
+                double driftLength = Math.Sqrt(
+                                                    Sq((intersectionPoint.X + flatIntersectionWithAxisAbsolute) - currentState.Z0) +
+                                                    Sq(intersectionPoint.Y - currentState.R0)
+                                                );
+
+                double? newIntensity = null;
+                if (absorptionCoefficientLeft.HasValue)
+                {
+                    newIntensity = currentState.Intensity * Math.Exp(-driftLength * absorptionCoefficientLeft.Value);
+                }
+
+                double? newTheta = PhysicsUtil.SnellsLawThetaOut(
+                                         currentState.Theta.Value,
+                                         opticalMaterialLeft.IndexOfRefraction(currentState.WaveLength),
+                                         opticalMaterialRight.IndexOfRefraction(currentState.WaveLength),
+                                         0
+                                     );
+
+                axiRay.AddRange(new AxiRayState(intersectionPoint.X + flatIntersectionWithAxisAbsolute, intersectionPoint.Y, newTheta, currentState.WaveLength, newIntensity));
+                return;
             }
         }
     }
