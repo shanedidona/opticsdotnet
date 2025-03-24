@@ -95,7 +95,7 @@ namespace opticsdotnet.Lib
             }
         }
 
-        public static void AxiRayTraceFlat(
+        static void AxiRayTraceFlat(
                 AxiRay axiRay,
                 IOpticalMaterial opticalMaterialLeft,
                 IOpticalMaterial opticalMaterialRight,
