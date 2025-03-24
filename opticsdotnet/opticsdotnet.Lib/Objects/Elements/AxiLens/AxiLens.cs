@@ -45,7 +45,28 @@ namespace opticsdotnet.Lib
             //Rays Hitting Right Surface or Nothing
             foreach (AxiRay axiRay in axiRays)
             {
-
+                if (Radius2.HasValue)
+                {
+                    AxiRayTraceCircle(
+                            axiRay,
+                            OpticalMaterial,
+                            nextDrift.OpticalMaterial,
+                            thisZ0 + CenterThickness,
+                            OuterRadius,
+                            Math.Abs(Radius2.Value),
+                            Radius1.Value < 0
+                        );
+                }
+                else
+                {
+                    AxiRayTraceFlat(
+                            axiRay,
+                            OpticalMaterial,
+                            nextDrift.OpticalMaterial,
+                            thisZ0 + CenterThickness,
+                            OuterRadius
+                        );
+                }
             }
         }
 
