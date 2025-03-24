@@ -32,7 +32,13 @@ namespace opticsdotnet.Lib
                 }
                 else
                 {
-
+                    AxiRayTraceFlat(
+                            axiRay,
+                            previousDrift.OpticalMaterial,
+                            OpticalMaterial,
+                            thisZ0,
+                            OuterRadius
+                        );
                 }
             }
 
