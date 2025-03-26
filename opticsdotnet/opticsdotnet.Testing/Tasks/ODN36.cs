@@ -12,7 +12,7 @@ namespace opticsdotnet.Testing.ODN36
             var axiDenseSource = new AxiDenseSource(
                                             new double[] { -0.001, 0 },
                                             new double[] { -0.001, 0, 0.001 },
-                                            new double[] { -0.001, 0, 0.001 },
+                                            new double[] { -0.4, -0.05, 0, 0.05, 0.4 },
                                             new double[] { 500, 600, 700 },
                                             1.0
                                         );
@@ -38,6 +38,8 @@ namespace opticsdotnet.Testing.ODN36
             AxiOpticalSystem axiOpticalSystem = new AxiOpticalSystem(
                     axiDenseSource, axiDrifts, axiElements, axiRayTerminator
                 );
+
+            axiOpticalSystem.RayTrace();
 
             string string1 = axiOpticalSystem.RenderMathematica();
 
