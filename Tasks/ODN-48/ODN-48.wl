@@ -7,3 +7,8 @@ Solve[
 		}
 	,{xp,yp}]
 
+
+
+Table[
+	Graphics[Get[f,Method->"String"]]
+,{f,StringSplit[Import["C:\\Users\\shane\\opticsdotnet\\Tasks\\ODN-48\\ODN48_1.txt"]]}]
