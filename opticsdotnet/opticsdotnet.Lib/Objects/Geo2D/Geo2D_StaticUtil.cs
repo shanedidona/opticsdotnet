@@ -120,7 +120,7 @@ namespace opticsdotnet.Lib
                 a2 += Sq(c);
                 a3 += Sq(s);
                 a4 += 2 * (-y0i * Sq(c) + c * s * x0i);
-                a5 += 2 * (c * s * y0i + x0i * Sq(s));
+                a5 += 2 * (c * s * y0i - x0i * Sq(s));
                 a6 += -2 * c * s;
             }
 
