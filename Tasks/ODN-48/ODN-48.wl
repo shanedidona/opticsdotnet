@@ -39,7 +39,7 @@ A1s=(y0i*c-x0i*s)^2
 A2s=c^2
 A3s=s^2
 A4s=2*(-y0i*c^2+c*s*x0i)
-A5s=2*(c*s*y0i+x0i*s*s)
+A5s=2*(c*s*y0i-x0i*s*s)
 A6s=-2*c*s
 
 betaS=A1s+A2s*yp^2+A3s*xp^2+A4s*yp+A5s*xp+A6s*xp*yp
