@@ -21,7 +21,9 @@ namespace opticsdotnet.Testing.ODN48
                 Line2D[] lines = new Line2D[numLines];
                 for (int lineI = 0; lineI < numLines; lineI++)
                 {
-                    lines[lineI] = new Line2D(random.NextInRange(-2, 2), random.NextInRange(-2, 2), random.NextInRange(-30, 30));
+                    double thetaAbsRange = 30;
+
+                    lines[lineI] = new Line2D(random.NextInRange(-2, 2), random.NextInRange(-2, 2), random.NextInRange(-thetaAbsRange, thetaAbsRange));
                     mathematicaRenderables.Add(lines[lineI]);
                     mathematicaRenderables.Add(lines[lineI].Point0);
                 }
