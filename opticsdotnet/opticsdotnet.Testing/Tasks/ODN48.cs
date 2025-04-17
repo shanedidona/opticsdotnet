@@ -25,7 +25,7 @@ namespace opticsdotnet.Testing.ODN48
 
                     lines[lineI] = new Line2D(random.NextInRange(-2, 2), random.NextInRange(-2, 2), random.NextInRange(-thetaAbsRange, thetaAbsRange));
                     mathematicaRenderables.Add(lines[lineI]);
-                    mathematicaRenderables.Add(lines[lineI].Point0);
+                    //mathematicaRenderables.Add(lines[lineI].Point0);
                 }
 
                 Point2D closestPointToLines = Geo2D.ClosestPointToLines(lines);
