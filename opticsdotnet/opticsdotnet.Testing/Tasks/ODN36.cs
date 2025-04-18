@@ -53,9 +53,9 @@ namespace opticsdotnet.Testing.ODN36
 
             var axiDenseSource = new AxiDenseSource(
                                             new double[] { 0 },
+                                            new double[] { -0.001, 0, 0.001 },
                                             new double[] { 0 },
-                                            new double[] { -0.05, 0, 0.05 },
-                                            new double[] { 500 },
+                                            new double[] { 587.6 },
                                             1.0
                                         );
 
@@ -78,7 +78,8 @@ namespace opticsdotnet.Testing.ODN36
 
             axiOpticalSystem.RayTrace();
 
-            var woo = axiOpticalSystem.LinesOut();
+            Line2D[] linesOut = axiOpticalSystem.LinesOut();
+            Point2D focalPoint = Geo2D.ClosestPointToLines(linesOut);
 
             string string1 = axiOpticalSystem.RenderMathematica();
 
