@@ -45,5 +45,44 @@ namespace opticsdotnet.Testing.ODN36
 
             File.WriteAllText(Path.Combine(saveDir, "ODN36_1.txt"), string1);
         }
+
+        public static void ODN36_2()
+        {
+            string saveDir = Path.Combine(Program.BaseSaveDir, "ODN-36");
+            Directory.CreateDirectory(saveDir);
+
+            var axiDenseSource = new AxiDenseSource(
+                                            new double[] { 0 },
+                                            new double[] { 0 },
+                                            new double[] { -0.05, 0, 0.05 },
+                                            new double[] { 500 },
+                                            1.0
+                                        );
+
+            var axiDrifts = new AxiDrift[]
+            {
+                new AxiDrift(new Vacuum(), 0.02),
+                new AxiDrift(new Vacuum(), 0.03),
+            };
+
+            var axiElements = new IAxiOpticalElement[]
+            {
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1859()
+            };
+
+            var axiRayTerminator = new AxiFlatTerminator();
+
+            AxiOpticalSystem axiOpticalSystem = new AxiOpticalSystem(
+                    axiDenseSource, axiDrifts, axiElements, axiRayTerminator
+                );
+
+            axiOpticalSystem.RayTrace();
+
+            var woo = axiOpticalSystem.LinesOut();
+
+            string string1 = axiOpticalSystem.RenderMathematica();
+
+            File.WriteAllText(Path.Combine(saveDir, "ODN36_2.txt"), string1);
+        }
     }
 }
