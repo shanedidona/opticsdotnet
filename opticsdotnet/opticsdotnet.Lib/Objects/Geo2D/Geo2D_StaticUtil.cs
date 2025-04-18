@@ -95,5 +95,46 @@ namespace opticsdotnet.Lib
                         line2.Point0.Y + a2Min * Math.Sin(line2.Theta)
                     );
         }
+
+        public static Point2D ClosestPointToLines(Line2D[] lines)
+        {
+            if (lines.Length < 2)
+            {
+                return null;
+            }
+
+            double a1 = 0;
+            double a2 = 0;
+            double a3 = 0;
+            double a4 = 0;
+            double a5 = 0;
+            double a6 = 0;
+
+            for (int i = 0; i < lines.Length; i++)
+            {
+                (double s, double c) = Math.SinCos(lines[i].Theta);
+                double x0i = lines[i].Point0.X;
+                double y0i = lines[i].Point0.Y;
+
+                a1 += Sq(y0i * c - x0i * s);
+                a2 += Sq(c);
+                a3 += Sq(s);
+                a4 += 2 * (-y0i * Sq(c) + c * s * x0i);
+                a5 += 2 * (c * s * y0i - x0i * Sq(s));
+                a6 += -2 * c * s;
+            }
+
+            double denom = 4 * a2 * a3 - Sq(a6);
+
+            if (Math.Abs(denom) < 1E-9)//TODO: Replace with const
+            {
+                return null;
+            }
+
+            double xp = (-2 * a2 * a5 + a4 * a6) / denom;
+            double yp = (-2 * a3 * a4 + a5 * a6) / denom;
+
+            return new Point2D(xp, yp);
+        }
     }
 }
