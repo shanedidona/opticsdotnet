@@ -52,3 +52,15 @@ FullSimplify[compare1]
 
 
 
+Expand[Sin[t]*Cos[t]]
+
+
+Plot[Sin[t],{t,0,2*Pi}];
+Plot[Cos[t],{t,0,2*Pi}];
+Plot[(Sin[t])^2,{t,0,2*Pi},AxesLabel->{"theta","Sin^2"}]
+Plot[(Cos[t])^2,{t,0,2*Pi},AxesLabel->{"theta","Cos^2"}]
+Plot[Sin[t]*Cos[t],{t,0,2*Pi},AxesLabel->{"theta","Sin*Cos"}]
+Plot[Sin[t]*Cos[t]-0.5*Sin[2*t],{t,0,2*Pi}]
+
+
+
