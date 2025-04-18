@@ -21,7 +21,7 @@ namespace opticsdotnet.Testing.ODN31
 
             string string1 = polyLine2D.RenderMathematica();
 
-            File.WriteAllText(Path.Combine(saveDir, "ODN1_31.txt"), string1);
+            File.WriteAllText(Path.Combine(saveDir, "ODN31_1.txt"), string1);
         }
     }
 }
