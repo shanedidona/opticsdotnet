@@ -85,6 +85,15 @@
 
         }
 
+        public Line2D[] LinesOut()//TODO: this might be removed very soon
+        {
+            return AxiRays
+                .Select(axiRay => axiRay.GetCurrentState())
+                .Select(axiRayState => new Line2D(axiRayState.Z0, axiRayState.R0, axiRayState.Theta.Value))
+                .ToArray();
+        }
+
+
         public string RenderMathematica()
         {
             var objectsToRender = new List<IMathematicaRenderable>();
