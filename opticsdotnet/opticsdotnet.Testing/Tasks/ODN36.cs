@@ -85,5 +85,26 @@ namespace opticsdotnet.Testing.ODN36
 
             File.WriteAllText(Path.Combine(saveDir, "ODN36_2.txt"), string1);
         }
+
+        public static void ODN36_3()
+        {
+            string saveDir = Path.Combine(Program.BaseSaveDir, "ODN-36");
+            Directory.CreateDirectory(saveDir);
+
+            double beamRadius = 0.001;
+            int numRays = 5;
+            double wavelengthNM = 587.6;
+            double frontDriftLength = 0.01;
+            double backDriftLength = 0.01;
+
+            var v1 = Analysis.CalculateFocalPointRelToBack(
+                beamRadius,
+                numRays,
+                wavelengthNM,
+                frontDriftLength,
+                backDriftLength,
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1859()
+            );
+        }
     }
 }
