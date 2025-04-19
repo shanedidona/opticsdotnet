@@ -163,5 +163,38 @@ namespace opticsdotnet.Testing.ThorlabsCatalog
                 File.WriteAllLines(Path.Combine(saveDir, diameters[i].ToString() + ".txt"), linesOut);
             }
         }
+
+        public static void ThorlabsCatalog_BestForm()
+        {
+            string saveDir = Path.Combine(Program.BaseSaveDir, "ThorlabsCatalogBestForm");
+            Directory.CreateDirectory(saveDir);
+
+            var diameters = new List<double>();
+            var lenses = new List<AxiLens[]>();
+
+            diameters.Add(0.0254);
+            lenses.Add(new AxiLens[]
+            {
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LBF254_040(),
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LBF254_050(),
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LBF254_075(),
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LBF254_100(),
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LBF254_150(),
+                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LBF254_200()
+            });
+
+            for (int i = 0; i < diameters.Count; i++)
+            {
+                var linesOut = new List<string>();
+                linesOut.Add(new DoubleMathematicaAdapter(diameters[i]).RenderMathematica());
+
+                foreach (AxiLens axiLens in lenses[i])
+                {
+                    linesOut.Add(new MathematicaRenderableMathematicaAdapter(axiLens).RenderMathematicaFunction("Graphics"));
+                }
+
+                File.WriteAllLines(Path.Combine(saveDir, diameters[i].ToString() + ".txt"), linesOut);
+            }
+        }
     }
 }
