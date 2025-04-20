@@ -169,10 +169,10 @@ namespace opticsdotnet.Testing.ThorlabsCatalog
             string saveDir = Path.Combine(Program.BaseSaveDir, "ThorlabsCatalogBestForm");
             Directory.CreateDirectory(saveDir);
 
-            var diameters = new List<double>();
+            var sections = new List<double>();
             var lenses = new List<AxiLens[]>();
 
-            diameters.Add(0.0254);
+            sections.Add(0.0254);
             lenses.Add(new AxiLens[]
             {
                 opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LBF254_040(),
@@ -183,17 +183,17 @@ namespace opticsdotnet.Testing.ThorlabsCatalog
                 opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LBF254_200()
             });
 
-            for (int i = 0; i < diameters.Count; i++)
+            for (int i = 0; i < sections.Count; i++)
             {
                 var linesOut = new List<string>();
-                linesOut.Add(new DoubleMathematicaAdapter(diameters[i]).RenderMathematica());
+                linesOut.Add(new DoubleMathematicaAdapter(sections[i]).RenderMathematica());
 
                 foreach (AxiLens axiLens in lenses[i])
                 {
                     linesOut.Add(new MathematicaRenderableMathematicaAdapter(axiLens).RenderMathematicaFunction("Graphics"));
                 }
 
-                File.WriteAllLines(Path.Combine(saveDir, diameters[i].ToString() + ".txt"), linesOut);
+                File.WriteAllLines(Path.Combine(saveDir, sections[i].ToString() + ".txt"), linesOut);
             }
         }
     }
