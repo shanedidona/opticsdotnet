@@ -9,24 +9,24 @@ namespace opticsdotnet.Testing.ThorlabsCatalog
             string saveDir = Path.Combine(Program.BaseSaveDir, "ThorlabsCatalog");
             Directory.CreateDirectory(saveDir);
 
-            var diameters = new List<double>();
+            var sections = new List<double>();
             var lenses = new List<AxiLens[]>();
 
-            diameters.Add(0.002);
+            sections.Add(0.002);
             lenses.Add(new AxiLens[]
             {
                 opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1024(),
                 opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1026()
             });
 
-            diameters.Add(0.003);
+            sections.Add(0.003);
             lenses.Add(new AxiLens[]
             {
                 opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1036(),
                 opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1039()
             });
 
-            diameters.Add(0.006);
+            sections.Add(0.006);
             lenses.Add(new AxiLens[]
             {
                 opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1116(),
@@ -35,14 +35,14 @@ namespace opticsdotnet.Testing.ThorlabsCatalog
                 opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1700()
             });
 
-            diameters.Add(0.009);
+            sections.Add(0.009);
             lenses.Add(new AxiLens[]
             {
                 opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1576(),
                 opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1472()
             });
 
-            diameters.Add(0.0127);
+            sections.Add(0.0127);
             lenses.Add(new AxiLens[]
             {
                 opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1540(),
@@ -54,7 +54,7 @@ namespace opticsdotnet.Testing.ThorlabsCatalog
                 opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1207()
             });
 
-            diameters.Add(0.018);
+            sections.Add(0.018);
             lenses.Add(new AxiLens[]
             {
                 opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1859(),
@@ -63,7 +63,7 @@ namespace opticsdotnet.Testing.ThorlabsCatalog
                 opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1119()
             });
 
-            diameters.Add(0.025);
+            sections.Add(0.025);
             lenses.Add(new AxiLens[]
             {
                 opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1252(),
@@ -73,7 +73,7 @@ namespace opticsdotnet.Testing.ThorlabsCatalog
                 opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1253()
             });
 
-            diameters.Add(0.0254);
+            sections.Add(0.0254);
             lenses.Add(new AxiLens[]
             {
                 opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1951(),
@@ -99,7 +99,7 @@ namespace opticsdotnet.Testing.ThorlabsCatalog
                 opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1259()
             });
 
-            diameters.Add(0.030);
+            sections.Add(0.030);
             lenses.Add(new AxiLens[]
             {
                 opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1274(),
@@ -113,7 +113,7 @@ namespace opticsdotnet.Testing.ThorlabsCatalog
                 opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1237()
             });
 
-            diameters.Add(0.0381);
+            sections.Add(0.0381);
             lenses.Add(new AxiLens[]
             {
                 opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1385(),
@@ -123,7 +123,7 @@ namespace opticsdotnet.Testing.ThorlabsCatalog
                 opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1389()
             });
 
-            diameters.Add(0.0508);
+            sections.Add(0.0508);
             lenses.Add(new AxiLens[]
             {
                 opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1401(),
@@ -141,7 +141,7 @@ namespace opticsdotnet.Testing.ThorlabsCatalog
                 opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1779()
             });
 
-            diameters.Add(0.075);
+            sections.Add(0.075);
             lenses.Add(new AxiLens[]
             {
                 opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1740(),
@@ -150,17 +150,17 @@ namespace opticsdotnet.Testing.ThorlabsCatalog
                 opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1353()
             });
 
-            for (int i = 0; i < diameters.Count; i++)
+            for (int i = 0; i < sections.Count; i++)
             {
                 var linesOut = new List<string>();
-                linesOut.Add(new DoubleMathematicaAdapter(diameters[i]).RenderMathematica());
+                linesOut.Add(new DoubleMathematicaAdapter(sections[i]).RenderMathematica());
 
                 foreach (AxiLens axiLens in lenses[i])
                 {
                     linesOut.Add(new MathematicaRenderableMathematicaAdapter(axiLens).RenderMathematicaFunction("Graphics"));
                 }
 
-                File.WriteAllLines(Path.Combine(saveDir, diameters[i].ToString() + ".txt"), linesOut);
+                File.WriteAllLines(Path.Combine(saveDir, sections[i].ToString() + ".txt"), linesOut);
             }
         }
 
