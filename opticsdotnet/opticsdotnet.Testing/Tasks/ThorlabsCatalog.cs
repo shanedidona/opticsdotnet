@@ -169,10 +169,10 @@ namespace opticsdotnet.Testing.ThorlabsCatalog
             string saveDir = Path.Combine(Program.BaseSaveDir, "ThorlabsCatalogBestForm");
             Directory.CreateDirectory(saveDir);
 
-            var sections = new List<double>();
+            var sections = new List<string>();
             var lenses = new List<AxiLens[]>();
 
-            sections.Add(0.0254);
+            sections.Add("N-BK7 Best Form Spherical Lenses Uncoated 1in Dia");
             lenses.Add(new AxiLens[]
             {
                 opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LBF254_040(),
@@ -186,14 +186,14 @@ namespace opticsdotnet.Testing.ThorlabsCatalog
             for (int i = 0; i < sections.Count; i++)
             {
                 var linesOut = new List<string>();
-                linesOut.Add(new DoubleMathematicaAdapter(sections[i]).RenderMathematica());
+                linesOut.Add(sections[i]);
 
                 foreach (AxiLens axiLens in lenses[i])
                 {
                     linesOut.Add(new MathematicaRenderableMathematicaAdapter(axiLens).RenderMathematicaFunction("Graphics"));
                 }
 
-                File.WriteAllLines(Path.Combine(saveDir, sections[i].ToString() + ".txt"), linesOut);
+                File.WriteAllLines(Path.Combine(saveDir, sections[i] + ".txt"), linesOut);
             }
         }
     }
