@@ -15,8 +15,7 @@ namespace opticsdotnet.Testing.ThorlabsCatalog
             string prefix = "N-BK7 Plano-Convex Lenses Uncoated ";
 
             sections.Add(prefix + "2mm Dia");
-            lenses.Add(
-            [
+            lenses.Add([
                 opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1024(),
                 opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1026()
             ]);
