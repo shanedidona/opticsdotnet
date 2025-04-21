@@ -17,8 +17,8 @@ namespace opticsdotnet.Testing.ThorlabsCatalog
 
             sections.Add(prefix + "2mm Dia");
             lenses.Add([
-                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1024(),
-                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1026()
+                LA1024(),
+                LA1026()
             ]);
 
             sections.Add(prefix + "3mm Dia");
