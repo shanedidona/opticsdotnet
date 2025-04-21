@@ -1,4 +1,5 @@
 ﻿using opticsdotnet.Lib;
+using static opticsdotnet.Lib.Vendors.Thorlabs.Catalog;
 
 namespace opticsdotnet.Testing.ThorlabsCatalog
 {
