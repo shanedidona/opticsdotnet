@@ -22,31 +22,27 @@ namespace opticsdotnet.Testing.ThorlabsCatalog
             ]);
 
             sections.Add(prefix + "3mm Dia");
-            lenses.Add(new AxiLens[]
-            {
+            lenses.Add([
                 LA1036(),
                 LA1039()
-            });
+            ]);
 
             sections.Add(prefix + "6mm Dia");
-            lenses.Add(new AxiLens[]
-            {
+            lenses.Add([
                 LA1116(),
                 LA1470(),
                 LA1222(),
                 LA1700()
-            });
+            ]);
 
             sections.Add(prefix + "9mm Dia");
-            lenses.Add(new AxiLens[]
-            {
+            lenses.Add([
                 LA1576(),
                 LA1472()
-            });
+            ]);
 
             sections.Add(prefix + "12.7mm Dia");
-            lenses.Add(new AxiLens[]
-            {
+            lenses.Add([
                 LA1540(),
                 LA1074(),
                 LA1560(),
@@ -54,30 +50,27 @@ namespace opticsdotnet.Testing.ThorlabsCatalog
                 LA1304(),
                 LA1213(),
                 LA1207()
-            });
+            ]);
 
             sections.Add(prefix + "18mm Dia");
-            lenses.Add(new AxiLens[]
-            {
+            lenses.Add([
                 LA1859(),
                 LA1270(),
                 LA1085(),
                 LA1119()
-            });
+            ]);
 
             sections.Add(prefix + "25mm Dia");
-            lenses.Add(new AxiLens[]
-            {
+            lenses.Add([
                 LA1252(),
                 LA1255(),
                 LA1257(),
                 LA1251(),
                 LA1253()
-            });
+            ]);
 
             sections.Add(prefix + "25.4mm Dia");
-            lenses.Add(new AxiLens[]
-            {
+            lenses.Add([
                 LA1951(),
                 LA1805(),
                 LA1027(),
@@ -99,11 +92,10 @@ namespace opticsdotnet.Testing.ThorlabsCatalog
                 LA1254(),
                 LA1258(),
                 LA1259()
-            });
+            ]);
 
             sections.Add(prefix + "30mm Dia");
-            lenses.Add(new AxiLens[]
-            {
+            lenses.Add([
                 LA1274(),
                 LA1102(),
                 LA1765(),
@@ -113,21 +105,19 @@ namespace opticsdotnet.Testing.ThorlabsCatalog
                 LA1832(),
                 LA1419(),
                 LA1237()
-            });
+            ]);
 
             sections.Add(prefix + "38.1mm Dia");
-            lenses.Add(new AxiLens[]
-            {
+            lenses.Add([
                 LA1385(),
                 LA1386(),
                 LA1387(),
                 LA1388(),
                 LA1389()
-            });
+            ]);
 
             sections.Add(prefix + "50.8mm Dia");
-            lenses.Add(new AxiLens[]
-            {
+            lenses.Add([
                 LA1401(),
                 LA1145(),
                 LA1050(),
@@ -141,16 +131,15 @@ namespace opticsdotnet.Testing.ThorlabsCatalog
                 LA1380(),
                 LA1727(),
                 LA1779()
-            });
+            ]);
 
             sections.Add(prefix + "75mm Dia");
-            lenses.Add(new AxiLens[]
-            {
+            lenses.Add([
                 LA1740(),
                 LA1238(),
                 LA1002(),
                 LA1353()
-            });
+            ]);
 
             for (int i = 0; i < sections.Count; i++)
             {
