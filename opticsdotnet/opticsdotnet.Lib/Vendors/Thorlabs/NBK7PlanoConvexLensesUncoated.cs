@@ -227,17 +227,15 @@
                 LA1353()
             ]);
 
-
-
-            var sectionObjects = new List<ThorlabsCatalogSection>();
+            var sections = new List<ThorlabsCatalogSection>();
             for (int i = 0; i < sectionNames.Count; i++)
             {
-                sectionObjects.Add(new ThorlabsCatalogSection(sectionNames[i], lenses[i]));
+                sections.Add(new ThorlabsCatalogSection(sectionNames[i], lenses[i]));
             }
 
             return new ThorlabsCatalogPage(
                     "N-BK7 Plano-Convex Lenses (Uncoated)",
-                    sectionObjects.ToArray(),
+                    sections.ToArray(),
                     "https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=112"
                 );
         }
