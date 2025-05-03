@@ -96,7 +96,7 @@
         public static AxiLens LA1353() => new AxiLens(new NBK7(), 0.0101, 0.0375, 0.103, null);
 
 
-        public ThorlabsCatalogPage NBK7PlanoConvexLensesUncoated()
+        public static ThorlabsCatalogPage NBK7PlanoConvexLensesUncoated()
         {
 
 
