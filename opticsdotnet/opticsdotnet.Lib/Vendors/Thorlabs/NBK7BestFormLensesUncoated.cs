@@ -11,5 +11,26 @@
         public static AxiLens LBF254_100() => new AxiLens(new NBK7(), 0.0040, 0.0254 / 2, 0.06002, 0.35330);
         public static AxiLens LBF254_150() => new AxiLens(new NBK7(), 0.0040, 0.0254 / 2, 0.08935, 0.57049);
         public static AxiLens LBF254_200() => new AxiLens(new NBK7(), 0.0040, 0.0254 / 2, 0.12150, 0.68450);
+
+        public static ThorlabsCatalogPage NBK7BestFormLensesUncoated()
+        {
+            ThorlabsCatalogSection thorlabsCatalogSection = new ThorlabsCatalogSection(
+                "Ø1\" N-BK7 Best Form Spherical Lenses, Uncoated",
+                [
+                    LBF254_040(),
+                    LBF254_050(),
+                    LBF254_075(),
+                    LBF254_100(),
+                    LBF254_150(),
+                    LBF254_200()
+                    ]
+                );
+
+            return new ThorlabsCatalogPage(
+                "Ø1\" N-BK7 Best Form Spherical Lenses, Uncoated",
+                [thorlabsCatalogSection],
+                "https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=900"
+                );
+        }
     }
 }
