@@ -98,22 +98,22 @@
 
         public static ThorlabsCatalogPage NBK7PlanoConvexLensesUncoated()
         {
-            var sections = new List<string>();
+            var sectionNames = new List<string>();
             var lenses = new List<AxiLens[]>();
 
-            sections.Add("Ø2.0 mm N-BK7 Plano-Convex Lenses (Uncoated)");
+            sectionNames.Add("Ø2.0 mm N-BK7 Plano-Convex Lenses (Uncoated)");
             lenses.Add([
                 LA1024(),
                 LA1026()
             ]);
 
-            sections.Add("Ø3.0 mm N-BK7 Plano-Convex Lenses (Uncoated)");
+            sectionNames.Add("Ø3.0 mm N-BK7 Plano-Convex Lenses (Uncoated)");
             lenses.Add([
                 LA1036(),
                 LA1039()
             ]);
 
-            sections.Add("Ø6.0 mm N-BK7 Plano-Convex Lenses (Uncoated)");
+            sectionNames.Add("Ø6.0 mm N-BK7 Plano-Convex Lenses (Uncoated)");
             lenses.Add([
                 LA1116(),
                 LA1470(),
@@ -121,13 +121,13 @@
                 LA1700()
             ]);
 
-            sections.Add("Ø9.0 mm N-BK7 Plano-Convex Lenses (Uncoated)");
+            sectionNames.Add("Ø9.0 mm N-BK7 Plano-Convex Lenses (Uncoated)");
             lenses.Add([
                 LA1576(),
                 LA1472()
             ]);
 
-            sections.Add("Ø1/2\" (Ø12.7 mm) N-BK7 Plano-Convex Lenses (Uncoated)");
+            sectionNames.Add("Ø1/2\" (Ø12.7 mm) N-BK7 Plano-Convex Lenses (Uncoated)");
             lenses.Add([
                 LA1540(),
                 LA1074(),
@@ -138,7 +138,7 @@
                 LA1207()
             ]);
 
-            sections.Add("Ø18.0 mm N-BK7 Plano-Convex Lenses (Uncoated)");
+            sectionNames.Add("Ø18.0 mm N-BK7 Plano-Convex Lenses (Uncoated)");
             lenses.Add([
                 LA1859(),
                 LA1270(),
@@ -146,7 +146,7 @@
                 LA1119()
             ]);
 
-            sections.Add("Ø25.0 mm N-BK7 Plano-Convex Lenses (Uncoated)");
+            sectionNames.Add("Ø25.0 mm N-BK7 Plano-Convex Lenses (Uncoated)");
             lenses.Add([
                 LA1252(),
                 LA1255(),
@@ -155,7 +155,7 @@
                 LA1253()
             ]);
 
-            sections.Add("Ø1\" (Ø25.4 mm) N-BK7 Plano-Convex Lenses (Uncoated)");
+            sectionNames.Add("Ø1\" (Ø25.4 mm) N-BK7 Plano-Convex Lenses (Uncoated)");
             lenses.Add([
                 LA1951(),
                 LA1805(),
@@ -180,7 +180,7 @@
                 LA1259()
             ]);
 
-            sections.Add("Ø30.0 mm N-BK7 Plano-Convex Lenses (Uncoated)");
+            sectionNames.Add("Ø30.0 mm N-BK7 Plano-Convex Lenses (Uncoated)");
             lenses.Add([
                 LA1274(),
                 LA1102(),
@@ -193,7 +193,7 @@
                 LA1237()
             ]);
 
-            sections.Add("Ø1.5\" (38.1 mm) N-BK7 Plano-Convex Lenses (Uncoated)");
+            sectionNames.Add("Ø1.5\" (38.1 mm) N-BK7 Plano-Convex Lenses (Uncoated)");
             lenses.Add([
                 LA1385(),
                 LA1386(),
@@ -202,7 +202,7 @@
                 LA1389()
             ]);
 
-            sections.Add("Ø2\" (Ø50.8 mm) N-BK7 Plano-Convex Lenses (Uncoated)");
+            sectionNames.Add("Ø2\" (Ø50.8 mm) N-BK7 Plano-Convex Lenses (Uncoated)");
             lenses.Add([
                 LA1401(),
                 LA1145(),
@@ -219,7 +219,7 @@
                 LA1779()
             ]);
 
-            sections.Add("Ø75.0 mm N-BK7 Plano-Convex Lenses (Uncoated)");
+            sectionNames.Add("Ø75.0 mm N-BK7 Plano-Convex Lenses (Uncoated)");
             lenses.Add([
                 LA1740(),
                 LA1238(),
@@ -230,9 +230,9 @@
 
 
             var sectionObjects = new List<ThorlabsCatalogSection>();
-            for (int i = 0; i < sections.Count; i++)
+            for (int i = 0; i < sectionNames.Count; i++)
             {
-                sectionObjects.Add(new ThorlabsCatalogSection(sections[i], lenses[i]));
+                sectionObjects.Add(new ThorlabsCatalogSection(sectionNames[i], lenses[i]));
             }
 
             return new ThorlabsCatalogPage(
