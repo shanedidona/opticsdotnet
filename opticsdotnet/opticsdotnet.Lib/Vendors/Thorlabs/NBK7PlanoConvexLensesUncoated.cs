@@ -107,13 +107,13 @@
                 LA1026()
             ]);
 
-            sections.Add(prefix + "3mm Dia");
+            sections.Add("Ø3.0 mm N-BK7 Plano-Convex Lenses (Uncoated)");
             lenses.Add([
                 LA1036(),
                 LA1039()
             ]);
 
-            sections.Add(prefix + "6mm Dia");
+            sections.Add("Ø6.0 mm N-BK7 Plano-Convex Lenses (Uncoated)");
             lenses.Add([
                 LA1116(),
                 LA1470(),
@@ -121,13 +121,13 @@
                 LA1700()
             ]);
 
-            sections.Add(prefix + "9mm Dia");
+            sections.Add("Ø9.0 mm N-BK7 Plano-Convex Lenses (Uncoated)");
             lenses.Add([
                 LA1576(),
                 LA1472()
             ]);
 
-            sections.Add(prefix + "12.7mm Dia");
+            sections.Add("Ø1/2\" (Ø12.7 mm) N-BK7 Plano-Convex Lenses (Uncoated)");
             lenses.Add([
                 LA1540(),
                 LA1074(),
@@ -138,7 +138,7 @@
                 LA1207()
             ]);
 
-            sections.Add(prefix + "18mm Dia");
+            sections.Add("Ø18.0 mm N-BK7 Plano-Convex Lenses (Uncoated)");
             lenses.Add([
                 LA1859(),
                 LA1270(),
@@ -146,7 +146,7 @@
                 LA1119()
             ]);
 
-            sections.Add(prefix + "25mm Dia");
+            sections.Add("Ø25.0 mm N-BK7 Plano-Convex Lenses (Uncoated)");
             lenses.Add([
                 LA1252(),
                 LA1255(),
@@ -155,7 +155,7 @@
                 LA1253()
             ]);
 
-            sections.Add(prefix + "25.4mm Dia");
+            sections.Add("Ø1\" (Ø25.4 mm) N-BK7 Plano-Convex Lenses (Uncoated)");
             lenses.Add([
                 LA1951(),
                 LA1805(),
@@ -180,7 +180,7 @@
                 LA1259()
             ]);
 
-            sections.Add(prefix + "30mm Dia");
+            sections.Add("Ø30.0 mm N-BK7 Plano-Convex Lenses (Uncoated)");
             lenses.Add([
                 LA1274(),
                 LA1102(),
@@ -193,7 +193,7 @@
                 LA1237()
             ]);
 
-            sections.Add(prefix + "38.1mm Dia");
+            sections.Add("Ø1.5\" (38.1 mm) N-BK7 Plano-Convex Lenses (Uncoated)");
             lenses.Add([
                 LA1385(),
                 LA1386(),
@@ -202,7 +202,7 @@
                 LA1389()
             ]);
 
-            sections.Add(prefix + "50.8mm Dia");
+            sections.Add("Ø2\" (Ø50.8 mm) N-BK7 Plano-Convex Lenses (Uncoated)");
             lenses.Add([
                 LA1401(),
                 LA1145(),
@@ -219,7 +219,7 @@
                 LA1779()
             ]);
 
-            sections.Add(prefix + "75mm Dia");
+            sections.Add("Ø75.0 mm N-BK7 Plano-Convex Lenses (Uncoated)");
             lenses.Add([
                 LA1740(),
                 LA1238(),
