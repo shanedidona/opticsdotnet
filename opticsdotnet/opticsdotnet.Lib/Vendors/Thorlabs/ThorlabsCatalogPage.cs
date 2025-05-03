@@ -1,4 +1,4 @@
-﻿namespace opticsdotnet.Lib.Objects
+﻿namespace opticsdotnet.Lib.Vendors.Thorlabs
 {
     public sealed class ThorlabsCatalogPage
     {
