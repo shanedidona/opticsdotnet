@@ -101,9 +101,7 @@
             var sections = new List<string>();
             var lenses = new List<AxiLens[]>();
 
-            string prefix = "N-BK7 Plano-Convex Lenses Uncoated ";
-
-            sections.Add(prefix + "2mm Dia");
+            sections.Add("Ø2.0 mm N-BK7 Plano-Convex Lenses (Uncoated)");
             lenses.Add([
                 LA1024(),
                 LA1026()
