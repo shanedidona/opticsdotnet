@@ -229,9 +229,17 @@
 
 
 
+            var sectionObjects = new List<ThorlabsCatalogSection>();
+            for (int i = 0; i < sections.Count; i++)
+            {
+                sectionObjects.Add(new ThorlabsCatalogSection(sections[i], lenses[i]));
+            }
 
-
-
+            return new ThorlabsCatalogPage(
+                    "N-BK7 Plano-Convex Lenses (Uncoated)",
+                    sectionObjects.ToArray(),
+                    "https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=112"
+                );
         }
     }
 }
