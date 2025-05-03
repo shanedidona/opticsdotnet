@@ -1,11 +1,44 @@
 ﻿using opticsdotnet.Lib;
+using opticsdotnet.Lib.Vendors.Thorlabs;
 using static opticsdotnet.Lib.Vendors.Thorlabs.Catalog;
 
 namespace opticsdotnet.Testing.ThorlabsCatalog
 {
     public static class ThorlabsCatalog
     {
+        public static void ThorlabsCatalog_Run()
+        {
+            string saveDir = Path.Combine(Program.BaseSaveDir, "ThorlabsCatalog", "Renderings");
+            Directory.CreateDirectory(saveDir);
 
+            var pages = new ThorlabsCatalogPage[]
+            {
+                NBK7BestFormLensesUncoated(),
+                NBK7PlanoConvexLensesUncoated()
+            };
+
+            foreach (ThorlabsCatalogPage page in pages)
+            {
+                var lines = new List<string>();
+                lines.Add("PageName|" + page.Name);
+
+                foreach (ThorlabsCatalogSection section in page.ThorlabsCatalogSections)
+                {
+                    lines.Add("SectionName|" + section.Name);
+
+                    foreach (IAxiOpticalElement axiOpticalElement in section.AxiOpticalElements)
+                    {
+                        lines.Add("AxiOpticalElement|" + axiOpticalElement.RenderMathematica());
+                    }
+                }
+
+                int pageNumber = Int32.Parse(page.URL.Split('=').Last());
+
+                string pathOut = Path.Combine(saveDir, pageNumber + ".txt");
+
+                File.WriteAllLines(pathOut, lines);
+            }
+        }
 
 
 
