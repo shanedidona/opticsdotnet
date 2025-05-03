@@ -5,6 +5,14 @@ namespace opticsdotnet.Testing.ThorlabsCatalog
 {
     public static class ThorlabsCatalog
     {
+
+
+
+
+
+
+
+
         public static void ThorlabsCatalog_1()
         {
             string saveDir = Path.Combine(Program.BaseSaveDir, "ThorlabsCatalog");
