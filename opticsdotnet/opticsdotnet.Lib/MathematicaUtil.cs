@@ -6,15 +6,15 @@ namespace opticsdotnet.Lib
     {
         public const string Nothing = "Nothing";
 
-        public static void woooo<TKey, TValue>(Dictionary<TKey, TValue> dict) where TKey : IMathematicaRenderable, TValue where TValue : IMathematicaRenderable
+        public static void woooo<TValue>(Dictionary<string, TValue> dict) where TValue : IMathematicaRenderable
         {
             StringBuilder sb1 = new StringBuilder();
 
-            KeyValuePair<TKey,TValue>[] keyValuePairs = dict.ToArray();
+            KeyValuePair<string,TValue>[] keyValuePairs = dict.ToArray();
 
             sb1.Append("<|");
 
-            foreach (KeyValuePair<TKey, TValue> keyValuePair in keyValuePairs)
+            foreach (KeyValuePair<string, TValue> keyValuePair in keyValuePairs)
             {
 
             }
