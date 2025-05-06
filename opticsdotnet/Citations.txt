@@ -57,3 +57,5 @@ Google AI overview
 SIMION-like grouping enumerables for ray starting conditions
 
 https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=900
+
+https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/where-generic-type-constraint
