@@ -20,6 +20,16 @@ namespace opticsdotnet.Lib
 
             foreach (char char1 in Value1)
             {
+                if (Replacements.ContainsKey(char1))
+                {
+                    sb1.Append(Replacements[char1]);
+                }
+                else
+                {
+                    sb1.Append(char1);
+                }
+
+
                 switch (char1)
                 {
                     case '"':
