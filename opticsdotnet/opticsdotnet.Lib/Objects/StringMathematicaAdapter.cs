@@ -28,23 +28,6 @@ namespace opticsdotnet.Lib
                 {
                     sb1.Append(char1);
                 }
-
-
-                switch (char1)
-                {
-                    case '"':
-                        sb1.Append("\\\"");
-                        continue;
-                    case '\n':
-                        sb1.Append("\\n");
-                        continue;
-                    case '\\':
-                        sb1.Append("\\\\");
-                        continue;
-                    default:
-                        sb1.Append(char1);
-                        continue;
-                }
             }
 
             sb1.Append('"');
