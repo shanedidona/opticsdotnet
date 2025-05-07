@@ -41,7 +41,8 @@ namespace opticsdotnet.Lib
             {
                 {'"', "\\\""},
                 {'\n', "\\n"},
-                {'\\', "\\\\"}
+                {'\\', "\\\\"},
+                {'Ø', "\\[CapitalOSlash]"}
             };
 
             return out1;
