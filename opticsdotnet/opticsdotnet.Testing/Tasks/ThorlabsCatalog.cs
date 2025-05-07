@@ -17,9 +17,9 @@ namespace opticsdotnet.Testing.ThorlabsCatalog
                 NBK7PlanoConvexLensesUncoated()
             };
 
+            string s1 = (new MathematicaRenderableMathematicaAdapter(pages)).RenderMathematica();
 
-
-
+            File.WriteAllText(Path.Combine(saveDir, "Renderings.txt"), s1);
 
 
 
