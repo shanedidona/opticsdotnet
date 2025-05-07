@@ -4,6 +4,8 @@ namespace opticsdotnet.Lib
 {
     public sealed class StringMathematicaAdapter : IMathematicaRenderable
     {
+        static Dictionary<char, string> Replacements = GenerateReplacements();
+
         readonly string Value1;
 
         public StringMathematicaAdapter(string value1)
@@ -38,6 +40,11 @@ namespace opticsdotnet.Lib
             sb1.Append('"');
 
             return sb1.ToString();
+        }
+
+        static Dictionary<char, string> GenerateReplacements()
+        {
+
         }
     }
 }
