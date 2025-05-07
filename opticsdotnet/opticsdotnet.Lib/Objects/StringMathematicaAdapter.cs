@@ -44,7 +44,14 @@ namespace opticsdotnet.Lib
 
         static Dictionary<char, string> GenerateReplacements()
         {
+            var out1 = new Dictionary<char, string>
+            {
+                {'"', "\\\""},
+                {'\n', "\\n"},
+                {'\\', "\\\\"}
+            };
 
+            return out1;
         }
     }
 }
