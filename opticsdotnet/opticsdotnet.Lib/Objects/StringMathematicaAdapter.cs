@@ -4,7 +4,7 @@ namespace opticsdotnet.Lib
 {
     public sealed class StringMathematicaAdapter : IMathematicaRenderable
     {
-        static Dictionary<char, string> Replacements = GenerateReplacements();
+        static readonly Dictionary<char, string> Replacements = GenerateReplacements();
 
         readonly string Value1;
 
