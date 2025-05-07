@@ -17,6 +17,13 @@ namespace opticsdotnet.Testing.ThorlabsCatalog
                 NBK7PlanoConvexLensesUncoated()
             };
 
+
+
+
+
+
+
+
             foreach (ThorlabsCatalogPage page in pages)
             {
                 var lines = new List<string>();
