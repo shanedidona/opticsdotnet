@@ -23,3 +23,10 @@ a1
 
 
 
+InputForm["\[CapitalOSlash]"]
+Put["\[CapitalOSlash]","C:\\Users\\shane\\opticsdotnet\\Tasks\\ThorlabsCatalog\\test1.txt"]
+
+Read["\[CapitalOSlash]",String]
+
+
+v1=Get["C:\\Users\\shane\\opticsdotnet\\Tasks\\ThorlabsCatalog\\Renderings\\Renderings.txt"]
