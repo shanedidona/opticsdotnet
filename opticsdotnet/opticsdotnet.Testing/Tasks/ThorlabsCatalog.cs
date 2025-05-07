@@ -11,12 +11,6 @@ namespace opticsdotnet.Testing.ThorlabsCatalog
             string saveDir = Path.Combine(Program.BaseSaveDir, "ThorlabsCatalog", "Renderings");
             Directory.CreateDirectory(saveDir);
 
-
-
-
-
-
-
             var pages = new ThorlabsCatalogPage[]
             {
                 NBK7BestFormLensesUncoated(),
