@@ -29,14 +29,12 @@ Put["\[CapitalOSlash]","C:\\Users\\shane\\opticsdotnet\\Tasks\\ThorlabsCatalog\\
 Read["\[CapitalOSlash]",String]
 
 
-v1=Get["C:\\Users\\shane\\opticsdotnet\\Tasks\\ThorlabsCatalog\\Renderings\\Renderings.txt"]
-
-
+Pages=Get["C:\\Users\\shane\\opticsdotnet\\Tasks\\ThorlabsCatalog\\Renderings\\Renderings.txt"];
 T1=Table[
 	Table[
 		{row[["Name"]],{Table[Graphics[f],{f,row["AxiOpticalElements"]}]}}
 	,{row,page["ThorlabsCatalogSections"]}]
-,{page,v1}];
+,{page,Pages}];
 TableForm[
 Flatten[T1,1]
 ]
