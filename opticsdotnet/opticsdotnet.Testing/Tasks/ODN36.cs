@@ -115,9 +115,9 @@ namespace opticsdotnet.Testing.ODN36
                                 );
             }
 
-            double[] fracZErrors = Enumerable.Range(0, axiLenses.Count)
+            double[] fracZErrors = Enumerable.Range(0, testDatas.Count)
                 .Select(
-                            i => (focalPointRelToBacks[i].X - expectedFocalZRelToBacks[i]) / expectedFocalZRelToBacks[i]
+                            i => (focalPointRelToBacks[i].X - testDatas[i].EexpectedFocalZRelToBack) / testDatas[i].EexpectedFocalZRelToBack
                         )
                 .ToArray();
 
