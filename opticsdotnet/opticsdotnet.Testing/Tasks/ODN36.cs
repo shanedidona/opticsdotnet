@@ -121,6 +121,7 @@ namespace opticsdotnet.Testing.ODN36
                         )
                 .ToArray();
 
+            double maxAbsFracZError = fracZErrors.Select(Math.Abs).Max();
             double maxAbsFocalY = focalPointRelToBacks.Select(x => Math.Abs(x.Y)).Max();
         }
     }
