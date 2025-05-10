@@ -94,5 +94,150 @@
         public static AxiLens LA1238() => new AxiLens(new NBK7(), 0.0192, 0.0375, 0.0515, null);
         public static AxiLens LA1002() => new AxiLens(new NBK7(), 0.0127, 0.0375, 0.0773, null);
         public static AxiLens LA1353() => new AxiLens(new NBK7(), 0.0101, 0.0375, 0.103, null);
+
+
+        public static ThorlabsCatalogPage NBK7PlanoConvexLensesUncoated()
+        {
+            var sectionNames = new List<string>();
+            var lenses = new List<AxiLens[]>();
+
+            sectionNames.Add("Ø2.0 mm N-BK7 Plano-Convex Lenses (Uncoated)");
+            lenses.Add([
+                LA1024(),
+                LA1026()
+            ]);
+
+            sectionNames.Add("Ø3.0 mm N-BK7 Plano-Convex Lenses (Uncoated)");
+            lenses.Add([
+                LA1036(),
+                LA1039()
+            ]);
+
+            sectionNames.Add("Ø6.0 mm N-BK7 Plano-Convex Lenses (Uncoated)");
+            lenses.Add([
+                LA1116(),
+                LA1470(),
+                LA1222(),
+                LA1700()
+            ]);
+
+            sectionNames.Add("Ø9.0 mm N-BK7 Plano-Convex Lenses (Uncoated)");
+            lenses.Add([
+                LA1576(),
+                LA1472()
+            ]);
+
+            sectionNames.Add("Ø1/2\" (Ø12.7 mm) N-BK7 Plano-Convex Lenses (Uncoated)");
+            lenses.Add([
+                LA1540(),
+                LA1074(),
+                LA1560(),
+                LA1289(),
+                LA1304(),
+                LA1213(),
+                LA1207()
+            ]);
+
+            sectionNames.Add("Ø18.0 mm N-BK7 Plano-Convex Lenses (Uncoated)");
+            lenses.Add([
+                LA1859(),
+                LA1270(),
+                LA1085(),
+                LA1119()
+            ]);
+
+            sectionNames.Add("Ø25.0 mm N-BK7 Plano-Convex Lenses (Uncoated)");
+            lenses.Add([
+                LA1252(),
+                LA1255(),
+                LA1257(),
+                LA1251(),
+                LA1253()
+            ]);
+
+            sectionNames.Add("Ø1\" (Ø25.4 mm) N-BK7 Plano-Convex Lenses (Uncoated)");
+            lenses.Add([
+                LA1951(),
+                LA1805(),
+                LA1027(),
+                LA1422(),
+                LA1131(),
+                LA1134(),
+                LA1608(),
+                LA1509(),
+                LA1986(),
+                LA1433(),
+                LA1229(),
+                LA1708(),
+                LA1461(),
+                LA1484(),
+                LA1172(),
+                LA1908(),
+                LA1978(),
+                LA1464(),
+                LA1254(),
+                LA1258(),
+                LA1259()
+            ]);
+
+            sectionNames.Add("Ø30.0 mm N-BK7 Plano-Convex Lenses (Uncoated)");
+            lenses.Add([
+                LA1274(),
+                LA1102(),
+                LA1765(),
+                LA1031(),
+                LA1907(),
+                LA1541(),
+                LA1832(),
+                LA1419(),
+                LA1237()
+            ]);
+
+            sectionNames.Add("Ø1.5\" (38.1 mm) N-BK7 Plano-Convex Lenses (Uncoated)");
+            lenses.Add([
+                LA1385(),
+                LA1386(),
+                LA1387(),
+                LA1388(),
+                LA1389()
+            ]);
+
+            sectionNames.Add("Ø2\" (Ø50.8 mm) N-BK7 Plano-Convex Lenses (Uncoated)");
+            lenses.Add([
+                LA1401(),
+                LA1145(),
+                LA1050(),
+                LA1384(),
+                LA1417(),
+                LA1399(),
+                LA1979(),
+                LA1301(),
+                LA1256(),
+                LA1725(),
+                LA1380(),
+                LA1727(),
+                LA1779()
+            ]);
+
+            sectionNames.Add("Ø75.0 mm N-BK7 Plano-Convex Lenses (Uncoated)");
+            lenses.Add([
+                LA1740(),
+                LA1238(),
+                LA1002(),
+                LA1353()
+            ]);
+
+            var sections = new List<ThorlabsCatalogSection>();
+            for (int i = 0; i < sectionNames.Count; i++)
+            {
+                sections.Add(new ThorlabsCatalogSection(sectionNames[i], lenses[i]));
+            }
+
+            return new ThorlabsCatalogPage(
+                    "N-BK7 Plano-Convex Lenses (Uncoated)",
+                    sections.ToArray(),
+                    "https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=112"
+                );
+        }
     }
 }
