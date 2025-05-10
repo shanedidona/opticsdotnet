@@ -97,14 +97,34 @@ namespace opticsdotnet.Testing.ODN36
             double frontDriftLength = 0.01;
             double backDriftLength = 0.01;
 
-            var v1 = Analysis.CalculateFocalPointRelToBack(
-                beamRadius,
-                numRays,
-                wavelengthNM,
-                frontDriftLength,
-                backDriftLength,
-                opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1859()
-            );
+            var axiLenses = new List<AxiLens>();
+            var expectedFocalZRelToBacks = new List<double>();
+
+            axiLenses.Add(opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1859());
+            expectedFocalZRelToBacks.Add(0.0153);
+
+            var focalPointRelToBacks = new List<Point2D>();
+            foreach (AxiLens axiLens in axiLenses)
+            {
+                focalPointRelToBacks.Add(
+                            Analysis.CalculateFocalPointRelToBack(
+                            beamRadius,
+                            numRays,
+                            wavelengthNM,
+                            frontDriftLength,
+                            backDriftLength,
+                            axiLens
+                        )
+                    );
+            }
+
+            double[] fracZErrors = Enumerable.Range(0, axiLenses.Count)
+                .Select(
+                            i => (focalPointRelToBacks[i].X - expectedFocalZRelToBacks[i]) / expectedFocalZRelToBacks[i]
+                        )
+                .ToArray();
+
+            double maxAbsFocalY = focalPointRelToBacks.Select(x => Math.Abs(x.Y)).Max();
         }
     }
 }
