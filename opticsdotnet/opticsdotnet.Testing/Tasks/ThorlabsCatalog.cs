@@ -20,31 +20,6 @@ namespace opticsdotnet.Testing.ThorlabsCatalog
             string s1 = (new MathematicaRenderableMathematicaAdapter(pages)).RenderMathematica();
 
             File.WriteAllText(Path.Combine(saveDir, "Renderings.txt"), s1);
-
-
-
-
-            foreach (ThorlabsCatalogPage page in pages)
-            {
-                var lines = new List<string>();
-                lines.Add("PageName|" + page.Name);
-
-                foreach (ThorlabsCatalogSection section in page.ThorlabsCatalogSections)
-                {
-                    lines.Add("SectionName|" + section.Name);
-
-                    foreach (IAxiOpticalElement axiOpticalElement in section.AxiOpticalElements)
-                    {
-                        lines.Add("AxiOpticalElement|" + axiOpticalElement.RenderMathematica());
-                    }
-                }
-
-                int pageNumber = Int32.Parse(page.URL.Split('=').Last());
-
-                string pathOut = Path.Combine(saveDir, pageNumber + ".txt");
-
-                File.WriteAllLines(pathOut, lines);
-            }
         }
 
 
