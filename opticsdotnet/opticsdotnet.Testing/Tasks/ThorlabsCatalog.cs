@@ -177,38 +177,5 @@ namespace opticsdotnet.Testing.ThorlabsCatalog
                 File.WriteAllLines(Path.Combine(saveDir, sections[i] + ".txt"), linesOut);
             }
         }
-
-        public static void ThorlabsCatalog_BestForm()
-        {
-            string saveDir = Path.Combine(Program.BaseSaveDir, "ThorlabsCatalogBestForm");
-            Directory.CreateDirectory(saveDir);
-
-            var sections = new List<string>();
-            var lenses = new List<AxiLens[]>();
-
-            sections.Add("N-BK7 Best Form Spherical Lenses Uncoated 1in Dia");
-            lenses.Add(new AxiLens[]
-            {
-                LBF254_040(),
-                LBF254_050(),
-                LBF254_075(),
-                LBF254_100(),
-                LBF254_150(),
-                LBF254_200()
-            });
-
-            for (int i = 0; i < sections.Count; i++)
-            {
-                var linesOut = new List<string>();
-                linesOut.Add(sections[i]);
-
-                foreach (AxiLens axiLens in lenses[i])
-                {
-                    linesOut.Add(new MathematicaRenderableMathematicaAdapter(axiLens).RenderMathematicaFunction("Graphics"));
-                }
-
-                File.WriteAllLines(Path.Combine(saveDir, sections[i] + ".txt"), linesOut);
-            }
-        }
     }
 }
