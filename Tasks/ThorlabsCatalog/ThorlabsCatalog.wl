@@ -1,9 +1,40 @@
 (* ::Package:: *)
 
-Table1=Table[
-	Table[
-		Get[f1,Method->"String"]
-	,{f1,StringSplit[Import[f]]}]
-,{f,FileNames["*.txt","C:\\Users\\shane\\opticsdotnet\\Tasks\\ThorlabsCatalog"]}];
+Parse1[lines_]:=Module[
+	{line,FileAssoc},
+		FileAssoc=Association[];
+		
+		Do[
+			
+	
+		,{line,lines}]
+	]
 
-TableForm[Sort[Table1,#1[[1]]<#2[[1]]&]]
+Table[
+	StringSplit[Import[f,"Text"]]
+
+
+,{f,FileNames["*.txt","C:\\Users\\shane\\opticsdotnet\\Tasks\\ThorlabsCatalog\\Renderings"]}];
+
+
+a1=Association[]
+a1["s"]=1
+a1
+
+
+
+InputForm["\[CapitalOSlash]"]
+Put["\[CapitalOSlash]","C:\\Users\\shane\\opticsdotnet\\Tasks\\ThorlabsCatalog\\test1.txt"]
+
+Read["\[CapitalOSlash]",String]
+
+
+Pages=Get["C:\\Users\\shane\\opticsdotnet\\Tasks\\ThorlabsCatalog\\Renderings\\Renderings.txt"];
+T1=Table[
+	Table[
+		{row[["Name"]],{Table[Graphics[f],{f,row["AxiOpticalElements"]}]}}
+	,{row,page["ThorlabsCatalogSections"]}]
+,{page,Pages}];
+TableForm[
+Flatten[T1,1]
+]

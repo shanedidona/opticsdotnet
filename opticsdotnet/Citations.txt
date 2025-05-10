@@ -60,3 +60,7 @@ https://en.wikipedia.org/wiki/Total_internal_reflection
 
 https://en.wikipedia.org/wiki/Snell%27s_law
 
+https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=900
+
+https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/where-generic-type-constraint
+

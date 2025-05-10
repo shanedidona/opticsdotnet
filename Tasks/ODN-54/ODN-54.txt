@@ -1,0 +1,4 @@
+<||>
+<|"Circle1" -> Circle[{0,2},1.3]|>
+<|"Circle1" -> Circle[{0,2},1.3], "Circle2" -> Circle[{0,4},1.3]|>
+<|"Circle1" -> Circle[{0,2},1.3], "Circle2" -> Circle[{0,4},1.3], "C\nircle2" -> Circle[{0,4},1.3]|>
