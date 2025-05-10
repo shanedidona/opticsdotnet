@@ -93,9 +93,19 @@ namespace opticsdotnet.Testing.ODN36
 
             double beamRadius = 0.001;
             int numRays = 5;
-            double wavelengthNM = 587.6;
             double frontDriftLength = 0.01;
             double backDriftLength = 0.01;
+
+            var testData = new List<(AxiLens AxiLens1, double EexpectedFocalZRelToBack, double TestWaveLengthNM)>();
+
+            testData.Add((opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1859(), 0.0153, 587.6));
+
+
+
+
+
+
+
 
 
 
