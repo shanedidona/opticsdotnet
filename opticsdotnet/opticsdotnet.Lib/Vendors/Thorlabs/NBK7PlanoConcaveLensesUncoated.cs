@@ -24,5 +24,46 @@
         public static AxiLens LC1315() => new AxiLens(new NBK7(), 0.0035, 0.0508 / 2, -0.0386, null);
         public static AxiLens LC1093() => new AxiLens(new NBK7(), 0.004, 0.0508 / 2, -0.0515, null);
         public static AxiLens LC1611() => new AxiLens(new NBK7(), 0.004, 0.0508 / 2, -0.0772, null);
+
+        public static ThorlabsCatalogPage NBK7PlanoConcaveLensesUncoated()
+        {
+            var sections = new List<ThorlabsCatalogSection>();
+
+            sections.Add(new ThorlabsCatalogSection(
+                    "Ø6.0 mm N-BK7 Plano-Concave Lens",
+                    [LC1975()]
+                ));
+
+            sections.Add(new ThorlabsCatalogSection(
+                    "Ø9.0 mm N-BK7 Plano-Concave Lens",
+                    [LC1906()]
+                ));
+
+            sections.Add(new ThorlabsCatalogSection(
+                    "Ø1/2\" (12.7 mm) N-BK7 Plano-Concave Lenses",
+                    [LC1054(), LC1060(), LC1439()]
+                ));
+
+            sections.Add(new ThorlabsCatalogSection(
+                    "Ø25 mm N-BK7 Plano-Concave Lenses",
+                    [LC1259(), LC1258(), LC1254()]
+                ));
+
+            sections.Add(new ThorlabsCatalogSection(
+                    "Ø1\" (25.4 mm) N-BK7 Plano-Concave Lenses",
+                    [LC1715(), LC1582(), LC1120()]
+                ));
+
+            sections.Add(new ThorlabsCatalogSection(
+                    "Ø2\" (50.8 mm) N-BK7 Plano-Concave Lenses",
+                    [LC1315(), LC1093(), LC1611()]
+                ));
+
+            return new ThorlabsCatalogPage(
+                    "N-BK7 Plano-Concave Lenses, Uncoated",
+                    sections.ToArray(),
+                    "https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=2087"
+                );
+        }
     }
 }
