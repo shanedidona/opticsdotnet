@@ -14,7 +14,8 @@ namespace opticsdotnet.Testing.ThorlabsCatalog
             var pages = new ThorlabsCatalogPage[]
             {
                 NBK7BestFormLensesUncoated(),
-                NBK7PlanoConvexLensesUncoated()
+                NBK7PlanoConvexLensesUncoated(),
+                NBK7PlanoConcaveLensesUncoated()
             };
 
             string s1 = (new MathematicaRenderableMathematicaAdapter(pages)).RenderMathematica();
