@@ -15,10 +15,20 @@
         public static AxiLens LF1141() => new AxiLens(new NBK7(), 0.003, 0.0254 / 2, 0.500, -0.2532);
 
 
+        public static ThorlabsCatalogPage NBK7OneInchNegativeMeniscusLenses()
+        {
+            var sections = new List<ThorlabsCatalogSection>();
 
+            sections.Add(new ThorlabsCatalogSection(
+                    "Ø1\" N-BK7 Negative Meniscus Lenses, Uncoated",
+                    [LF1822(), LF1547(), LF1097(), LF1015(), LF1544(), LF1988(), LF1141()]
+                ));
 
-
-
-
+            return new ThorlabsCatalogPage(
+                    "Ø1\" N-BK7 Negative Meniscus Lenses",
+                    sections.ToArray(),
+                    "https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=902"
+                );
+        }
     }
 }
