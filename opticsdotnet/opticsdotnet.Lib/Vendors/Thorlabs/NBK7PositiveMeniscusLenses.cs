@@ -12,10 +12,10 @@
         public static AxiLens LE1202() => new AxiLens(new NBK7(), 0.0028, 0.0254 / 2, 0.0662, -0.1822);
         public static AxiLens LE1929() => new AxiLens(new NBK7(), 0.0025, 0.0254 / 2, 0.1009, -0.2882);
 
-
-
-
-
-
+        public static AxiLens LE1076() => new AxiLens(new NBK7(), 0.0097, 0.0254, 0.0303, -0.0658);
+        public static AxiLens LE1418() => new AxiLens(new NBK7(), 0.0073, 0.0254, 0.0479, -0.1193);
+        public static AxiLens LE1015() => new AxiLens(new NBK7(), 0.0062, 0.0254, 0.0652, -0.1716);
+        public static AxiLens LE1613() => new AxiLens(new NBK7(), 0.0055, 0.0254, 0.0825, -0.2247);
+        public static AxiLens LE1985() => new AxiLens(new NBK7(), 0.0051, 0.0254, 0.1001, -0.2791);
     }
 }
