@@ -10,7 +10,7 @@ namespace opticsdotnet.Testing
         {
             BaseSaveDir = File.ReadAllLines("settings.txt")[0];
 
-            ODN36.ODN36.ODN36_3();
+            ODN36.ODN36.ODN36_1();
         }
     }
 }
