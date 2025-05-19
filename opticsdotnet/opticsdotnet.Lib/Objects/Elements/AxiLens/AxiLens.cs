@@ -1,13 +1,9 @@
-﻿namespace opticsdotnet.Lib
-{
-    public sealed class AxiLens : IAxiOpticalElement
-    {
-        readonly double CenterThickness;
-        readonly double OuterRadius;
-        readonly double? Radius1;//Null means flat, positive is convex, and negative is concave
-        readonly double? Radius2;//Null means flat, positive is convex, and negative is concave
-        readonly IOpticalMaterial OpticalMaterial;
+﻿using static opticsdotnet.Lib.MathUtil;
 
+namespace opticsdotnet.Lib
+{
+    public sealed partial class AxiLens : IAxiOpticalElement
+    {
         public AxiLens(IOpticalMaterial opticalMaterial, double centerThickness, double outerRadius, double? radius1, double? radius2)
         {
             CenterThickness = centerThickness;
@@ -15,6 +11,63 @@
             Radius1 = radius1;
             Radius2 = radius2;
             OpticalMaterial = opticalMaterial;
+        }
+
+        public void AxiRayTrace(double thisZ0, AxiDrift previousDrift, AxiDrift nextDrift, AxiRay[] axiRays)//TODO: support total internal reflection
+        {
+            //Rays Hitting Left Surface or nothing
+            foreach (AxiRay axiRay in axiRays)
+            {
+                if (Radius1.HasValue)
+                {
+                    AxiRayTraceCircle(
+                            axiRay,
+                            previousDrift.OpticalMaterial,
+                            OpticalMaterial,
+                            thisZ0,
+                            OuterRadius,
+                            Math.Abs(Radius1.Value),
+                            0 < Radius1.Value
+                        );
+                }
+                else
+                {
+                    AxiRayTraceFlat(
+                            axiRay,
+                            previousDrift.OpticalMaterial,
+                            OpticalMaterial,
+                            thisZ0,
+                            OuterRadius
+                        );
+                }
+            }
+
+            //Rays Hitting Right Surface or Nothing
+            foreach (AxiRay axiRay in axiRays)
+            {
+                if (Radius2.HasValue)
+                {
+                    AxiRayTraceCircle(
+                            axiRay,
+                            OpticalMaterial,
+                            nextDrift.OpticalMaterial,
+                            thisZ0 + CenterThickness,
+                            OuterRadius,
+                            Math.Abs(Radius2.Value),
+                            Radius2.Value < 0
+                        );
+                }
+                else
+                {
+                    AxiRayTraceFlat(
+                            axiRay,
+                            OpticalMaterial,
+                            nextDrift.OpticalMaterial,
+                            thisZ0 + CenterThickness,
+                            OuterRadius
+                        );
+                }
+            }
         }
 
         public double CenterLength => CenterThickness;
@@ -26,7 +79,7 @@
             Line2D lowerEdge = new Line2D(0, -OuterRadius, 0);
             Line2D upperEdge = new Line2D(0, OuterRadius, 0);
 
-            IMathematicaRenderable leftSurface;
+            Geo2D leftSurface;
             Point2D lowerLeftPoint;
             Point2D upperLeftPoint;
             if (Radius1.HasValue)
@@ -35,33 +88,29 @@
                 {
                     //Convex
 
-                    Circle2D circle = new Circle2D(Radius1.Value, 0, Radius1.Value);
+                    Circle2D circle = LeftConvexCircle();
 
                     lowerLeftPoint = Geo2D.LineIntersectCircle(lowerEdge, circle).LeftMost();
                     upperLeftPoint = Geo2D.LineIntersectCircle(upperEdge, circle).LeftMost();
 
-                    Arc2D arc = circle.GetArc(
+                    leftSurface = circle.GetArc(
                             (upperLeftPoint - circle.Center).Theta(),
                             (lowerLeftPoint - circle.Center).Theta() + 2 * Math.PI
                         );
-
-                    leftSurface = arc;
                 }
                 else
                 {
                     //Concave
 
-                    Circle2D circle = new Circle2D(-Math.Abs(Radius1.Value), 0, Math.Abs(Radius1.Value));
+                    Circle2D circle = LeftConcaveCircle();
 
                     lowerLeftPoint = Geo2D.LineIntersectCircle(lowerEdge, circle).RightMost();
                     upperLeftPoint = Geo2D.LineIntersectCircle(upperEdge, circle).RightMost();
 
-                    Arc2D arc = circle.GetArc(
+                    leftSurface = circle.GetArc(
                             (upperLeftPoint - circle.Center).Theta(),
                             (lowerLeftPoint - circle.Center).Theta()
                         );
-
-                    leftSurface = arc;
                 }   
             }
             else
@@ -72,7 +121,7 @@
                 leftSurface = new LineSegment2D(lowerLeftPoint, upperLeftPoint);
             }
 
-            IMathematicaRenderable rightSurface;
+            Geo2D rightSurface;
             Point2D lowerRightPoint;
             Point2D upperRightPoint;
             if (Radius2.HasValue)
@@ -86,12 +135,10 @@
                     lowerRightPoint = Geo2D.LineIntersectCircle(lowerEdge, circle).RightMost();
                     upperRightPoint = Geo2D.LineIntersectCircle(upperEdge, circle).RightMost();
 
-                    Arc2D arc = circle.GetArc(
+                    rightSurface = circle.GetArc(
                             (upperRightPoint - circle.Center).Theta(),
                             (lowerRightPoint - circle.Center).Theta()
                         );
-
-                    rightSurface = arc;
                 }
                 else
                 {
@@ -102,12 +149,10 @@
                     lowerRightPoint = Geo2D.LineIntersectCircle(lowerEdge, circle).LeftMost();
                     upperRightPoint = Geo2D.LineIntersectCircle(upperEdge, circle).LeftMost();
 
-                    Arc2D arc = circle.GetArc(
+                    rightSurface = circle.GetArc(
                             (upperRightPoint - circle.Center).Theta(),
                             (lowerRightPoint - circle.Center).Theta() + 2 * Math.PI
                         );
-
-                    rightSurface = arc;
                 }
             }
             else

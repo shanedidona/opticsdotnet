@@ -1,4 +1,5 @@
-﻿using ScottPlot;
+﻿using static opticsdotnet.Lib.MathUtil;
+using ScottPlot;
 
 namespace opticsdotnet.Lib
 {
@@ -56,6 +57,52 @@ namespace opticsdotnet.Lib
             }
 
             multiplot.SavePng(pathOut, 1000, 1000);
+        }
+
+        public static double? SnellsLawThetaOut(
+                double thetaIn,//Relative to +X axis
+                double? nLeft,
+                double? nRight,
+                double normalThetaIntoRight//Relative to +X axis
+            )
+        {
+            if (!nLeft.HasValue)
+            {
+                return null;
+            }
+
+            if (!nRight.HasValue)
+            {
+                return null;
+            }
+
+            if (PiOver2 <= Math.Abs(thetaIn))
+            {
+                throw new NotSupportedException("(0.5 * Math.PI) <= Math.Abs(thetaIn)");
+            }
+
+            if (PiOver2 <= Math.Abs(normalThetaIntoRight))
+            {
+                throw new NotSupportedException("(0.5 * Math.PI) <= Math.Abs(normalThetaIntoRight)");
+            }
+
+            if (nRight < nLeft)
+            {
+                //Total Internal Reflection Check
+
+                double criticalAngle = Math.Asin(nRight.Value / nLeft.Value);
+
+                if (criticalAngle <= Math.Abs(thetaIn))
+                {
+                    return null;
+                }
+            }
+
+            double absRelThetaOut = Math.Asin(Math.Sin(Math.Abs(thetaIn - normalThetaIntoRight)) * nLeft.Value / nRight.Value);//Order does not matter since abs
+
+            double thetaOut = normalThetaIntoRight + Math.Sign(thetaIn - normalThetaIntoRight) * absRelThetaOut;
+
+            return thetaOut;
         }
     }
 }

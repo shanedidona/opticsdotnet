@@ -11,6 +11,8 @@
         readonly double[] AxiElementOffsets;
         readonly double AxiRayTerminatorOffset;
 
+        AxiRay[] AxiRays;
+
         public AxiOpticalSystem(
                 IAxiRaySource axiRaySource,
                 AxiDrift[] axiDrifts,
@@ -51,6 +53,47 @@
             AxiRayTerminatorOffset = AxiElementOffsets.Last() + AxiDrifts.Last().Length1;
         }
 
+        public void RayTrace()
+        {
+            if (AxiRays != null)
+            {
+                throw new NotSupportedException("AxiRays != null");
+            }
+
+            AxiRays = AxiRaySource.AxiRays().ToArray();
+
+            for (int i = 0; i < NumOpticalElements; i++)
+            {
+                AxiElements[i].AxiRayTrace(AxiElementOffsets[i], AxiDrifts[i], AxiDrifts[i + 1], AxiRays);
+            }
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+        }
+
+        public Line2D[] LinesOut()//TODO: this might be removed very soon
+        {
+            return AxiRays
+                .Select(axiRay => axiRay.GetCurrentState())
+                .Select(axiRayState => new Line2D(axiRayState.Z0, axiRayState.R0, axiRayState.Theta.Value))
+                .ToArray();
+        }
+
+
         public string RenderMathematica()
         {
             var objectsToRender = new List<IMathematicaRenderable>();
@@ -68,7 +111,7 @@
             objectsToRender.Add(AxiRayTerminator);
             offsetsForRender.Add(new double[] { AxiRayTerminatorOffset, 0 });
 
-            var alreadyMathematicaRenderedMathematicaAdapters = new List<AlreadyMathematicaRenderedMathematicaAdapter>();
+            var mathematicaRenderables = new List<IMathematicaRenderable>();
             for (int i = 0; i < objectsToRender.Count; i++)
             {
                 var renderableOffset = new MathematicaRenderableMathematicaAdapter(
@@ -78,10 +121,18 @@
 
                 string renderedTranslated = new MathematicaRenderableMathematicaAdapter(objectsToRender[i], renderableOffset).RenderMathematicaFunction("Translate");
 
-                alreadyMathematicaRenderedMathematicaAdapters.Add(new AlreadyMathematicaRenderedMathematicaAdapter(renderedTranslated));
+                mathematicaRenderables.Add(new AlreadyMathematicaRenderedMathematicaAdapter(renderedTranslated));
             }
 
-            return new MathematicaRenderableMathematicaAdapter(alreadyMathematicaRenderedMathematicaAdapters.ToArray()).RenderMathematica();
+            if (AxiRays != null)
+            {
+                foreach (AxiRay axiRay in AxiRays)
+                {
+                    mathematicaRenderables.Add(axiRay);
+                }
+            }
+
+            return new MathematicaRenderableMathematicaAdapter(mathematicaRenderables.ToArray()).RenderMathematica();
         }
     }
 }
