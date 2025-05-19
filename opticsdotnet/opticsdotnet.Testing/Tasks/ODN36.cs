@@ -107,6 +107,8 @@ namespace opticsdotnet.Testing.ODN36
 
             testDatas.Add((opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LE1929(), 0.2965, 587.6));
 
+            testDatas.Add((opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LF1141(), -0.9946, 587.6));
+
             var focalPointRelToBacks = new List<Point2D>();
             foreach (var testData in testDatas)
             {
