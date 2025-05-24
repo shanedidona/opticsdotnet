@@ -20,23 +20,23 @@ namespace opticsdotnet.Lib
                 //Relative to the point we care about where this flat intersects the axis
                 Line2D incomingLine = new Line2D(currentState.Z0 - thisZ0, currentState.R0, currentState.Theta.Value);
 
+                Point2D intersectionPoint = Geo2D.LineIntersectLine(incomingLine, Flat);
 
+                double? absorptionCoefficientLeft = previousDrift.OpticalMaterial.AbsorptionCoefficient(currentState.WaveLength);
 
+                double? newIntensity = null;
+                if (absorptionCoefficientLeft.HasValue)
+                {
+                    double driftLength = Math.Sqrt(
+                                                    Sq((intersectionPoint.X + thisZ0) - currentState.Z0) +
+                                                    Sq(intersectionPoint.Y - currentState.R0)
+                                                );
 
+                    newIntensity = currentState.Intensity * Math.Exp(-driftLength * absorptionCoefficientLeft.Value);
+                }
 
+                axiRay.AddRange(new AxiRayState(intersectionPoint.X, thisZ0, currentState.Theta, currentState.WaveLength, newIntensity));
             }
-
-
-
-
-
-
-
-
-
-
-
-            throw new NotImplementedException();
         }
 
         public string RenderMathematica()
