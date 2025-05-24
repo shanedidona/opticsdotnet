@@ -4,7 +4,7 @@ namespace opticsdotnet.Lib
 {
     public sealed class AxiFlatTerminator : IAxiRayTerminator
     {
-        Line2D Flat = new Line2D(0, 0, PiOver2);
+        readonly Line2D Flat = new Line2D(0, 0, PiOver2);
 
 
         public void AxiRayTrace(double thisZ0, AxiDrift previousDrift, AxiRay[] axiRays)
