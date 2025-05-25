@@ -64,7 +64,7 @@
 
             for (int i = 0; i < NumOpticalElements; i++)
             {
-                AxiElements[i].AxiRayTrace(AxiElementOffsets[i], AxiDrifts[i], AxiDrifts[i + 1], AxiRays);
+                AxiElements[i].AxiRayTrace(AxiElementOffsets[i], AxiDrifts[i], AxiDrifts[i + 1], AxiRays).ToArray();
             }
 
             AxiRayTerminator.AxiRayTrace(AxiRayTerminatorOffset, AxiDrifts[AxiDrifts.Length - 1], AxiRays).ToArray();

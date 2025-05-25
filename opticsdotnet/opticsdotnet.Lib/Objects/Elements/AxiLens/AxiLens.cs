@@ -13,7 +13,7 @@ namespace opticsdotnet.Lib
             OpticalMaterial = opticalMaterial;
         }
 
-        public void AxiRayTrace(double thisZ0, AxiDrift previousDrift, AxiDrift nextDrift, IEnumerable<AxiRay> axiRays)//TODO: support total internal reflection
+        public IEnumerable<AxiRay> AxiRayTrace(double thisZ0, AxiDrift previousDrift, AxiDrift nextDrift, IEnumerable<AxiRay> axiRays)//TODO: support total internal reflection
         {
             foreach (AxiRay axiRay in axiRays)
             {
@@ -64,6 +64,8 @@ namespace opticsdotnet.Lib
                             OuterRadius
                         );
                 }
+
+                yield return axiRay;
             }
         }
 
