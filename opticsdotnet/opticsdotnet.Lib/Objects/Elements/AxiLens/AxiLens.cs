@@ -40,10 +40,7 @@ namespace opticsdotnet.Lib
                             OuterRadius
                         );
                 }
-            }
-            
-            foreach (AxiRay axiRay in axiRays)
-            {
+                
                 //Rays Hitting Right Surface or Nothing
                 if (Radius2.HasValue)
                 {
