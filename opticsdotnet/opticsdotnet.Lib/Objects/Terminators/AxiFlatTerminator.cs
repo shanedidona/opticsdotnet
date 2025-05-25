@@ -7,15 +7,15 @@ namespace opticsdotnet.Lib
         readonly Line2D Flat = new Line2D(0, 0, PiOver2);
 
 
-        public void AxiRayTrace(double thisZ0, AxiDrift previousDrift, IEnumerable<AxiRay> axiRays)
+        public IEnumerable<AxiRay> AxiRayTrace(double thisZ0, AxiDrift previousDrift, IEnumerable<AxiRay> axiRays)
         {
             foreach (AxiRay axiRay in axiRays)
             {
                 AxiRayState currentState = axiRay.GetCurrentState();
 
-                if (!currentState.Theta.HasValue) { continue; }
+                if (!currentState.Theta.HasValue) { yield return axiRay; continue; }
 
-                if (!currentState.Intensity.HasValue) { continue; }
+                if (!currentState.Intensity.HasValue) { yield return axiRay; continue; }
 
                 //Relative to the point we care about where this flat intersects the axis
                 Line2D incomingLine = new Line2D(currentState.Z0 - thisZ0, currentState.R0, currentState.Theta.Value);
@@ -36,6 +36,8 @@ namespace opticsdotnet.Lib
                 }
 
                 axiRay.AddRange(new AxiRayState(intersectionPoint.X + thisZ0, intersectionPoint.Y, currentState.Theta, currentState.WaveLength, newIntensity));
+
+                yield return axiRay;
             }
         }
 
