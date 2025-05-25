@@ -67,22 +67,7 @@
                 AxiElements[i].AxiRayTrace(AxiElementOffsets[i], AxiDrifts[i], AxiDrifts[i + 1], AxiRays);
             }
 
-
-
-
-
-
-
-
-
-            
-
-
-
-
-
-
-
+            AxiRayTerminator.AxiRayTrace(AxiRayTerminatorOffset, AxiDrifts[AxiDrifts.Length - 1], AxiRays);
         }
 
         public Line2D[] LinesOut()//TODO: this might be removed very soon

@@ -1,10 +1,47 @@
-﻿namespace opticsdotnet.Lib
+﻿using static opticsdotnet.Lib.MathUtil;
+
+namespace opticsdotnet.Lib
 {
     public sealed class AxiFlatTerminator : IAxiRayTerminator
     {
+        readonly Line2D Flat = new Line2D(0, 0, PiOver2);
+
+
+        public void AxiRayTrace(double thisZ0, AxiDrift previousDrift, AxiRay[] axiRays)
+        {
+            foreach (AxiRay axiRay in axiRays)
+            {
+                AxiRayState currentState = axiRay.GetCurrentState();
+
+                if (!currentState.Theta.HasValue) { continue; }
+
+                if (!currentState.Intensity.HasValue) { continue; }
+
+                //Relative to the point we care about where this flat intersects the axis
+                Line2D incomingLine = new Line2D(currentState.Z0 - thisZ0, currentState.R0, currentState.Theta.Value);
+
+                Point2D intersectionPoint = Geo2D.LineIntersectLine(incomingLine, Flat);
+
+                double? absorptionCoefficientLeft = previousDrift.OpticalMaterial.AbsorptionCoefficient(currentState.WaveLength);
+
+                double? newIntensity = null;
+                if (absorptionCoefficientLeft.HasValue)
+                {
+                    double driftLength = Math.Sqrt(
+                                                    Sq((intersectionPoint.X + thisZ0) - currentState.Z0) +
+                                                    Sq(intersectionPoint.Y - currentState.R0)
+                                                );
+
+                    newIntensity = currentState.Intensity * Math.Exp(-driftLength * absorptionCoefficientLeft.Value);
+                }
+
+                axiRay.AddRange(new AxiRayState(intersectionPoint.X + thisZ0, intersectionPoint.Y, currentState.Theta, currentState.WaveLength, newIntensity));
+            }
+        }
+
         public string RenderMathematica()
         {
-            return (new Line2D(0, 0, Math.PI / 2)).RenderMathematica();
+            return Flat.RenderMathematica();
         }
     }
 }
