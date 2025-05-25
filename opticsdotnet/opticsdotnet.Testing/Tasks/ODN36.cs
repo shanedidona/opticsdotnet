@@ -12,7 +12,7 @@ namespace opticsdotnet.Testing.ODN36
             var axiDenseSource = new AxiDenseSource(
                                             new double[] { -0.001, 0 },
                                             new double[] { -0.001, 0, 0.001 },
-                                            new double[] { -0.2, -0.05, 0, 0.05, 0.2 },
+                                            new double[] { -0.1, -0.05, 0, 0.05, 0.1 },
                                             new double[] { 500, 600, 700 },
                                             1.0
                                         );
