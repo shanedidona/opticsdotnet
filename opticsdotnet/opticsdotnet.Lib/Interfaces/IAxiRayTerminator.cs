@@ -2,6 +2,6 @@
 {
     public interface IAxiRayTerminator : IMathematicaRenderable
     {
-        public void AxiRayTrace(double thisZ0, AxiDrift previousDrift, AxiRay[] axiRays);
+        public void AxiRayTrace(double thisZ0, AxiDrift previousDrift, IEnumerable<AxiRay> axiRays);
     }
 }

@@ -7,7 +7,7 @@ namespace opticsdotnet.Lib
         readonly Line2D Flat = new Line2D(0, 0, PiOver2);
 
 
-        public void AxiRayTrace(double thisZ0, AxiDrift previousDrift, AxiRay[] axiRays)
+        public void AxiRayTrace(double thisZ0, AxiDrift previousDrift, IEnumerable<AxiRay> axiRays)
         {
             foreach (AxiRay axiRay in axiRays)
             {
