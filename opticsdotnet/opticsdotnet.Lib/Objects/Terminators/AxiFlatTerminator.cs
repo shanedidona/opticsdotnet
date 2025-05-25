@@ -35,7 +35,7 @@ namespace opticsdotnet.Lib
                     newIntensity = currentState.Intensity * Math.Exp(-driftLength * absorptionCoefficientLeft.Value);
                 }
 
-                axiRay.AddRange(new AxiRayState(intersectionPoint.X, thisZ0, currentState.Theta, currentState.WaveLength, newIntensity));
+                axiRay.AddRange(new AxiRayState(intersectionPoint.X + thisZ0, intersectionPoint.Y, currentState.Theta, currentState.WaveLength, newIntensity));
             }
         }
 
