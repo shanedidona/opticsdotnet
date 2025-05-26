@@ -7,6 +7,7 @@
         public readonly double? Theta;
         public readonly double WaveLength;
         public readonly double? Intensity;
+        public readonly bool IsLive;
 
         public AxiRayState(double z0, double r0, double? theta, double waveLength, double? intensity)
         {
@@ -15,6 +16,8 @@
             Theta = theta;
             WaveLength = waveLength;
             Intensity = intensity;
+
+            IsLive = Theta.HasValue && Intensity.HasValue;
         }
     }
 }
