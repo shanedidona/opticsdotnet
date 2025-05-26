@@ -104,5 +104,24 @@ namespace opticsdotnet.Lib
 
             return thetaOut;
         }
+
+        public static double? CalculateNewIntensity(
+                this IOpticalMaterial opticalMaterial,
+                double waveLength,
+                double driftLength,
+                double oldIntensity
+            )
+        {
+            double? absorptionCoefficient = opticalMaterial.AbsorptionCoefficient(waveLength);
+
+            if (absorptionCoefficient.HasValue)
+            {
+                return oldIntensity * Math.Exp(-driftLength * absorptionCoefficient.Value);
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }
