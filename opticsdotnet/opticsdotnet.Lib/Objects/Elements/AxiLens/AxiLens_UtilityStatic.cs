@@ -127,6 +127,13 @@ namespace opticsdotnet.Lib
                                                     Sq(intersectionPoint.Y - currentState.R0)
                                                 );
 
+
+
+
+
+
+
+
                 double? newIntensity = null;
                 if (absorptionCoefficientLeft.HasValue)
                 {
