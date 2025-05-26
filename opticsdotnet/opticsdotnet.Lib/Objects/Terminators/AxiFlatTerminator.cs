@@ -13,9 +13,7 @@ namespace opticsdotnet.Lib
             {
                 AxiRayState currentState = axiRay.GetCurrentState();
 
-                if (!currentState.Theta.HasValue) { continue; }
-
-                if (!currentState.Intensity.HasValue) { continue; }
+                if (!currentState.IsLive) { continue; }
 
                 //Relative to the point we care about where this flat intersects the axis
                 Line2D incomingLine = new Line2D(currentState.Z0 - thisZ0, currentState.R0, currentState.Theta.Value);
