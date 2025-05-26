@@ -71,6 +71,11 @@ namespace opticsdotnet.Lib
                                                     Sq(point.Y - currentState.R0)
                                                 );
 
+
+
+
+
+
                 double? absorptionCoefficientLeft = opticalMaterialLeft.AbsorptionCoefficient(currentState.WaveLength);
 
                 double? newIntensity = null;
