@@ -12,6 +12,7 @@
         readonly double AxiRayTerminatorOffset;
 
         AxiRay[] AxiRays;
+        AxiRay[] AxiRaysAtTerminator;
 
         public AxiOpticalSystem(
                 IAxiRaySource axiRaySource,
@@ -61,13 +62,16 @@
             }
 
             AxiRays = AxiRaySource.AxiRays().ToArray();
+            AxiRay[] axiRaysToTrace = AxiRays;
 
             for (int i = 0; i < NumOpticalElements; i++)
             {
-                AxiElements[i].AxiRayTrace(AxiElementOffsets[i], AxiDrifts[i], AxiDrifts[i + 1], AxiRays);
+                axiRaysToTrace = AxiElements[i].AxiRayTrace(AxiElementOffsets[i], AxiDrifts[i], AxiDrifts[i + 1], axiRaysToTrace).ToArray();
             }
 
-            AxiRayTerminator.AxiRayTrace(AxiRayTerminatorOffset, AxiDrifts[AxiDrifts.Length - 1], AxiRays);
+            AxiRaysAtTerminator = AxiRayTerminator.AxiRayTrace(AxiRayTerminatorOffset, AxiDrifts[AxiDrifts.Length - 1], axiRaysToTrace)
+                .Where(axiRay => axiRay.GetCurrentState().IsLive)
+                .ToArray();
         }
 
         public Line2D[] LinesOut()//TODO: this might be removed very soon

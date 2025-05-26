@@ -7,7 +7,7 @@ namespace opticsdotnet.Lib
         readonly Line2D Flat = new Line2D(0, 0, PiOver2);
 
 
-        public void AxiRayTrace(double thisZ0, AxiDrift previousDrift, AxiRay[] axiRays)
+        public IEnumerable<AxiRay> AxiRayTrace(double thisZ0, AxiDrift previousDrift, IEnumerable<AxiRay> axiRays)
         {
             foreach (AxiRay axiRay in axiRays)
             {
@@ -36,6 +36,8 @@ namespace opticsdotnet.Lib
                 }
 
                 axiRay.AddRange(new AxiRayState(intersectionPoint.X + thisZ0, intersectionPoint.Y, currentState.Theta, currentState.WaveLength, newIntensity));
+
+                yield return axiRay;
             }
         }
 
