@@ -69,7 +69,9 @@
                 raysToTrace = AxiElements[i].AxiRayTrace(AxiElementOffsets[i], AxiDrifts[i], AxiDrifts[i + 1], raysToTrace).ToArray();
             }
 
-            AxiRaysAtTerminator = AxiRayTerminator.AxiRayTrace(AxiRayTerminatorOffset, AxiDrifts[AxiDrifts.Length - 1], raysToTrace).ToArray();
+            AxiRaysAtTerminator = AxiRayTerminator.AxiRayTrace(AxiRayTerminatorOffset, AxiDrifts[AxiDrifts.Length - 1], raysToTrace)
+                .Where(axiRay => axiRay.GetCurrentState().IsLive)
+                .ToArray();
         }
 
         public Line2D[] LinesOut()//TODO: this might be removed very soon
