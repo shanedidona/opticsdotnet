@@ -62,13 +62,14 @@
             }
 
             AxiRays = AxiRaySource.AxiRays().ToArray();
+            AxiRay[] raysToTrace = AxiRays;
 
             for (int i = 0; i < NumOpticalElements; i++)
             {
-                AxiElements[i].AxiRayTrace(AxiElementOffsets[i], AxiDrifts[i], AxiDrifts[i + 1], AxiRays).ToArray();
+                raysToTrace = AxiElements[i].AxiRayTrace(AxiElementOffsets[i], AxiDrifts[i], AxiDrifts[i + 1], raysToTrace).ToArray();
             }
 
-            AxiRaysAtTerminator = AxiRayTerminator.AxiRayTrace(AxiRayTerminatorOffset, AxiDrifts[AxiDrifts.Length - 1], AxiRays).ToArray();
+            AxiRaysAtTerminator = AxiRayTerminator.AxiRayTrace(AxiRayTerminatorOffset, AxiDrifts[AxiDrifts.Length - 1], raysToTrace).ToArray();
         }
 
         public Line2D[] LinesOut()//TODO: this might be removed very soon
