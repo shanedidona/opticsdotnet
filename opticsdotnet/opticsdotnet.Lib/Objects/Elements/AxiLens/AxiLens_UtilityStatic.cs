@@ -21,9 +21,7 @@ namespace opticsdotnet.Lib
 
             AxiRayState currentState = axiRay.GetCurrentState();
 
-            if (!currentState.Theta.HasValue) { return; }
-
-            if (!currentState.Intensity.HasValue) { return; }
+            if (!currentState.IsLive) { return; }
 
             //Relative to the point we care about where this circle intersects the axis
             Line2D incomingLine = new Line2D(currentState.Z0 - circleIntersectionWithAxisAbsolute, currentState.R0, currentState.Theta.Value);
@@ -105,9 +103,7 @@ namespace opticsdotnet.Lib
         {
             AxiRayState currentState = axiRay.GetCurrentState();
 
-            if (!currentState.Theta.HasValue) { return; }
-
-            if (!currentState.Intensity.HasValue) { return; }
+            if (!currentState.IsLive) { return; }
 
             //Relative to the point we care about where this flat intersects the axis
             Line2D incomingLine = new Line2D(currentState.Z0 - flatIntersectionWithAxisAbsolute, currentState.R0, currentState.Theta.Value);
