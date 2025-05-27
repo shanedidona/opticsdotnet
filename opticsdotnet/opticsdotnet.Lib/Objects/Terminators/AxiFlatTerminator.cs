@@ -20,6 +20,12 @@ namespace opticsdotnet.Lib
 
                 Point2D intersectionPoint = Geo2D.LineIntersectLine(incomingLine, Flat);
 
+
+
+
+
+
+
                 double? absorptionCoefficientLeft = previousDrift.OpticalMaterial.AbsorptionCoefficient(currentState.WaveLength);
 
                 double? newIntensity = null;
