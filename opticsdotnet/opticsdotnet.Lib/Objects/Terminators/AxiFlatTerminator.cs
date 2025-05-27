@@ -20,24 +20,12 @@ namespace opticsdotnet.Lib
 
                 Point2D intersectionPoint = Geo2D.LineIntersectLine(incomingLine, Flat);
 
-
-
-
-
-
-
-                double? absorptionCoefficientLeft = previousDrift.OpticalMaterial.AbsorptionCoefficient(currentState.WaveLength);
-
-                double? newIntensity = null;
-                if (absorptionCoefficientLeft.HasValue)
-                {
-                    double driftLength = Math.Sqrt(
+                double driftLength = Math.Sqrt(
                                                     Sq((intersectionPoint.X + thisZ0) - currentState.Z0) +
                                                     Sq(intersectionPoint.Y - currentState.R0)
                                                 );
 
-                    newIntensity = currentState.Intensity * Math.Exp(-driftLength * absorptionCoefficientLeft.Value);
-                }
+                double? newIntensity = previousDrift.OpticalMaterial.CalculateNewIntensity(currentState.WaveLength, driftLength, currentState.Intensity.Value);
 
                 axiRay.AddRange(new AxiRayState(intersectionPoint.X + thisZ0, intersectionPoint.Y, currentState.Theta, currentState.WaveLength, newIntensity));
 
