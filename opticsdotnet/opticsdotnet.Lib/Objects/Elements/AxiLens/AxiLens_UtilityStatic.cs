@@ -120,25 +120,12 @@ namespace opticsdotnet.Lib
             }
 
             {
-                double? absorptionCoefficientLeft = opticalMaterialLeft.AbsorptionCoefficient(currentState.WaveLength);
-
                 double driftLength = Math.Sqrt(
                                                     Sq((intersectionPoint.X + flatIntersectionWithAxisAbsolute) - currentState.Z0) +
                                                     Sq(intersectionPoint.Y - currentState.R0)
                                                 );
 
-
-
-
-
-
-
-
-                double? newIntensity = null;
-                if (absorptionCoefficientLeft.HasValue)
-                {
-                    newIntensity = currentState.Intensity * Math.Exp(-driftLength * absorptionCoefficientLeft.Value);
-                }
+                double? newIntensity = opticalMaterialLeft.CalculateNewIntensity(currentState.WaveLength, driftLength, currentState.Intensity.Value);
 
                 double? newTheta = PhysicsUtil.SnellsLawThetaOut(
                                          currentState.Theta.Value,
