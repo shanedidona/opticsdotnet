@@ -2,7 +2,7 @@
 
 namespace opticsdotnet.Lib
 {
-    public sealed partial class AxiLens : IAxiOpticalElement
+    public sealed partial class SphericalSinglet : IAxiOpticalElement
     {
         static void AxiRayTraceCircle(
                 AxiRay axiRay,
