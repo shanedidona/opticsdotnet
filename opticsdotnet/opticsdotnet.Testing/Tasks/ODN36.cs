@@ -96,7 +96,7 @@ namespace opticsdotnet.Testing.ODN36
             double frontDriftLength = 0.01;
             double backDriftLength = 0.01;
 
-            var testDatas = new List<(AxiLens AxiLens1, double EexpectedFocalZRelToBack, double TestWaveLengthNM)>();
+            var testDatas = new List<(SphericalSinglet SphericalSinglet1, double EexpectedFocalZRelToBack, double TestWaveLengthNM)>();
 
             testDatas.Add((opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1859(), 0.0153, 587.6));
 
@@ -119,7 +119,7 @@ namespace opticsdotnet.Testing.ODN36
                                         testData.TestWaveLengthNM,
                                         frontDriftLength,
                                         backDriftLength,
-                                        testData.AxiLens1
+                                        testData.SphericalSinglet1
                                     )
                                 );
             }
