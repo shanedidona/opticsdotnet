@@ -71,7 +71,7 @@ namespace opticsdotnet.Lib
 
         public double CenterLength => CenterThickness;
 
-        public AxiLens ReturnFlipped() => new AxiLens(OpticalMaterial, CenterThickness, OuterRadius, Radius2, Radius1);
+        public SphericalSinglet ReturnFlipped() => new SphericalSinglet(OpticalMaterial, CenterThickness, OuterRadius, Radius2, Radius1);
 
         public string RenderMathematica()
         {
