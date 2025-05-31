@@ -2,9 +2,9 @@
 
 namespace opticsdotnet.Lib
 {
-    public sealed partial class AxiLens : IAxiOpticalElement
+    public sealed partial class SphericalSinglet : IAxiOpticalElement
     {
-        public AxiLens(IOpticalMaterial opticalMaterial, double centerThickness, double outerRadius, double? radius1, double? radius2)
+        public SphericalSinglet(IOpticalMaterial opticalMaterial, double centerThickness, double outerRadius, double? radius1, double? radius2)
         {
             CenterThickness = centerThickness;
             OuterRadius = outerRadius;
@@ -71,7 +71,7 @@ namespace opticsdotnet.Lib
 
         public double CenterLength => CenterThickness;
 
-        public AxiLens ReturnFlipped() => new AxiLens(OpticalMaterial, CenterThickness, OuterRadius, Radius2, Radius1);
+        public SphericalSinglet ReturnFlipped() => new SphericalSinglet(OpticalMaterial, CenterThickness, OuterRadius, Radius2, Radius1);
 
         public string RenderMathematica()
         {
