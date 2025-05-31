@@ -9,10 +9,10 @@ namespace opticsdotnet.Testing.ODN11
             string saveDir = Path.Combine(Program.BaseSaveDir, "ODN-11");
             Directory.CreateDirectory(saveDir);
 
-            var axiLenses = new List<AxiLens>();
+            var sphericalSinglets = new List<SphericalSinglet>();
 
-            axiLenses.Add(
-                    new AxiLens(
+            sphericalSinglets.Add(
+                    new SphericalSinglet(
                          new NBK7(),
                          0.02,
                          0.05,
@@ -21,8 +21,8 @@ namespace opticsdotnet.Testing.ODN11
                     )
                 );
 
-            axiLenses.Add(
-                    new AxiLens(
+            sphericalSinglets.Add(
+                    new SphericalSinglet(
                          new NBK7(),
                          0.02,
                          0.05,
@@ -31,8 +31,8 @@ namespace opticsdotnet.Testing.ODN11
                     )
                 );
 
-            axiLenses.Add(
-                    new AxiLens(
+            sphericalSinglets.Add(
+                    new SphericalSinglet(
                          new NBK7(),
                          0.02,
                          0.05,
@@ -41,8 +41,8 @@ namespace opticsdotnet.Testing.ODN11
                     )
                 );
 
-            axiLenses.Add(
-                    new AxiLens(
+            sphericalSinglets.Add(
+                    new SphericalSinglet(
                          new NBK7(),
                          0.02,
                          0.05,
@@ -51,8 +51,8 @@ namespace opticsdotnet.Testing.ODN11
                     )
                 );
 
-            axiLenses.Add(
-                    new AxiLens(
+            sphericalSinglets.Add(
+                    new SphericalSinglet(
                          new NBK7(),
                          0.02,
                          0.05,
@@ -61,8 +61,8 @@ namespace opticsdotnet.Testing.ODN11
                     )
                 );
 
-            string[] linesOut = axiLenses.Select(axiLens =>
-                    new MathematicaRenderableMathematicaAdapter(axiLens).RenderMathematicaFunction("Graphics")
+            string[] linesOut = sphericalSinglets.Select(sphericalSinglet =>
+                    new MathematicaRenderableMathematicaAdapter(sphericalSinglet).RenderMathematicaFunction("Graphics")
 
                 ).ToArray();
 
