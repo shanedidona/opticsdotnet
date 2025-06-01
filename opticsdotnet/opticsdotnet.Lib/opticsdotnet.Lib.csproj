@@ -16,6 +16,13 @@
     <None Update="Data\NBK7\NBK7_AttenuationCoeffs.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Data\NSF11\NSF11_AttenuationCoeffs.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\NSF11\" />
   </ItemGroup>
 
 </Project>
