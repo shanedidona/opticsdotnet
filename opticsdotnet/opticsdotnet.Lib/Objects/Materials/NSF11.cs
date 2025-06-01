@@ -6,13 +6,15 @@
         //https://www.thorlabs.com/images/TabImages/Uncoated_N-SF11_Transmission.xlsx
 
 
+        static readonly LinearSplineWithMinMax AbsorptionCoefficientLinearSplineWithMinMax = IOUtil.LinearSplineWithMinMaxFromCSVFile("Data//NSF11//NFS11_AttenuationCoeffs.csv");
+
         public double? IndexOfRefractionMinWavelength => throw new NotImplementedException();
 
         public double? IndexOfRefractionMaxWavelength => throw new NotImplementedException();
 
-        public double? AbsorptionCoefficientMinWavelength => throw new NotImplementedException();
+        public double? AbsorptionCoefficientMinWavelength => AbsorptionCoefficientLinearSplineWithMinMax.MinIndep;
 
-        public double? AbsorptionCoefficientMaxWavelength => throw new NotImplementedException();
+        public double? AbsorptionCoefficientMaxWavelength => AbsorptionCoefficientLinearSplineWithMinMax.MaxIndep;
 
         public double? AbsorptionCoefficient(double wavelength)
         {
