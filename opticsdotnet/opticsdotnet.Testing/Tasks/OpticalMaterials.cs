@@ -1,10 +1,10 @@
 ﻿using opticsdotnet.Lib;
 
-namespace opticsdotnet.Testing.ODN9
+namespace opticsdotnet.Testing.OpticalMaterials
 {
-    public static class ODN9
+    public static class OpticalMaterials
     {
-        public static void ODN9_1()
+        public static void OpticalMaterials_1()
         {
             string saveDir = Path.Combine(Program.BaseSaveDir, "ODN-9");
             Directory.CreateDirectory(saveDir);
