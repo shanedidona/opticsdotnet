@@ -6,18 +6,18 @@ namespace opticsdotnet.Testing.OpticalMaterials
     {
         public static void OpticalMaterials_1()
         {
-
-
-
-
-
-
-
-
-
-
-            string saveDir = Path.Combine(Program.BaseSaveDir, "ODN-9");
+            string saveDir = Path.Combine(Program.BaseSaveDir, "OpticalMaterials");
             Directory.CreateDirectory(saveDir);
+
+
+
+
+
+
+
+
+
+
 
 
 
