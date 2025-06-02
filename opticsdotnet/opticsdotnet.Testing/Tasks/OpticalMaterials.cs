@@ -9,7 +9,7 @@ namespace opticsdotnet.Testing.OpticalMaterials
             string saveDir = Path.Combine(Program.BaseSaveDir, "OpticalMaterials");
             Directory.CreateDirectory(saveDir);
 
-            PhysicsUtil.OpticalMaterialPlot(new NBK7(), Path.Combine(saveDir, "ODN9_1.png"), 1000);
+            PhysicsUtil.OpticalMaterialPlot(new NBK7(), Path.Combine(saveDir, "NBK7.png"), 1000);
         }
     }
 }
