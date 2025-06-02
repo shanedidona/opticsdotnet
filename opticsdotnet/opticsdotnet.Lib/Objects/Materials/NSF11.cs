@@ -24,12 +24,32 @@
 
         public double? AbsorptionCoefficient(double wavelength)
         {
-            throw new NotImplementedException();
+            if (wavelength < AbsorptionCoefficientMinWavelength)
+            {
+                return null;
+            }
+
+            if (AbsorptionCoefficientMaxWavelength < wavelength)
+            {
+                return null;
+            }
+
+            return AbsorptionCoefficientLinearSplineWithMinMax.LinearSpline1.Interpolate(wavelength);
         }
 
         public double? IndexOfRefraction(double wavelength)
         {
-            throw new NotImplementedException();
+            if (wavelength < IndexOfRefractionMinWavelength)
+            {
+                return null;
+            }
+
+            if (IndexOfRefractionMaxWavelength < wavelength)
+            {
+                return null;
+            }
+
+            return PhysicsUtil.SellmeierEvaluate(wavelength, B1, B2, B3, C1, C2, C3);
         }
     }
 }
