@@ -12,7 +12,7 @@
         const double C2 = 0.0623068142;
         const double C3 = 155.23629;
 
-        static readonly LinearSplineWithMinMax AbsorptionCoefficientLinearSplineWithMinMax = IOUtil.LinearSplineWithMinMaxFromCSVFile("Data//NSF11//NFS11_AttenuationCoeffs.csv");
+        static readonly LinearSplineWithMinMax AbsorptionCoefficientLinearSplineWithMinMax = IOUtil.LinearSplineWithMinMaxFromCSVFile("Data//NSF11//NSF11_AttenuationCoeffs.csv");
 
         public double? IndexOfRefractionMinWavelength => 370;
 
