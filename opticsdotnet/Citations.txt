@@ -64,3 +64,9 @@ https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=900
 
 https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/where-generic-type-constraint
 
+https://stackoverflow.com/questions/1472514/convert-light-frequency-to-rgb
+https://stackoverflow.com/a/1472535 for name
+
+
+
+
