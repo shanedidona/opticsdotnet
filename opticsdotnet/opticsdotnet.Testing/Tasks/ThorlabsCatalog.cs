@@ -17,7 +17,8 @@ namespace opticsdotnet.Testing.ThorlabsCatalog
                 NBK7PlanoConvexLensesUncoated(),
                 NBK7PlanoConcaveLensesUncoated(),
                 NBK7PositiveMeniscusLenses(),
-                NBK7OneInchNegativeMeniscusLenses()
+                NBK7OneInchNegativeMeniscusLenses(),
+                NBK7andNSF11BiConcaveLensesUncoated()
             };
 
             string s1 = (new MathematicaRenderableMathematicaAdapter(pages)).RenderMathematica();
