@@ -69,4 +69,7 @@ https://stackoverflow.com/a/1472535 for name
 
 
 
+https://en.wikipedia.org/wiki/CIE_1931_color_space
+CIE 2019, Colour-matching functions of CIE 1931 standard colorimetric observer, International Commission on Illumination (CIE), Vienna, AT, DOI: 10.25039/CIE.DS.xvudnb9b
+https://cie.co.at/datatable/cie-1931-colour-matching-functions-2-degree-observer
 
