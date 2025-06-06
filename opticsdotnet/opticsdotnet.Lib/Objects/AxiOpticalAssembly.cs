@@ -9,17 +9,13 @@
         readonly double[] AxiElementOffsets;
 
 
-        public AxiOpticalSystem(
-                IAxiRaySource axiRaySource,
+        public AxiOpticalAssembly(
                 AxiDrift[] axiDrifts,
-                IAxiOpticalElement[] axiElements,
-                IAxiRayTerminator axiRayTerminator
+                IAxiOpticalElement[] axiElements
             )
         {
-            AxiRaySource = axiRaySource;
             AxiDrifts = axiDrifts;
             AxiElements = axiElements;
-            AxiRayTerminator = axiRayTerminator;
 
             if (axiDrifts.Length < 1)
             {
@@ -45,8 +41,6 @@
                     AxiElementOffsets[i] = AxiElementOffsets[i - 1] + AxiElements[i - 1].CenterLength + AxiDrifts[i].Length1;
                 }
             }
-
-            AxiRayTerminatorOffset = AxiElementOffsets.Last() + AxiDrifts.Last().Length1;
         }
 
 
