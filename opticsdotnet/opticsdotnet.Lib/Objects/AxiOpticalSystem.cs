@@ -30,18 +30,6 @@
 
             AxiRays = AxiRaySource.AxiRays().ToArray();
 
-
-
-
-
-
-
-
-
-
-
-
-
             AxiRay[] axiRaysToTrace = AxiOpticalAssembly1.RayTrace(AxiRays).ToArray();
 
             AxiRaysAtTerminator = AxiRayTerminator.AxiRayTrace(AxiOpticalAssembly1.AxiRayTerminatorOffset, AxiOpticalAssembly1.LastAxiDrift, axiRaysToTrace)
