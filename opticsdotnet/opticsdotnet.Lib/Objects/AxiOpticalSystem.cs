@@ -6,8 +6,6 @@
         readonly AxiOpticalAssembly AxiOpticalAssembly1;
         readonly IAxiRayTerminator AxiRayTerminator;
 
-        readonly int NumOpticalElements;
-        readonly double[] AxiElementOffsets;
         readonly double AxiRayTerminatorOffset;
 
         AxiRay[] AxiRays;
