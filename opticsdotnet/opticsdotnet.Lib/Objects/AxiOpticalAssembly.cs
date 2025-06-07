@@ -1,6 +1,6 @@
 ﻿namespace opticsdotnet.Lib
 {
-    public sealed class AxiOpticalAssembly
+    public sealed class AxiOpticalAssembly : IMathematicaRenderable
     {
         readonly AxiDrift[] AxiDrifts;
         readonly IAxiOpticalElement[] AxiElements;
@@ -99,14 +99,9 @@
 
 
 
-
-
-
-
-
-
-
-
-
+        public string RenderMathematica()
+        {
+            return new MathematicaRenderableMathematicaAdapter(GetMathematicaRenderables()).RenderMathematica();
+        }
     }
 }
