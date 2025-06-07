@@ -29,18 +29,8 @@
 
 
 
-            if (axiDrifts.Length < 1)
-            {
-                throw new NotSupportedException("There must be at least one IAxiDrift");
-            }
+            
 
-            if (axiDrifts.Length != (axiElements.Length + 1))
-            {
-                throw new NotSupportedException("axiDrifts.Length != (axiElements.Length + 1)");
-            }
-
-            NumOpticalElements = AxiElements.Length;
-            AxiElementOffsets = new double[NumOpticalElements];
 
             for (int i = 0; i < NumOpticalElements; i++)
             {
