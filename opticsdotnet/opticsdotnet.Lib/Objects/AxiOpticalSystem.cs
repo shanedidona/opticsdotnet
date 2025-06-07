@@ -44,7 +44,7 @@
 
             AxiRay[] axiRaysToTrace = AxiOpticalAssembly1.RayTrace(AxiRays).ToArray();
 
-            AxiRaysAtTerminator = AxiRayTerminator.AxiRayTrace(AxiRayTerminatorOffset, AxiDrifts[AxiDrifts.Length - 1], axiRaysToTrace)
+            AxiRaysAtTerminator = AxiRayTerminator.AxiRayTrace(AxiOpticalAssembly1.AxiRayTerminatorOffset, AxiOpticalAssembly1.LastAxiDrift, axiRaysToTrace)
                 .Where(axiRay => axiRay.GetCurrentState().IsLive)
                 .ToArray();
         }
