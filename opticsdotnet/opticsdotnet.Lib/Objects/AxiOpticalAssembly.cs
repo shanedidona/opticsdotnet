@@ -7,6 +7,7 @@
 
         readonly int NumOpticalElements;
         readonly double[] AxiElementOffsets;
+        public readonly AxiDrift LastAxiDrift;
         public readonly double AxiRayTerminatorOffset;
 
         public AxiOpticalAssembly(
@@ -42,6 +43,7 @@
                 }
             }
 
+            LastAxiDrift = AxiDrifts.Last();
             AxiRayTerminatorOffset = AxiElementOffsets.Last() + AxiDrifts.Last().Length1;
         }
 
