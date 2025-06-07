@@ -42,12 +42,7 @@
 
 
 
-            AxiRay[] axiRaysToTrace = AxiRays;
-
-            for (int i = 0; i < NumOpticalElements; i++)
-            {
-                axiRaysToTrace = AxiElements[i].AxiRayTrace(AxiElementOffsets[i], AxiDrifts[i], AxiDrifts[i + 1], axiRaysToTrace).ToArray();
-            }
+            AxiRay[] axiRaysToTrace = AxiOpticalAssembly1.RayTrace(AxiRays).ToArray();
 
             AxiRaysAtTerminator = AxiRayTerminator.AxiRayTrace(AxiRayTerminatorOffset, AxiDrifts[AxiDrifts.Length - 1], axiRaysToTrace)
                 .Where(axiRay => axiRay.GetCurrentState().IsLive)
