@@ -76,5 +76,17 @@
         {
             return new MathematicaRenderableMathematicaAdapter(GetMathematicaRenderables()).RenderMathematica();
         }
+
+        public IEnumerable<AxiRay> RayTrace(IEnumerable<AxiRay> axiRays)
+        {
+            IEnumerable<AxiRay> axiRaysToTrace = axiRays;
+
+            for (int i = 0; i < NumOpticalElements; i++)
+            {
+                axiRaysToTrace = AxiElements[i].AxiRayTrace(AxiElementOffsets[i], AxiDrifts[i], AxiDrifts[i + 1], axiRaysToTrace).ToArray();
+            }
+
+            return axiRaysToTrace;
+        }
     }
 }
