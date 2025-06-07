@@ -48,17 +48,11 @@
             var objectsToRender = new List<IMathematicaRenderable>();
             var offsetsForRender = new List<double[]>();
 
-            objectsToRender.Add(AxiRaySource);
-            offsetsForRender.Add(new double[] { 0, 0 });
-
             for (int i = 0; i < NumOpticalElements; i++)
             {
                 objectsToRender.Add(AxiElements[i]);
                 offsetsForRender.Add(new double[] { AxiElementOffsets[i], 0 });
             }
-
-            objectsToRender.Add(AxiRayTerminator);
-            offsetsForRender.Add(new double[] { AxiRayTerminatorOffset, 0 });
 
             var mathematicaRenderables = new List<IMathematicaRenderable>();
             for (int i = 0; i < objectsToRender.Count; i++)
