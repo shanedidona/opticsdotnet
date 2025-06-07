@@ -23,24 +23,25 @@
 
         public void RayTrace()
         {
-
-
-
-
-
-
-
-
-
-
-
-
             if (AxiRays != null)
             {
                 throw new NotSupportedException("AxiRays != null");
             }
 
             AxiRays = AxiRaySource.AxiRays().ToArray();
+
+
+
+
+
+
+
+
+
+
+
+
+
             AxiRay[] axiRaysToTrace = AxiRays;
 
             for (int i = 0; i < NumOpticalElements; i++)
