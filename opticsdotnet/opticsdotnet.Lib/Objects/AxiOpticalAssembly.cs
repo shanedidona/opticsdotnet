@@ -70,11 +70,6 @@
             return mathematicaRenderables.ToArray();
         }
 
-
-
-
-
-
         public string RenderMathematica()
         {
             return new MathematicaRenderableMathematicaAdapter(GetMathematicaRenderables()).RenderMathematica();
