@@ -3,8 +3,7 @@
     public sealed class AxiOpticalSystem : IMathematicaRenderable
     {
         readonly IAxiRaySource AxiRaySource;
-        readonly AxiDrift[] AxiDrifts;
-        readonly IAxiOpticalElement[] AxiElements;
+        readonly AxiOpticalAssembly AxiOpticalAssembly1;
         readonly IAxiRayTerminator AxiRayTerminator;
 
         readonly int NumOpticalElements;
@@ -22,9 +21,15 @@
             )
         {
             AxiRaySource = axiRaySource;
-            AxiDrifts = axiDrifts;
-            AxiElements = axiElements;
+            AxiOpticalAssembly1 = new AxiOpticalAssembly(axiDrifts, axiElements);
             AxiRayTerminator = axiRayTerminator;
+
+
+
+
+
+
+
 
             if (axiDrifts.Length < 1)
             {
