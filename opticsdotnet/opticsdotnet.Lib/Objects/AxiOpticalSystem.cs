@@ -6,8 +6,6 @@
         readonly AxiOpticalAssembly AxiOpticalAssembly1;
         readonly IAxiRayTerminator AxiRayTerminator;
 
-        readonly double AxiRayTerminatorOffset;
-
         AxiRay[] AxiRays;
         AxiRay[] AxiRaysAtTerminator;
 
@@ -34,7 +32,7 @@
 
             
 
-            AxiRayTerminatorOffset = AxiElementOffsets.Last() + AxiDrifts.Last().Length1;
+            
         }
 
         public void RayTrace()

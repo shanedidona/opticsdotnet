@@ -7,7 +7,7 @@
 
         readonly int NumOpticalElements;
         readonly double[] AxiElementOffsets;
-
+        public readonly double AxiRayTerminatorOffset;
 
         public AxiOpticalAssembly(
                 AxiDrift[] axiDrifts,
@@ -41,6 +41,8 @@
                     AxiElementOffsets[i] = AxiElementOffsets[i - 1] + AxiElements[i - 1].CenterLength + AxiDrifts[i].Length1;
                 }
             }
+
+            AxiRayTerminatorOffset = AxiElementOffsets.Last() + AxiDrifts.Last().Length1;
         }
 
         public IMathematicaRenderable[] GetMathematicaRenderables()
