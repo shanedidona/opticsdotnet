@@ -19,24 +19,22 @@
             AxiRaySource = axiRaySource;
             AxiOpticalAssembly1 = new AxiOpticalAssembly(axiDrifts, axiElements);
             AxiRayTerminator = axiRayTerminator;
-
-
-
-
-
-
-
-
-            
-
-
-            
-
-            
         }
 
         public void RayTrace()
         {
+
+
+
+
+
+
+
+
+
+
+
+
             if (AxiRays != null)
             {
                 throw new NotSupportedException("AxiRays != null");
