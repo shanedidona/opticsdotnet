@@ -67,15 +67,7 @@
                 mathematicaRenderables.Add(new AlreadyMathematicaRenderedMathematicaAdapter(renderedTranslated));
             }
 
-            if (AxiRays != null)
-            {
-                foreach (AxiRay axiRay in AxiRays)
-                {
-                    mathematicaRenderables.Add(axiRay);
-                }
-            }
-
-            return new MathematicaRenderableMathematicaAdapter(mathematicaRenderables.ToArray()).RenderMathematica();
+            return mathematicaRenderables.ToArray();
         }
 
 
