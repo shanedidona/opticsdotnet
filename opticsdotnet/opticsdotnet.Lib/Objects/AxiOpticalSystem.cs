@@ -50,6 +50,19 @@
 
         public string RenderMathematica()
         {
+
+
+
+
+
+
+
+
+
+
+
+
+
             var objectsToRender = new List<IMathematicaRenderable>();
             var offsetsForRender = new List<double[]>();
 
