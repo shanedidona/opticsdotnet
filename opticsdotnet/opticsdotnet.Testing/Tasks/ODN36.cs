@@ -34,9 +34,11 @@ namespace opticsdotnet.Testing.ODN36
 
             var axiRayTerminator = new AxiFlatTerminator();
 
+            AxiOpticalAssembly axiOpticalAssembly = new AxiOpticalAssembly(axiDrifts, axiElements);
+
 
             AxiOpticalSystem axiOpticalSystem = new AxiOpticalSystem(
-                    axiDenseSource, axiDrifts, axiElements, axiRayTerminator
+                    axiDenseSource, axiOpticalAssembly, axiRayTerminator
                 );
 
             axiOpticalSystem.RayTrace();
