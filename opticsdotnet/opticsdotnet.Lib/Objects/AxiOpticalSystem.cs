@@ -50,6 +50,7 @@
 
         public string RenderMathematica()
         {
+            var mathematicaRenderables = new List<IMathematicaRenderable>();
 
 
 
