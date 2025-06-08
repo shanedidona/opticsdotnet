@@ -69,6 +69,11 @@ namespace opticsdotnet.Lib
             }
         }
 
+        public AxiRay AxiRayTraceSingleRay(double thisZ0, AxiDrift previousDrift, AxiDrift nextDrift, AxiRay axiRay)
+        {
+            throw new NotImplementedException();
+        }
+
         public double CenterLength => CenterThickness;
 
         public SphericalSinglet ReturnFlipped() => new SphericalSinglet(OpticalMaterial, CenterThickness, OuterRadius, Radius2, Radius1);
