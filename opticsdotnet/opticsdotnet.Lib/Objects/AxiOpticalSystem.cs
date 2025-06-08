@@ -72,7 +72,10 @@
                 mathematicaRenderables.Add(new AlreadyMathematicaRenderedMathematicaAdapter(renderedTranslated));
             }
 
-
+            mathematicaRenderables = AxiOpticalAssembly1.GetMathematicaRenderables()
+                .Prepend(mathematicaRenderables.First())
+                .Append(mathematicaRenderables.Last())
+                .ToList();
 
 
 
