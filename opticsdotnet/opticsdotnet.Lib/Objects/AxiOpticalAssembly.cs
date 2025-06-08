@@ -90,5 +90,22 @@
 
             return axiRaysToTrace;
         }
+
+        public AxiRay RayTraceSingleRay(AxiRay axiRay)
+        {
+            AxiRay out1 = axiRay;
+
+            for (int i = 0; i < NumOpticalElements; i++)
+            {
+                if (!axiRay.GetCurrentState().IsLive)
+                {
+                    return axiRay;
+                }
+
+                out1 = AxiElements[i].AxiRayTraceSingleRay(AxiElementOffsets[i], AxiDrifts[i], AxiDrifts[i + 1], axiRay);
+            }
+
+            return axiRay;
+        }
     }
 }
