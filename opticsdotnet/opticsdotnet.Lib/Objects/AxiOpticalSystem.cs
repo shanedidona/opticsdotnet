@@ -56,19 +56,8 @@
             objectsToRender.Add(AxiRaySource);
             offsetsForRender.Add(new double[] { 0, 0 });
 
-
-
-
-
-
-
-
-
-
-            
-
             objectsToRender.Add(AxiRayTerminator);
-            offsetsForRender.Add(new double[] { AxiRayTerminatorOffset, 0 });
+            offsetsForRender.Add(new double[] { AxiOpticalAssembly1.AxiRayTerminatorOffset, 0 });
 
             var mathematicaRenderables = new List<IMathematicaRenderable>();
             for (int i = 0; i < objectsToRender.Count; i++)
@@ -82,6 +71,17 @@
 
                 mathematicaRenderables.Add(new AlreadyMathematicaRenderedMathematicaAdapter(renderedTranslated));
             }
+
+
+
+
+
+
+
+
+
+
+
 
             if (AxiRays != null)
             {
