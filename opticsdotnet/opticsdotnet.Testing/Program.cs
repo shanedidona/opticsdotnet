@@ -13,6 +13,8 @@ namespace opticsdotnet.Testing
             opticsdotnet.Testing.ThorlabsCatalog.ThorlabsCatalog.ThorlabsCatalog_Run();
 
             opticsdotnet.Testing.ODN36.ODN36.ODN36_3();
+
+            opticsdotnet.Testing.ODN36.ODN36.ODN36_1();
         }
     }
 }

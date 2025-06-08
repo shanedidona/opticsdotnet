@@ -3,13 +3,8 @@
     public sealed class AxiOpticalSystem : IMathematicaRenderable
     {
         readonly IAxiRaySource AxiRaySource;
-        readonly AxiDrift[] AxiDrifts;
-        readonly IAxiOpticalElement[] AxiElements;
+        readonly AxiOpticalAssembly AxiOpticalAssembly1;
         readonly IAxiRayTerminator AxiRayTerminator;
-
-        readonly int NumOpticalElements;
-        readonly double[] AxiElementOffsets;
-        readonly double AxiRayTerminatorOffset;
 
         AxiRay[] AxiRays;
         AxiRay[] AxiRaysAtTerminator;
@@ -22,36 +17,8 @@
             )
         {
             AxiRaySource = axiRaySource;
-            AxiDrifts = axiDrifts;
-            AxiElements = axiElements;
+            AxiOpticalAssembly1 = new AxiOpticalAssembly(axiDrifts, axiElements);
             AxiRayTerminator = axiRayTerminator;
-
-            if (axiDrifts.Length < 1)
-            {
-                throw new NotSupportedException("There must be at least one IAxiDrift");
-            }
-
-            if (axiDrifts.Length != (axiElements.Length + 1))
-            {
-                throw new NotSupportedException("axiDrifts.Length != (axiElements.Length + 1)");
-            }
-
-            NumOpticalElements = AxiElements.Length;
-            AxiElementOffsets = new double[NumOpticalElements];
-
-            for (int i = 0; i < NumOpticalElements; i++)
-            {
-                if (i == 0)
-                {
-                    AxiElementOffsets[0] = AxiDrifts[0].Length1;
-                }
-                else
-                {
-                    AxiElementOffsets[i] = AxiElementOffsets[i - 1] + AxiElements[i - 1].CenterLength + AxiDrifts[i].Length1;
-                }
-            }
-
-            AxiRayTerminatorOffset = AxiElementOffsets.Last() + AxiDrifts.Last().Length1;
         }
 
         public void RayTrace()
@@ -62,14 +29,12 @@
             }
 
             AxiRays = AxiRaySource.AxiRays().ToArray();
-            AxiRay[] axiRaysToTrace = AxiRays;
 
-            for (int i = 0; i < NumOpticalElements; i++)
-            {
-                axiRaysToTrace = AxiElements[i].AxiRayTrace(AxiElementOffsets[i], AxiDrifts[i], AxiDrifts[i + 1], axiRaysToTrace).ToArray();
-            }
-
-            AxiRaysAtTerminator = AxiRayTerminator.AxiRayTrace(AxiRayTerminatorOffset, AxiDrifts[AxiDrifts.Length - 1], axiRaysToTrace)
+            AxiRaysAtTerminator = AxiRayTerminator.AxiRayTrace(
+                    AxiOpticalAssembly1.AxiRayTerminatorOffset,
+                    AxiOpticalAssembly1.LastAxiDrift,
+                    AxiOpticalAssembly1.RayTrace(AxiRays)
+                )
                 .Where(axiRay => axiRay.GetCurrentState().IsLive)
                 .ToArray();
         }
@@ -91,14 +56,8 @@
             objectsToRender.Add(AxiRaySource);
             offsetsForRender.Add(new double[] { 0, 0 });
 
-            for (int i = 0; i < NumOpticalElements; i++)
-            {
-                objectsToRender.Add(AxiElements[i]);
-                offsetsForRender.Add(new double[] { AxiElementOffsets[i], 0 });
-            }
-
             objectsToRender.Add(AxiRayTerminator);
-            offsetsForRender.Add(new double[] { AxiRayTerminatorOffset, 0 });
+            offsetsForRender.Add(new double[] { AxiOpticalAssembly1.AxiRayTerminatorOffset, 0 });
 
             var mathematicaRenderables = new List<IMathematicaRenderable>();
             for (int i = 0; i < objectsToRender.Count; i++)
@@ -112,6 +71,11 @@
 
                 mathematicaRenderables.Add(new AlreadyMathematicaRenderedMathematicaAdapter(renderedTranslated));
             }
+
+            mathematicaRenderables = AxiOpticalAssembly1.GetMathematicaRenderables()
+                .Prepend(mathematicaRenderables.First())
+                .Append(mathematicaRenderables.Last())
+                .ToList();
 
             if (AxiRays != null)
             {
