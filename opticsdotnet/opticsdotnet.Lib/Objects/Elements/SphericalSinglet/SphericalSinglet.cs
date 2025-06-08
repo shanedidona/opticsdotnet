@@ -17,61 +17,61 @@ namespace opticsdotnet.Lib
         {
             foreach (AxiRay axiRay in axiRays)
             {
-                //Rays Hitting Left Surface or nothing
-                if (Radius1.HasValue)
-                {
-                    AxiRayTraceCircle(
-                            axiRay,
-                            previousDrift.OpticalMaterial,
-                            OpticalMaterial,
-                            thisZ0,
-                            OuterRadius,
-                            Math.Abs(Radius1.Value),
-                            0 < Radius1.Value
-                        );
-                }
-                else
-                {
-                    AxiRayTraceFlat(
-                            axiRay,
-                            previousDrift.OpticalMaterial,
-                            OpticalMaterial,
-                            thisZ0,
-                            OuterRadius
-                        );
-                }
                 
-                //Rays Hitting Right Surface or Nothing
-                if (Radius2.HasValue)
-                {
-                    AxiRayTraceCircle(
-                            axiRay,
-                            OpticalMaterial,
-                            nextDrift.OpticalMaterial,
-                            thisZ0 + CenterThickness,
-                            OuterRadius,
-                            Math.Abs(Radius2.Value),
-                            Radius2.Value < 0
-                        );
-                }
-                else
-                {
-                    AxiRayTraceFlat(
-                            axiRay,
-                            OpticalMaterial,
-                            nextDrift.OpticalMaterial,
-                            thisZ0 + CenterThickness,
-                            OuterRadius
-                        );
-                }
-
-                yield return axiRay;
             }
         }
 
         public AxiRay AxiRayTraceSingleRay(double thisZ0, AxiDrift previousDrift, AxiDrift nextDrift, AxiRay axiRay)
         {
-            throw new NotImplementedException();
+            //Rays Hitting Left Surface or nothing
+            if (Radius1.HasValue)
+            {
+                AxiRayTraceCircle(
+                        axiRay,
+                        previousDrift.OpticalMaterial,
+                        OpticalMaterial,
+                        thisZ0,
+                        OuterRadius,
+                        Math.Abs(Radius1.Value),
+                        0 < Radius1.Value
+                    );
+            }
+            else
+            {
+                AxiRayTraceFlat(
+                        axiRay,
+                        previousDrift.OpticalMaterial,
+                        OpticalMaterial,
+                        thisZ0,
+                        OuterRadius
+                    );
+            }
+
+            //Rays Hitting Right Surface or Nothing
+            if (Radius2.HasValue)
+            {
+                AxiRayTraceCircle(
+                        axiRay,
+                        OpticalMaterial,
+                        nextDrift.OpticalMaterial,
+                        thisZ0 + CenterThickness,
+                        OuterRadius,
+                        Math.Abs(Radius2.Value),
+                        Radius2.Value < 0
+                    );
+            }
+            else
+            {
+                AxiRayTraceFlat(
+                        axiRay,
+                        OpticalMaterial,
+                        nextDrift.OpticalMaterial,
+                        thisZ0 + CenterThickness,
+                        OuterRadius
+                    );
+            }
+
+            yield return axiRay;
         }
 
         public double CenterLength => CenterThickness;
