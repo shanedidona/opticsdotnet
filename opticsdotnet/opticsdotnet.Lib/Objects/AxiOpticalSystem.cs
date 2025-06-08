@@ -77,15 +77,6 @@
                 .Append(mathematicaRenderables.Last())
                 .ToList();
 
-
-
-
-
-
-
-
-
-
             if (AxiRays != null)
             {
                 foreach (AxiRay axiRay in AxiRays)
