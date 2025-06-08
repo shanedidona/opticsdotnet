@@ -71,7 +71,7 @@ namespace opticsdotnet.Lib
                     );
             }
 
-            yield return axiRay;
+            return axiRay;
         }
 
         public double CenterLength => CenterThickness;
