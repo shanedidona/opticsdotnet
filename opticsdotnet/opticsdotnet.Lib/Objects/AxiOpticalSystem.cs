@@ -50,24 +50,14 @@
 
         public string RenderMathematica()
         {
-
-
-
-
-
-
-
-
-
-
-
-
-
             var objectsToRender = new List<IMathematicaRenderable>();
             var offsetsForRender = new List<double[]>();
 
             objectsToRender.Add(AxiRaySource);
             offsetsForRender.Add(new double[] { 0, 0 });
+
+
+
 
 
 
