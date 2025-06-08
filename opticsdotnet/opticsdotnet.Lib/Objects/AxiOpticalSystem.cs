@@ -65,11 +65,7 @@
 
 
 
-            for (int i = 0; i < NumOpticalElements; i++)
-            {
-                objectsToRender.Add(AxiElements[i]);
-                offsetsForRender.Add(new double[] { AxiElementOffsets[i], 0 });
-            }
+            
 
             objectsToRender.Add(AxiRayTerminator);
             offsetsForRender.Add(new double[] { AxiRayTerminatorOffset, 0 });
