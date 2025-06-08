@@ -99,13 +99,13 @@
             {
                 if (!axiRay.GetCurrentState().IsLive)
                 {
-                    return axiRay;
+                    return out1;
                 }
 
                 out1 = AxiElements[i].AxiRayTraceSingleRay(AxiElementOffsets[i], AxiDrifts[i], AxiDrifts[i + 1], axiRay);
             }
 
-            return axiRay;
+            return out1;
         }
     }
 }
