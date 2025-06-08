@@ -17,7 +17,7 @@ namespace opticsdotnet.Lib
         {
             foreach (AxiRay axiRay in axiRays)
             {
-                
+                yield return AxiRayTraceSingleRay(thisZ0, previousDrift, nextDrift, axiRay);
             }
         }
 
