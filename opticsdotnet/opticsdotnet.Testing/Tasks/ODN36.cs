@@ -46,6 +46,16 @@ namespace opticsdotnet.Testing.ODN36
             string string1 = axiOpticalSystem.RenderMathematica();
 
             File.WriteAllText(Path.Combine(saveDir, "ODN36_1.txt"), string1);
+
+            AxiRayState[] initialStates = new AxiRayState[]
+            {
+                new AxiRayState(0, 0, 0, 500, 1),
+                new AxiRayState(0, 0, 0.01, 500, 1)
+            };
+
+            AxiRay[] individualRaysOut = initialStates.Select(initialState => axiOpticalAssembly.RayTraceSingleRay(new AxiRay(initialState))).ToArray();
+
+
         }
 
         public static void ODN36_2()
