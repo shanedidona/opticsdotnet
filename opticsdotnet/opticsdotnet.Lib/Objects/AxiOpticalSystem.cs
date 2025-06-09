@@ -20,6 +20,16 @@
             AxiOpticalAssembly1 = new AxiOpticalAssembly(axiDrifts, axiElements);
             AxiRayTerminator = axiRayTerminator;
         }
+        public AxiOpticalSystem(
+                IAxiRaySource axiRaySource,
+                AxiOpticalAssembly axiOpticalAssembly,
+                IAxiRayTerminator axiRayTerminator
+            )
+        {
+            AxiRaySource = axiRaySource;
+            AxiOpticalAssembly1 = axiOpticalAssembly;
+            AxiRayTerminator = axiRayTerminator;
+        }
 
         public void RayTrace()
         {
