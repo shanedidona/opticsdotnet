@@ -74,5 +74,11 @@ CIE 2019, Colour-matching functions of CIE 1931 standard colorimetric observer, 
 https://cie.co.at/datatable/cie-1931-colour-matching-functions-2-degree-observer
 https://en.wikipedia.org/wiki/RGB_color_spaces
 https://en.wikipedia.org/wiki/SRGB
+looked at http://www.brucelindbloom.com/index.html?Eqn_RGB_XYZ_Matrix.html but did not copy values
+looked at https://fujiwaratko.sakura.ne.jp/infosci/colorspace/bradford_e.html but did not copy values
+
+
+
+
 
 
