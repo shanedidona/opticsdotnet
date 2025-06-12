@@ -76,6 +76,16 @@ https://en.wikipedia.org/wiki/RGB_color_spaces
 https://en.wikipedia.org/wiki/SRGB
 looked at http://www.brucelindbloom.com/index.html?Eqn_RGB_XYZ_Matrix.html but did not copy values
 looked at https://fujiwaratko.sakura.ne.jp/infosci/colorspace/bradford_e.html but did not copy values
+https://en.wikipedia.org/wiki/LMS_color_space
+https://en.wikipedia.org/wiki/Standard_illuminant
+https://www.datacolor.com/wp-content/uploads/2022/06/color-management-ebook-3-en.pdf
+https://www.color.org/srgb.pdf
+https://www.oceanopticsbook.info/view/photometry-and-visibility/from-xyz-to-rgb
+
+
+
+
+
 
 
 
