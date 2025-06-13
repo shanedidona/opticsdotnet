@@ -81,6 +81,7 @@ https://en.wikipedia.org/wiki/Standard_illuminant
 https://www.datacolor.com/wp-content/uploads/2022/06/color-management-ebook-3-en.pdf
 https://www.color.org/srgb.pdf
 https://www.oceanopticsbook.info/view/photometry-and-visibility/from-xyz-to-rgb
+https://www.color.org/chardata/rgb/srgb.xalter
 
 
 
