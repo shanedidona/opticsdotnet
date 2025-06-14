@@ -32,7 +32,7 @@ Matrix1={
 	{3.2410,-1.5374,-0.4986},
 	{-0.9692,1.8760,0.0416},
 	{0.0556,-0.2040,1.0570}
-}
+}(*https://www.w3.org/Graphics/Color/sRGB.html*)
 
 Data2=Table[
 	RGB1=Dot[Matrix1,f[[2;;4]]];
@@ -57,8 +57,6 @@ Table[
 	Style[f[[1]],Bold,RGBColor[f[[2]],f[[3]],f[[4]]]]
 
 ,{f,Data3}]
-
-
 
 
 
