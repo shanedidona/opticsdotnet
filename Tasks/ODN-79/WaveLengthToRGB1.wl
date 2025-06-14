@@ -22,6 +22,9 @@ ListPlot[Data1[[All,{1,4}]],PlotRange->All]
 1/0.0125313
 
 
+(*
+https://cie.co.at/datatable/cie-1931-colour-matching-functions-2-degree-observer
+*)
 CIE1931=Import["C:\\Users\\shane\\opticsdotnet\\opticsdotnet\\opticsdotnet.Lib\\Data\\WaveLengthToRGB1\\CIE_xyz_1931_2deg.csv"];
 
 ListPlot[
@@ -57,7 +60,5 @@ Table[
 	Style[f[[1]],Bold,RGBColor[f[[2]],f[[3]],f[[4]]]]
 
 ,{f,Data3}]
-
-
 
 
