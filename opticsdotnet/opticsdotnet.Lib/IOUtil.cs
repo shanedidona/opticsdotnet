@@ -2,7 +2,7 @@
 {
     public static class IOUtil
     {
-        public static LinearSplineWithMinMax LinearSplineWithMinMaxFromCSVFile(string path)
+        public static LinearSplineWithMinMax[] LinearSplinesWithMinMaxFromCSVFile(string path)
         {
             MathNet.Numerics.LinearAlgebra.Matrix<double> mat1 = MathNet.Numerics.Data.Text.DelimitedReader.Read<double>(path, false, ",", false);
 
@@ -12,6 +12,18 @@
             {
                 throw new NotSupportedException("!Compare.ValidateIncreasing(xs) for " + path);
             }
+
+            
+
+
+
+
+
+
+
+
+
+
 
             double[] ys = mat1.Column(1).ToArray();
 
