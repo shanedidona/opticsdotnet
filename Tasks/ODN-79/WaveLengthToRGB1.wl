@@ -4,7 +4,7 @@
 CIE1931=Import["C:\\Users\\shane\\opticsdotnet\\opticsdotnet\\opticsdotnet.Lib\\Data\\WaveLengthToRGB1\\CIE_xyz_1931_2deg.csv"];
 
 ListPlot[
-	{CIE1931[[All,{1,2}]],Data1[[All,{1,3}]],Data1[[All,{1,4}]]}
+	{CIE1931[[All,{1,2}]],CIE1931[[All,{1,3}]],CIE1931[[All,{1,4}]]}
 ,PlotRange->All,PlotStyle->{Red,Green,Blue},PlotLabel->"CIE1931"]
 
 Matrix1={
@@ -34,6 +34,7 @@ ListPlot[
 Table[
 	Style[f[[1]],Bold,RGBColor[f[[2]],f[[3]],f[[4]]]]
 ,{f,ClippedAfterMatrix}]
+
 
 
 
