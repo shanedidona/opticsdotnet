@@ -1,5 +1,18 @@
 (* ::Package:: *)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 CIE1931=Import["C:\\Users\\shane\\opticsdotnet\\opticsdotnet\\opticsdotnet.Lib\\Data\\WaveLengthToRGB1\\CIE_xyz_1931_2deg.csv"];
 
 ListPlot[
