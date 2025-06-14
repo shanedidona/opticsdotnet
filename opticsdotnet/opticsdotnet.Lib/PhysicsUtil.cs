@@ -5,6 +5,9 @@ namespace opticsdotnet.Lib
 {
     public static class PhysicsUtil
     {
+        static readonly LinearSplineWithMinMax[] WaveLengthToRGB1Data = IOUtil.LinearSplinesWithMinMaxFromCSVFile("Data//WaveLengthToRGB1//WaveLengthToRGB1.csv");
+
+
         public static double SellmeierEvaluate(
                 double wavelength,//nanometers
                 double b1,
@@ -122,6 +125,25 @@ namespace opticsdotnet.Lib
             {
                 return null;
             }
+        }
+
+        public static (double R1, double G1, double B1) WaveLengthToRGB1(double waveLength)
+        {
+            if (waveLength < WaveLengthToRGB1Data[0].MinIndep)
+            {
+                return (0, 0, 0);
+            }
+
+            if (WaveLengthToRGB1Data[0].MaxIndep < waveLength)
+            {
+                return (0, 0, 0);
+            }
+
+            return (
+                        WaveLengthToRGB1Data[0].LinearSpline1.Interpolate(waveLength),
+                        WaveLengthToRGB1Data[1].LinearSpline1.Interpolate(waveLength),
+                        WaveLengthToRGB1Data[2].LinearSpline1.Interpolate(waveLength)
+                );
         }
     }
 }
