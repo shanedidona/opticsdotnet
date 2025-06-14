@@ -35,7 +35,7 @@ Table[
 	Style[f[[1]],Bold,RGBColor[f[[2]],f[[3]],f[[4]]]]
 ,{f,ClippedAfterMatrix}]
 
-
+Export["C:\\Users\\shane\\opticsdotnet\\opticsdotnet\\opticsdotnet.Lib\\Data\\WaveLengthToRGB1\WaveLengthToRGB1.csv",ClippedAfterMatrix]
 
 
 
