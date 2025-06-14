@@ -13,25 +13,19 @@
                 throw new NotSupportedException("!Compare.ValidateIncreasing(xs) for " + path);
             }
 
-            
+            var out1 = new LinearSplineWithMinMax[mat1.ColumnCount - 1];
+            for (int i = 0; i < out1.Length; i++)
+            {
+                double[] ys = mat1.Column(i + 1).ToArray();
 
-
-
-
-
-
-
-
-
-
-
-            double[] ys = mat1.Column(1).ToArray();
-
-            return new LinearSplineWithMinMax(
+                out1[i] = new LinearSplineWithMinMax(
                     MathNet.Numerics.Interpolation.LinearSpline.InterpolateSorted(xs, ys),
                     xs.First(),
                     xs.Last()
                 );
+            }
+
+            return out1;
         }
     }
 }
