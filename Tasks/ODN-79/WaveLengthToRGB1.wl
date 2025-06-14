@@ -20,7 +20,7 @@ AfterMatrix=Table[
 
 ListPlot[
 	{AfterMatrix[[All,{1,2}]],AfterMatrix[[All,{1,3}]],AfterMatrix[[All,{1,4}]]}
-,PlotRange->All,PlotStyle->{Red,Green,Blue},PlotLabel->"After Matrix"]
+,PlotRange->All,PlotStyle->{Red,Green,Blue},PlotLabel->" sRGB After Matrix"]
 
 ClippedAfterMatrix=Table[
 	RGB1=Clip[Dot[Matrix1,f[[2;;4]]],{0,1}];
@@ -29,7 +29,7 @@ ClippedAfterMatrix=Table[
 
 ListPlot[
 	{ClippedAfterMatrix[[All,{1,2}]],ClippedAfterMatrix[[All,{1,3}]],ClippedAfterMatrix[[All,{1,4}]]}
-,PlotRange->All,PlotStyle->{Red,Green,Blue},PlotLabel->"Clipped After Matrix"]
+,PlotRange->All,PlotStyle->{Red,Green,Blue},PlotLabel->"sRGB Clipped After Matrix"]
 
 Table[
 	Style[f[[1]],Bold,RGBColor[f[[2]],f[[3]],f[[4]]]]
