@@ -87,6 +87,8 @@ https://www.color.org/chardata/rgb/sRGB.pdf found in one^ version that says (Upd
 
 https://www.color.org/chardata/rgb/icctransform.xalter
 
+https://news.ycombinator.com/item?id=29962964
+https://www.w3.org/Graphics/Color/sRGB.html
 
 
 
