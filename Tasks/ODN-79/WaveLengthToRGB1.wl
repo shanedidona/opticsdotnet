@@ -1,6 +1,7 @@
 (* ::Package:: *)
 
-
+(*https://cie.co.at/datatable/cie-1931-colour-matching-functions-2-degree-observer*)
+CIE1931=Import["C:\\Users\\shane\\opticsdotnet\\opticsdotnet\\opticsdotnet.Lib\\Data\\WaveLengthToRGB1\\CIE_xyz_1931_2deg.csv"];
 
 
 
