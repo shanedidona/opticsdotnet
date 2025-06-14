@@ -23,7 +23,7 @@ ListPlot[
 ,PlotRange->All,PlotStyle->{Red,Green,Blue},PlotLabel->" sRGB After Matrix"]
 
 ClippedAfterMatrix=Table[
-	RGB1=Clip[Dot[Matrix1,f[[2;;4]]],{0,1}];
+	RGB1=Clip[Dot[Matrix1,f[[2;;4]]],{0,1}];(*https://www.w3.org/Graphics/Color/sRGB.html*)
 	Prepend[RGB1,f[[1]]]
 ,{f,CIE1931}];
 
