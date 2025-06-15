@@ -1,6 +1,4 @@
-﻿using opticsdotnet.Lib.Mathematica;
-
-namespace opticsdotnet.Lib
+﻿namespace opticsdotnet.Lib.Mathematica
 {
     public sealed class DoubleMathematicaAdapter : IMathematicaRenderable
     {
