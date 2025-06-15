@@ -1,4 +1,5 @@
-﻿using static opticsdotnet.Lib.MathUtil;
+﻿using opticsdotnet.Lib.Mathematica;
+using static opticsdotnet.Lib.MathUtil;
 
 namespace opticsdotnet.Lib
 {

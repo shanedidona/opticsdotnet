@@ -1,4 +1,6 @@
-﻿namespace opticsdotnet.Lib
+﻿using opticsdotnet.Lib.Mathematica;
+
+namespace opticsdotnet.Lib
 {
     public sealed class Line2D : Geo2D
     {

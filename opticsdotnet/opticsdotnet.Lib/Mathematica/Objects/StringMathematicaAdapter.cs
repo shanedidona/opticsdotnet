@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace opticsdotnet.Lib
+namespace opticsdotnet.Lib.Mathematica
 {
     public sealed class StringMathematicaAdapter : IMathematicaRenderable
     {

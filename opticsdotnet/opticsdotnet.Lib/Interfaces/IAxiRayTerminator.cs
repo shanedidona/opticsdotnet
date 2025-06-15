@@ -1,4 +1,6 @@
-﻿namespace opticsdotnet.Lib
+﻿using opticsdotnet.Lib.Mathematica;
+
+namespace opticsdotnet.Lib
 {
     public interface IAxiRayTerminator : IMathematicaRenderable
     {

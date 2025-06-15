@@ -1,4 +1,6 @@
-﻿namespace opticsdotnet.Lib.Vendors.Thorlabs
+﻿using opticsdotnet.Lib.Mathematica;
+
+namespace opticsdotnet.Lib.Vendors.Thorlabs
 {
     public sealed class ThorlabsCatalogPage : IMathematicaRenderable
     {

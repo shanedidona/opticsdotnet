@@ -1,4 +1,5 @@
 ﻿using opticsdotnet.Lib;
+using opticsdotnet.Lib.Mathematica;
 using ScottPlot;
 
 namespace opticsdotnet.Testing.ODN18
