@@ -64,3 +64,38 @@ https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=900
 
 https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/where-generic-type-constraint
 
+https://stackoverflow.com/questions/1472514/convert-light-frequency-to-rgb
+https://stackoverflow.com/a/1472535 for name
+
+
+
+https://en.wikipedia.org/wiki/CIE_1931_color_space
+CIE 2019, Colour-matching functions of CIE 1931 standard colorimetric observer, International Commission on Illumination (CIE), Vienna, AT, DOI: 10.25039/CIE.DS.xvudnb9b
+https://cie.co.at/datatable/cie-1931-colour-matching-functions-2-degree-observer
+https://en.wikipedia.org/wiki/RGB_color_spaces
+https://en.wikipedia.org/wiki/SRGB
+looked at http://www.brucelindbloom.com/index.html?Eqn_RGB_XYZ_Matrix.html but did not copy values
+looked at https://fujiwaratko.sakura.ne.jp/infosci/colorspace/bradford_e.html but did not copy values
+https://en.wikipedia.org/wiki/LMS_color_space
+https://en.wikipedia.org/wiki/Standard_illuminant
+https://www.datacolor.com/wp-content/uploads/2022/06/color-management-ebook-3-en.pdf
+https://www.color.org/srgb.pdf
+https://www.oceanopticsbook.info/view/photometry-and-visibility/from-xyz-to-rgb
+
+https://www.color.org/chardata/rgb/srgb.xalter (is where PDF below comes from)
+https://www.color.org/chardata/rgb/sRGB.pdf found in one^ version that says (Updated April 2015) (used for calcs)
+
+https://www.color.org/chardata/rgb/icctransform.xalter
+
+https://news.ycombinator.com/item?id=29962964
+https://www.w3.org/Graphics/Color/sRGB.html
+
+
+
+
+
+
+
+
+
+
