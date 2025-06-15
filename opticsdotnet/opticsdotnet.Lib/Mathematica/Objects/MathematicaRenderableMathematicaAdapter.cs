@@ -1,7 +1,6 @@
-﻿using opticsdotnet.Lib.Mathematica;
-using System.Text;
+﻿using System.Text;
 
-namespace opticsdotnet.Lib
+namespace opticsdotnet.Lib.Mathematica
 {
     public sealed class MathematicaRenderableMathematicaAdapter : IMathematicaRenderable
     {
