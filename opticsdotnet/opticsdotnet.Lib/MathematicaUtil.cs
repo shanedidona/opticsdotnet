@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using opticsdotnet.Lib.Mathematica;
+using System.Text;
 
 namespace opticsdotnet.Lib
 {
