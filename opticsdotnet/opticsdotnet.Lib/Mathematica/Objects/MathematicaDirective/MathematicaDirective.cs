@@ -1,20 +1,7 @@
 ﻿namespace opticsdotnet.Lib.Mathematica
 {
-    public sealed class MathematicaDirective : IMathematicaRenderable
+    public abstract class MathematicaDirective : IMathematicaRenderable
     {
-
-
-
-
-
-
-
-
-
-
-        public string RenderMathematica()
-        {
-            throw new NotImplementedException();
-        }
+        public abstract string RenderMathematica();
     }
 }
