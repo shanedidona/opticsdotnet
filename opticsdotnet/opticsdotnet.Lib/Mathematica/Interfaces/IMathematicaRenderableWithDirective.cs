@@ -1,6 +1,6 @@
 ﻿namespace opticsdotnet.Lib.Mathematica
 {
-    public interface IMathematicaRenderableWithDirective
+    public interface IMathematicaRenderableWithDirective : IMathematicaRenderable
     {
         string RenderMathematicaWithDirective(params MathematicaDirective[] mathematicaDirectives);
     }
