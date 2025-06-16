@@ -19,3 +19,11 @@ Graphics[{Bold,1}]
 
 
 Graphics[{Red,{Dashed,Circle[{1,2},3]}}]
+
+
+Graphics[{Directive[Dashed],Circle[{1,2},3]}]
+Graphics[{Directive[],Circle[{1,2},3]}]
+Graphics[{Directive[Dashed],Circle[{1,2},3]}]
+
+
+
