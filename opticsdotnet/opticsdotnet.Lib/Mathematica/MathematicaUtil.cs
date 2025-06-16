@@ -24,7 +24,7 @@ namespace opticsdotnet.Lib.Mathematica
             return sb1.ToString();
         }
 
-        public static string RenderMathematicaWithDirectivesMethod(this IMathematicaRenderable mathematicaRenderable, params MathematicaDirective[] mathematicaDirectives)
+        public static string RenderMathematicaWithDirectives(this IMathematicaRenderable mathematicaRenderable, params MathematicaDirective[] mathematicaDirectives)
         {
             StringBuilder sb1 = new StringBuilder();
             sb1.Append("{Directive[");
