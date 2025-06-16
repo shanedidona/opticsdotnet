@@ -1,4 +1,5 @@
 ﻿using opticsdotnet.Lib;
+using opticsdotnet.Lib.Mathematica;
 using opticsdotnet.Lib.Vendors.Thorlabs;
 using static opticsdotnet.Lib.Vendors.Thorlabs.Catalog;
 

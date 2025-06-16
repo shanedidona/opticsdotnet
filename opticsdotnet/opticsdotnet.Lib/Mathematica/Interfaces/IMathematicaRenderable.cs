@@ -1,4 +1,4 @@
-﻿namespace opticsdotnet.Lib
+﻿namespace opticsdotnet.Lib.Mathematica
 {
     public interface IMathematicaRenderable
     {

@@ -1,4 +1,4 @@
-﻿using opticsdotnet.Lib;
+﻿using opticsdotnet.Lib.Mathematica;
 
 namespace opticsdotnet.Testing.ODN55
 {
