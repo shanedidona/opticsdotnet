@@ -17,6 +17,8 @@ namespace opticsdotnet.Testing
             opticsdotnet.Testing.ODN36.ODN36.ODN36_1();
 
             opticsdotnet.Testing.WaveLengthToRGB1.WaveLengthToRGB1.WaveLengthToRGB1_1();
+
+            opticsdotnet.Testing.ODN84.ODN84.ODN84_1();
         }
     }
 }
