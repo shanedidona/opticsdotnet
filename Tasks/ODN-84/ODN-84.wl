@@ -26,4 +26,6 @@ Graphics[{Directive[],Circle[{1,2},3]}]
 Graphics[{Directive[Dashed],Circle[{1,2},3]}]
 
 
-
+T1=Table[
+	Graphics[Get[f,Method->"String"],Axes->True]
+,{f,StringSplit[Import["C:\\Users\\shane\\opticsdotnet\\Tasks\\ODN-84\\ODN-84.txt"],"\n"]}]
