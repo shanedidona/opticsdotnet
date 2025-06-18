@@ -25,20 +25,35 @@
 
         public IEnumerable<AxiRay> AxiRays()
         {
+            int z0Index = 0;
             foreach (double z0 in Z0s)
             {
                 foreach (double r0 in R0s)
                 {
+                    int r0Index = 0;
+
                     foreach (double theta in Thetas)
                     {
+                        int thetaIndex = 0;
+
                         foreach (double waveLength in WaveLengths)
                         {
+                            int waveLengthIndex = 0;
+
                             yield return new AxiRay(
                                     new AxiRayState(z0, r0, theta, waveLength, Intensity)
                                 );
+
+                            waveLengthIndex++;
                         }
+
+                        thetaIndex++;
                     }
+
+                    r0Index++;
                 }
+
+                z0Index++;
             }
         }
 
