@@ -5,7 +5,7 @@ namespace opticsdotnet.Lib
     public sealed class AxiRay : IMathematicaRenderable
     {
         readonly List<AxiRayState> States;
-        readonly MathematicaDirective[] MathematicaDirectives;
+        public MathematicaDirective[] MathematicaDirectives;
 
         public AxiRay(AxiRayState initialState, MathematicaDirective[] mathematicaDirectives = null)
         {
