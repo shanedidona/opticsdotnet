@@ -30,7 +30,7 @@ namespace opticsdotnet.Lib
                                         States.Select(
                                             state => new Point2D(state.Z0, state.R0)
                                         ).ToArray()
-                                    ).RenderMathematica();
+                                    ).RenderMathematicaWithDirectives(MathematicaDirectives);
         }
     }
 }
