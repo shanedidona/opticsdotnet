@@ -7,13 +7,15 @@
         readonly IEnumerable<double> Thetas;
         readonly IEnumerable<double> WaveLengths;
         readonly double? Intensity;
+        readonly IAxiDenseSourceMathematicaDirectiveGenerator AxiDenseSourceMathematicaDirectiveGenerator;
 
         public AxiDenseSource(
                 IEnumerable<double> z0s,
                 IEnumerable<double> r0s,
                 IEnumerable<double> thetas,
                 IEnumerable<double> waveLengths,
-                double? intensity
+                double? intensity,
+                IAxiDenseSourceMathematicaDirectiveGenerator axiDenseSourceMathematicaDirectiveGenerator = null
             )
         {
             Z0s = z0s;
@@ -21,6 +23,7 @@
             Thetas = thetas;
             WaveLengths = waveLengths;
             Intensity = intensity;
+            AxiDenseSourceMathematicaDirectiveGenerator = axiDenseSourceMathematicaDirectiveGenerator;
         }
 
         public IEnumerable<AxiRay> AxiRays()
@@ -41,7 +44,11 @@
                             int waveLengthIndex = 0;
 
                             yield return new AxiRay(
-                                    new AxiRayState(z0, r0, theta, waveLength, Intensity)
+                                    new AxiRayState(z0, r0, theta, waveLength, Intensity),
+                                    AxiDenseSourceMathematicaDirectiveGenerator?.GenerateAxiDenseSourceMathematicaDirectiveArray(
+                                                z0Index, r0Index, thetaIndex, waveLengthIndex,
+                                                z0, r0, theta, waveLength
+                                            )
                                 );
 
                             waveLengthIndex++;
