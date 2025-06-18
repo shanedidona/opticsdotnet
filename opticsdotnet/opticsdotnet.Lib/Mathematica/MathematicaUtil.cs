@@ -26,7 +26,7 @@ namespace opticsdotnet.Lib.Mathematica
 
         public static string RenderMathematicaWithDirectives(this IMathematicaRenderable mathematicaRenderable, params MathematicaDirective[] mathematicaDirectives)
         {
-            if (mathematicaDirectives != null || mathematicaDirectives.Length == 0)
+            if (mathematicaDirectives == null || mathematicaDirectives.Length == 0)
             {
                 return mathematicaRenderable.RenderMathematica();
             }
