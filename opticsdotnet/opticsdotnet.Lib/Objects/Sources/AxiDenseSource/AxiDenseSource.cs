@@ -31,18 +31,15 @@
             int z0Index = 0;
             foreach (double z0 in Z0s)
             {
+                int r0Index = 0;
                 foreach (double r0 in R0s)
                 {
-                    int r0Index = 0;
-
+                    int thetaIndex = 0;
                     foreach (double theta in Thetas)
                     {
-                        int thetaIndex = 0;
-
+                        int waveLengthIndex = 0;
                         foreach (double waveLength in WaveLengths)
                         {
-                            int waveLengthIndex = 0;
-
                             yield return new AxiRay(
                                     new AxiRayState(z0, r0, theta, waveLength, Intensity),
                                     AxiDenseSourceMathematicaDirectiveGenerator?.GenerateAxiDenseSourceMathematicaDirectiveArray(
