@@ -5,10 +5,13 @@ namespace opticsdotnet.Lib
     public sealed class AxiRay : IMathematicaRenderable
     {
         readonly List<AxiRayState> States;
+        public MathematicaDirective[] MathematicaDirectives;
 
-        public AxiRay(AxiRayState initialState)
+        public AxiRay(AxiRayState initialState, MathematicaDirective[] mathematicaDirectives = null)
         {
             States = new List<AxiRayState>() { initialState };
+
+            MathematicaDirectives = mathematicaDirectives ?? Array.Empty<MathematicaDirective>();
         }
 
         public AxiRayState GetCurrentState()
@@ -27,7 +30,7 @@ namespace opticsdotnet.Lib
                                         States.Select(
                                             state => new Point2D(state.Z0, state.R0)
                                         ).ToArray()
-                                    ).RenderMathematica();
+                                    ).RenderMathematicaWithDirectives(MathematicaDirectives);
         }
     }
 }
