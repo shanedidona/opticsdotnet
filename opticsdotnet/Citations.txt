@@ -90,6 +90,11 @@ https://www.color.org/chardata/rgb/icctransform.xalter
 https://news.ycombinator.com/item?id=29962964
 https://www.w3.org/Graphics/Color/sRGB.html
 
+https://stackoverflow.com/questions/5222828/array-of-a-generic-class-with-unspecified-type
+https://www.codeproject.com/Articles/1097830/Down-the-Rabbit-Hole-with-Array-of-Generics
+https://stackoverflow.com/questions/11161569/array-of-different-generics
+
+
 
 
 
