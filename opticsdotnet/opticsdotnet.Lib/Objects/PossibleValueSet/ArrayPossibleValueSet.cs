@@ -14,5 +14,7 @@
         public override T FirstItem => Items.First();
 
         public override T LastItem => Items.Last();
+
+        public override Type ItemType => typeof(T);
     }
 }

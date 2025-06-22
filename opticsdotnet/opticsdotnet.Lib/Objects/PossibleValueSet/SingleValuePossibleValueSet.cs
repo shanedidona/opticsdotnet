@@ -14,5 +14,7 @@
         public override T FirstItem => Item;
 
         public override T LastItem => Item;
+
+        public override Type ItemType => typeof(T);
     }
 }

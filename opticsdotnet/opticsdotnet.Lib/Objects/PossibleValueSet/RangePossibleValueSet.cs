@@ -16,5 +16,7 @@
         public override double FirstItem => Min1;
 
         public override double LastItem => Max1;
+
+        public override Type ItemType => typeof(double);
     }
 }
