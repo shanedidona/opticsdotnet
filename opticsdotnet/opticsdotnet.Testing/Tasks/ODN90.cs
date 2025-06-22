@@ -14,7 +14,7 @@ namespace opticsdotnet.Testing.ODN90
             var v1 = new RangePossibleValueSet(1, 2);
             var v2 = new SingleValuePossibleValueSet<Circle2D>(new Circle2D(1, 2, 3));
 
-
+            Type v3 = typeof(RangePossibleValueSet);
 
 
 
