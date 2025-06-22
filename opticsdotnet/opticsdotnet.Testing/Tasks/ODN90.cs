@@ -20,7 +20,11 @@ namespace opticsdotnet.Testing.ODN90
 
             PossibleValueSet_Extensions.NumberOfPermutations([v1, v2]);
 
-
+            var v4 = new object[30];
+            v4[0] = new NBK7();
+            v4[1] = null;
+            v4[2] = v3;
+            v4[3] = 1;
 
 
 
