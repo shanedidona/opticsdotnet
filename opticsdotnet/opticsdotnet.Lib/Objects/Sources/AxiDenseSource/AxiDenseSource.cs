@@ -2,18 +2,18 @@
 {
     public sealed class AxiDenseSource : IAxiRaySource
     {
-        readonly IEnumerable<double> Z0s;
-        readonly IEnumerable<double> R0s;
-        readonly IEnumerable<double> Thetas;
-        readonly IEnumerable<double> WaveLengths;
+        readonly double[] Z0s;
+        readonly double[] R0s;
+        readonly double[] Thetas;
+        readonly double[] WaveLengths;
         readonly double? Intensity;
         readonly IAxiDenseSourceMathematicaDirectiveGenerator AxiDenseSourceMathematicaDirectiveGenerator;
 
         public AxiDenseSource(
-                IEnumerable<double> z0s,
-                IEnumerable<double> r0s,
-                IEnumerable<double> thetas,
-                IEnumerable<double> waveLengths,
+                double[] z0s,
+                double[] r0s,
+                double[] thetas,
+                double[] waveLengths,
                 double? intensity,
                 IAxiDenseSourceMathematicaDirectiveGenerator axiDenseSourceMathematicaDirectiveGenerator = null
             )
