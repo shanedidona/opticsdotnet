@@ -26,6 +26,25 @@ namespace opticsdotnet.Testing.ODN90
             v4[2] = v3;
             v4[3] = 1;
 
+            ArrayPossibleValueSet<IAxiOpticalElement> someElements = new ArrayPossibleValueSet<IAxiOpticalElement>([
+                    opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1002(),
+                    opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1024()
+                ]);
+
+            ArrayPossibleValueSet<IAxiOpticalElement> someElements2 = new ArrayPossibleValueSet<IAxiOpticalElement>([
+                    opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1002(),
+                    opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1024(),
+                    opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1027()
+                ]);
+
+            RangePossibleValueSet drift1s = new RangePossibleValueSet(0.001, 0.003);
+            RangePossibleValueSet drift2s = new RangePossibleValueSet(0.001, 0.003);
+            RangePossibleValueSet drift3s = new RangePossibleValueSet(0.001, 0.003);
+
+
+
+
+
 
 
 
