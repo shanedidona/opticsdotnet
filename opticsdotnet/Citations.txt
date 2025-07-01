@@ -96,6 +96,7 @@ https://stackoverflow.com/questions/11161569/array-of-different-generics
 
 https://stackoverflow.com/questions/3255697/using-c-sharp-reflection-to-call-a-constructor
 
+https://stackoverflow.com/questions/2524906/how-do-i-invoke-a-static-constructor-with-reflection
 
 
 
