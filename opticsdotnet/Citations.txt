@@ -94,6 +94,7 @@ https://stackoverflow.com/questions/5222828/array-of-a-generic-class-with-unspec
 https://www.codeproject.com/Articles/1097830/Down-the-Rabbit-Hole-with-Array-of-Generics
 https://stackoverflow.com/questions/11161569/array-of-different-generics
 
+https://stackoverflow.com/questions/3255697/using-c-sharp-reflection-to-call-a-constructor
 
 
 
