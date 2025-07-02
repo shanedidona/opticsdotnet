@@ -1,5 +1,7 @@
 ﻿using opticsdotnet.Lib;
 using opticsdotnet.Lib.Mathematica;
+using System;
+using System.Reflection;
 
 namespace opticsdotnet.Testing.ODN90
 {
@@ -41,9 +43,9 @@ namespace opticsdotnet.Testing.ODN90
             RangePossibleValueSet drift2s = new RangePossibleValueSet(0.001, 0.003);
             RangePossibleValueSet drift3s = new RangePossibleValueSet(0.001, 0.003);
 
+            Type t1 = typeof(SphericalSinglet);
 
-
-
+            var woooo = t1.GetConstructor()
 
 
 
