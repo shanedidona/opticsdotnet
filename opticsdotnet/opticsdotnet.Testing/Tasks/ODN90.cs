@@ -39,13 +39,22 @@ namespace opticsdotnet.Testing.ODN90
                     opticsdotnet.Lib.Vendors.Thorlabs.Catalog.LA1027()
                 ]);
 
+            TemplateObject<SphericalSingletCurvedCurved> thirdLensTemplate = new TemplateObject<SphericalSingletCurvedCurved>(new PossibleValueSet[] {
+                    new ArrayPossibleValueSet<IOpticalMaterial> ([new NBK7(), new NSF11() ]),
+                    new RangePossibleValueSet(0.01, 0.015),
+                    new SingleValuePossibleValueSet<double>(0.01),
+                    new RangePossibleValueSet(0.01, 0.015),
+                    new RangePossibleValueSet(0.01, 0.015)
+            });
+
             RangePossibleValueSet drift1s = new RangePossibleValueSet(0.001, 0.003);
             RangePossibleValueSet drift2s = new RangePossibleValueSet(0.001, 0.003);
             RangePossibleValueSet drift3s = new RangePossibleValueSet(0.001, 0.003);
+            RangePossibleValueSet drift4s = new RangePossibleValueSet(0.001, 0.003);
 
             Type t1 = typeof(SphericalSinglet);
 
-            var woooo = t1.GetConstructor()
+            //var woooo = t1.GetConstructor()
 
 
 
