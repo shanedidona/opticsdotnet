@@ -52,6 +52,32 @@ namespace opticsdotnet.Testing.ODN90
             RangePossibleValueSet drift3s = new RangePossibleValueSet(0.001, 0.003);
             RangePossibleValueSet drift4s = new RangePossibleValueSet(0.001, 0.003);
 
+            TemplateObject<AxiDrift>[] axiDriftTemplates = new TemplateObject<AxiDrift>[]
+            {
+                new TemplateObject<AxiDrift>([new SingleValuePossibleValueSet<IOpticalMaterial>(new Vacuum()), drift1s]),
+                new TemplateObject<AxiDrift>([new SingleValuePossibleValueSet<IOpticalMaterial>(new Vacuum()), drift2s]),
+                new TemplateObject<AxiDrift>([new SingleValuePossibleValueSet<IOpticalMaterial>(new Vacuum()), drift3s]),
+                new TemplateObject<AxiDrift>([new SingleValuePossibleValueSet<IOpticalMaterial>(new Vacuum()), drift4s])
+            };
+
+            TemplateObject<IAxiOpticalElement>[] axiOpticalElementTemplates = new TemplateObject<IAxiOpticalElement>[]
+            {
+
+            }
+
+
+
+            AxiOpticalSystemTemplate axiOpticalSystemTemplate = new AxiOpticalSystemTemplate(
+                axiDriftTemplates
+                
+                
+                
+                )
+
+
+
+
+
             Type t1 = typeof(SphericalSinglet);
 
             //var woooo = t1.GetConstructor()
