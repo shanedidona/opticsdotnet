@@ -1,8 +1,8 @@
 ﻿namespace opticsdotnet.Lib
 {
-    public sealed class TemplateObject : ITemplateSpot
+    public sealed class TemplateObject<T> : ITemplateSpot
     {
-        public readonly Type Type1;
+        
 
 
 
