@@ -1,6 +1,6 @@
 ﻿namespace opticsdotnet.Lib
 {
-    public sealed class ArrayPossibleValueSet<T> : PossibleValueSet<T>
+    public class ArrayPossibleValueSet<T> : PossibleValueSet<T>
     {
         public readonly T[] Items;
 
