@@ -4,7 +4,7 @@
     {
         public AxiOpticalSystemTemplate(
                 ITemplateSpot<AxiDrift>[] axiDriftTemplates,
-                TemplateObject<IAxiOpticalElement>[] axiOpticalElementTemplates
+                ITemplateSpot<IAxiOpticalElement>[] axiOpticalElementTemplates
             )
         {
 
