@@ -50,7 +50,11 @@ namespace opticsdotnet.Testing.ODN90
             RangePossibleValueSet drift1s = new RangePossibleValueSet(0.001, 0.003);
             RangePossibleValueSet drift2s = new RangePossibleValueSet(0.001, 0.003);
             RangePossibleValueSet drift3s = new RangePossibleValueSet(0.001, 0.003);
-            RangePossibleValueSet drift4s = new RangePossibleValueSet(0.001, 0.003);
+
+            AxiDrift possibleDrift4No1 = new AxiDrift(new Vacuum(), 0.01);
+            AxiDrift possibleDrift4No2 = new AxiDrift(new Vacuum(), 0.02);
+
+            ITemplateSpot<AxiDrift> drift4Choices = new ArrayPossibleValueSet<AxiDrift>([possibleDrift4No1, possibleDrift4No2]);
 
             TemplateObject<AxiDrift>[] axiDriftTemplates = new TemplateObject<AxiDrift>[]
             {
