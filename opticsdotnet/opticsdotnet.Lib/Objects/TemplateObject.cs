@@ -8,5 +8,7 @@
         {
             PossibleValueSets = possibleValueSets;
         }
+
+        public Type ItemType => typeof(T);
     }
 }
