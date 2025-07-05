@@ -2,6 +2,8 @@
 {
     public class AxiOpticalSystemTemplate
     {
+        ITemplateSpot<AxiDrift>[] AxiDriftTemplates;
+
         public AxiOpticalSystemTemplate(
                 ITemplateSpot<AxiDrift>[] axiDriftTemplates,
                 ITemplateSpot[] axiOpticalElementTemplates
@@ -14,6 +16,38 @@
                     throw new NotSupportedException("!axiOpticalElementTemplate.ItemType.IsAssignableTo(typeof(IAxiOpticalElement))");
                 }
             }
+
+            CheckValidity(axiOpticalElementTemplates[0]);
+
+
+
+
+
+
+
+
+
+
+            //foreach (ITemplateSpot<AxiDrift> axiDriftTemplate in axiDriftTemplates)
+            //{
+
+            //}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            AxiDriftTemplates = axiDriftTemplates;
 
         }
 
@@ -46,8 +80,8 @@
 
         public static bool CheckValidity(ITemplateSpot[] tree)
         {
-
             throw new NotImplementedException();
+            //foreach (templateSpot)
 
 
 
@@ -60,9 +94,22 @@
             throw new NotImplementedException();
         }
             
+        static bool CheckValidity(ITemplateSpot templateSpot)
+        {
+            var wooo = templateSpot.ItemType;
+
+
+            object woo = new();
+            //
 
 
 
 
+
+
+
+            throw new NotImplementedException();
+
+        }
     }
 }
