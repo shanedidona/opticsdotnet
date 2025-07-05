@@ -60,19 +60,21 @@ namespace opticsdotnet.Testing.ODN90
                 new TemplateObject<AxiDrift>([new SingleValuePossibleValueSet<IOpticalMaterial>(new Vacuum()), drift4s])
             };
 
-            TemplateObject<IAxiOpticalElement>[] axiOpticalElementTemplates = new TemplateObject<IAxiOpticalElement>[]
+            ITemplateSpot<IAxiOpticalElement>[] axiOpticalElementTemplates = new ITemplateSpot<IAxiOpticalElement>[]
             {
+               thirdLensTemplate
+            };
 
-            }
+
 
 
 
             AxiOpticalSystemTemplate axiOpticalSystemTemplate = new AxiOpticalSystemTemplate(
                 axiDriftTemplates
-                
-                
-                
-                )
+
+
+
+                );
 
 
 
