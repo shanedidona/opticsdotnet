@@ -9,6 +9,7 @@
                 ITemplateSpot[] axiOpticalElementTemplates
             )
         {
+            #region Check that each axiOpticalElementTemplate's ItemType is assignable to IAxiOpticalElement
             foreach (ITemplateSpot axiOpticalElementTemplate in axiOpticalElementTemplates)
             {
                 if (!axiOpticalElementTemplate.ItemType.IsAssignableTo(typeof(IAxiOpticalElement)))
@@ -16,6 +17,11 @@
                     throw new NotSupportedException("!axiOpticalElementTemplate.ItemType.IsAssignableTo(typeof(IAxiOpticalElement))");
                 }
             }
+            #endregion
+
+
+
+
 
             CheckValidity(axiOpticalElementTemplates[0]);
 
