@@ -7,6 +7,13 @@
                 ITemplateSpot[] axiOpticalElementTemplates
             )
         {
+            foreach (ITemplateSpot axiOpticalElementTemplate in axiOpticalElementTemplates)
+            {
+                if (!axiOpticalElementTemplate.ItemType.IsAssignableTo(typeof(IAxiOpticalElement)))
+                {
+                    throw new NotSupportedException("!axiOpticalElementTemplate.ItemType.IsAssignableTo(typeof(IAxiOpticalElement))");
+                }
+            }
 
         }
 
