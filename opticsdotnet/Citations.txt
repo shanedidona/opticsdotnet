@@ -100,6 +100,7 @@ https://stackoverflow.com/questions/2524906/how-do-i-invoke-a-static-constructor
 
 https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/base
 
+https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/is
 
 
 
