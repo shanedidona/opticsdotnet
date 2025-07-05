@@ -7,6 +7,14 @@
         public ArrayPossibleValueSet(T[] items)
         {
             Items = items;
+
+            foreach (T item in items)
+            {
+                if (typeof(T).IsAssignableTo(typeof(ITemplateSpot)))
+                {
+                    throw new NotSupportedException("typeof(T).IsAssignableTo(typeof(ITemplateSpot))");
+                }
+            }
         }
 
         public override int? NumItems => Items.Length;
