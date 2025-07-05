@@ -56,7 +56,7 @@ namespace opticsdotnet.Testing.ODN90
 
             ITemplateSpot<AxiDrift> drift4Choices = new ArrayPossibleValueSet<AxiDrift>([possibleDrift4No1, possibleDrift4No2]);
 
-            TemplateObject<AxiDrift>[] axiDriftTemplates = new TemplateObject<AxiDrift>[]
+            ITemplateSpot<AxiDrift>[] axiDriftTemplates = new ITemplateSpot<AxiDrift>[]
             {
                 new TemplateObject<AxiDrift>([new SingleValuePossibleValueSet<IOpticalMaterial>(new Vacuum()), drift1s]),
                 new TemplateObject<AxiDrift>([new SingleValuePossibleValueSet<IOpticalMaterial>(new Vacuum()), drift2s]),
