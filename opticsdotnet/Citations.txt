@@ -102,6 +102,7 @@ https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/base
 
 https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/is
 
+https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/patterns
 
 
 
