@@ -36,35 +36,6 @@ namespace opticsdotnet.Lib
             BigInteger? includingContinuous = continuousFound ? null : excludingContinuous;
 
             return (includingContinuous, excludingContinuous);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            BigInteger out1 = 1;
-
-            foreach (PossibleValueSet possibleValueSet in possibleValueSets)
-            {
-                if (possibleValueSet.NumItems.HasValue)
-                {
-                    out1 *= possibleValueSet.NumItems.Value;
-                }
-                else
-                {
-                    return null;
-                }
-            }
-
-            return out1;
         }
     }
 }
