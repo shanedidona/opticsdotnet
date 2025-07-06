@@ -1,11 +1,11 @@
 ﻿namespace opticsdotnet.Lib
 {
-    public class AxiOpticalSystemTemplate
+    public class AxiOpticalAssemblyTemplate
     {
         ITemplateSpot<AxiDrift>[] AxiDriftTemplates;
         ITemplateSpot[] AxiOpticalElementTemplates;
 
-        public AxiOpticalSystemTemplate(
+        public AxiOpticalAssemblyTemplate(
                 ITemplateSpot<AxiDrift>[] axiDriftTemplates,
                 ITemplateSpot[] axiOpticalElementTemplates
             )
@@ -102,7 +102,7 @@
 
 
 
-        public AxiOpticalSystemTemplate(
+        public AxiOpticalAssemblyTemplate(
             PossibleValueSet[] possibleValueSet,
             IOpticalMaterial[] driftOpticalMaterials,
             Type[] elementTypes

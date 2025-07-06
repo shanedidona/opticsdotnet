@@ -73,7 +73,7 @@ namespace opticsdotnet.Testing.ODN90
 
 
 
-            AxiOpticalSystemTemplate axiOpticalSystemTemplate = new AxiOpticalSystemTemplate(
+            AxiOpticalAssemblyTemplate axiOpticalSystemTemplate = new AxiOpticalAssemblyTemplate(
                 axiDriftTemplates,
                 axiOpticalElementTemplates
 
