@@ -8,7 +8,7 @@ namespace opticsdotnet.Lib
         public abstract Type ItemType { get; }
     }
 
-    public abstract class PossibleValueSet<T> : PossibleValueSet, ITemplateSpot<T>
+    public abstract class PossibleValueSet<T> : PossibleValueSet, TemplateSpot<T>
     {
         public abstract T FirstItem { get; }
         public abstract T LastItem { get; }
