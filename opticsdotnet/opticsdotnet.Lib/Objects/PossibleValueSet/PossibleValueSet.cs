@@ -16,8 +16,18 @@ namespace opticsdotnet.Lib
 
     public static class PossibleValueSet_Extensions
     {
-        public static BigInteger? NumberOfPermutations(this PossibleValueSet[] possibleValueSets)
+        public static (BigInteger? IncludingContinuous, BigInteger ExcludingContinuous) NumberOfPermutations(this PossibleValueSet[] possibleValueSets)
         {
+
+
+
+
+
+
+
+
+
+
             BigInteger out1 = 1;
 
             foreach (PossibleValueSet possibleValueSet in possibleValueSets)
