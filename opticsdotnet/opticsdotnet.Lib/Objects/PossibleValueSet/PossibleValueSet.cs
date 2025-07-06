@@ -18,10 +18,12 @@ namespace opticsdotnet.Lib
     {
         public static (BigInteger? IncludingContinuous, BigInteger ExcludingContinuous) NumberOfPermutations(this PossibleValueSet[] possibleValueSets)
         {
-            BigInteger? includingContinuous = 1;
             BigInteger excludingContinuous = 1;
 
+            foreach (PossibleValueSet possibleValueSet in possibleValueSets)
+            {
 
+            }
 
 
 
