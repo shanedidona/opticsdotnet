@@ -2,7 +2,7 @@
 
 namespace opticsdotnet.Lib
 {
-    public abstract class PossibleValueSet : ITemplateSpot
+    public abstract class PossibleValueSet : TemplateSpot
     {
         public abstract int? NumItems { get; }//Null means infinity
         public abstract Type ItemType { get; }
