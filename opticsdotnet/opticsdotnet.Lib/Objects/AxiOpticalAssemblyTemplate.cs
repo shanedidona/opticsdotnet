@@ -20,7 +20,17 @@
             }
             #endregion
 
+            #region Numbers-of-Items Checking
+            if (axiDriftTemplates.Length < 1)
+            {
+                throw new NotSupportedException("There must be at least one axiDriftTemplate");
+            }
 
+            if (axiDriftTemplates.Length != (axiOpticalElementTemplates.Length + 1))
+            {
+                throw new NotSupportedException("axiDriftTemplates.Length != (axiOpticalElementTemplates.Length + 1)");
+            }
+            #endregion
 
 
 
