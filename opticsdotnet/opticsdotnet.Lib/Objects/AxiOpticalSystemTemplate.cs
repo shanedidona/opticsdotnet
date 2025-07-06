@@ -3,6 +3,7 @@
     public class AxiOpticalSystemTemplate
     {
         ITemplateSpot<AxiDrift>[] AxiDriftTemplates;
+        ITemplateSpot[] AxiOpticalElementTemplates;
 
         public AxiOpticalSystemTemplate(
                 ITemplateSpot<AxiDrift>[] axiDriftTemplates,
@@ -20,6 +21,8 @@
             #endregion
 
             AxiDriftTemplates = axiDriftTemplates;
+            AxiOpticalElementTemplates = axiOpticalElementTemplates;
+
 
 
 
