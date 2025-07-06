@@ -23,8 +23,23 @@ namespace opticsdotnet.Lib
 
             foreach (PossibleValueSet possibleValueSet in possibleValueSets)
             {
-
+                if (possibleValueSet.NumItems.HasValue)
+                {
+                    excludingContinuous *= possibleValueSet.NumItems.Value;
+                }
+                else
+                {
+                    continuousFound = true;
+                }
             }
+
+            BigInteger? includingContinuous = continuousFound ? null : excludingContinuous;
+
+
+
+
+
+
 
 
 
