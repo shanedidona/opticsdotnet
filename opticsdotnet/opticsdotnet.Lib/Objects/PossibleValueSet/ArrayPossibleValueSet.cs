@@ -1,4 +1,6 @@
-﻿namespace opticsdotnet.Lib
+﻿using System.Numerics;
+
+namespace opticsdotnet.Lib
 {
     public class ArrayPossibleValueSet<T> : PossibleValueSet<T>
     {
@@ -17,7 +19,7 @@
             }
         }
 
-        public override int? NumItems => Items.Length;
+        public override BigInteger? NumItems => Items.Length;
 
         public override T FirstItem => Items.First();
 

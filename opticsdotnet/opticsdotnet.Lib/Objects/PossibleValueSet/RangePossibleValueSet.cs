@@ -1,4 +1,6 @@
-﻿namespace opticsdotnet.Lib
+﻿using System.Numerics;
+
+namespace opticsdotnet.Lib
 {
     public sealed class RangePossibleValueSet : PossibleValueSet<double>
     {
@@ -11,7 +13,7 @@
             Max1 = max;
         }
 
-        public override int? NumItems => null;
+        public override BigInteger? NumItems => null;
 
         public override double FirstItem => Min1;
 
