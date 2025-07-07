@@ -13,7 +13,7 @@ namespace opticsdotnet.Lib
             Max1 = max;
         }
 
-        public override NumItemMetricGroup NumItemMetricGroup1 => new NumItemMetricGroup(null);
+        public override NumItemMetricGroup NumItemMetricGroup1 => new NumItemMetricGroup(null, 1);
 
         public override double FirstItem => Min1;
 
