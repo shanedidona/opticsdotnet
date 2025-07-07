@@ -19,7 +19,7 @@ namespace opticsdotnet.Lib
             }
         }
 
-        public override BigInteger? NumItems => Items.Length;
+        public override NumItemMetricGroup NumItemMetricGroup1 => new NumItemMetricGroup(Items.Length);
 
         public override T FirstItem => Items.First();
 

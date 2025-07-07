@@ -4,7 +4,7 @@ namespace opticsdotnet.Lib
 {
     public abstract class PossibleValueSet : ITemplateSpot
     {
-        public abstract BigInteger? NumItems { get; }//Null means infinity
+        public abstract NumItemMetricGroup NumItemMetricGroup1 { get; }
         public abstract Type ItemType { get; }
     }
 

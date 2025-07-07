@@ -13,7 +13,7 @@ namespace opticsdotnet.Lib
             Max1 = max;
         }
 
-        public override BigInteger? NumItems => null;
+        public override NumItemMetricGroup NumItemMetricGroup1 => new NumItemMetricGroup(null);
 
         public override double FirstItem => Min1;
 
