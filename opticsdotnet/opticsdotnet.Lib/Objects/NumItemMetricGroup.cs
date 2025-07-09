@@ -15,5 +15,27 @@ namespace opticsdotnet.Lib
             NumItemsIncludingContinuous = numItemsIncludingContinuous;
             NumItemsExcludingContinuous = numItemsExcludingContinuous;
         }
+        public NumItemMetricGroup(NumItemMetricGroup[] groupsToMultiply)
+        {
+            bool continuousFound = false;
+            BigInteger excludingContinuous = 1;
+
+            foreach (NumItemMetricGroup numItemMetricGroup in groupsToMultiply)
+            {
+                if (numItemMetricGroup.NumItemsIncludingContinuous.HasValue)
+                {
+                    excludingContinuous *= NumItemsIncludingContinuous.Value;
+                }
+                else
+                {
+                    continuousFound = true;
+                }
+            }
+
+            BigInteger? includingContinuous = continuousFound ? null : excludingContinuous;
+
+            NumItemsExcludingContinuous = excludingContinuous;
+            NumItemsIncludingContinuous = includingContinuous;
+        }
     }
 }
