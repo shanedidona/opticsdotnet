@@ -1,6 +1,4 @@
-﻿using System.Numerics;
-
-namespace opticsdotnet.Lib
+﻿namespace opticsdotnet.Lib
 {
     public abstract class PossibleValueSet : ITemplateSpot
     {
