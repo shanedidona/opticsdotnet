@@ -24,7 +24,7 @@ namespace opticsdotnet.Lib
             {
                 if (numItemMetricGroup.NumItemsIncludingContinuous.HasValue)
                 {
-                    excludingContinuous *= NumItemsIncludingContinuous.Value;
+                    excludingContinuous *= numItemMetricGroup.NumItemsIncludingContinuous.Value;
                 }
                 else
                 {
