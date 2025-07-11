@@ -66,7 +66,9 @@ namespace opticsdotnet.Testing.ODN90
 
             ITemplateSpot[] axiOpticalElementTemplates = new ITemplateSpot[]
             {
-               thirdLensTemplate
+                someElements,
+                someElements2,
+                thirdLensTemplate
             };
 
 
