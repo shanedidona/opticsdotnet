@@ -34,8 +34,8 @@ namespace opticsdotnet.Lib
 
             BigInteger? includingContinuous = continuousFound ? null : excludingContinuous;
 
-            NumItemsExcludingContinuous = excludingContinuous;
             NumItemsIncludingContinuous = includingContinuous;
+            NumItemsExcludingContinuous = excludingContinuous;
         }
     }
 }
