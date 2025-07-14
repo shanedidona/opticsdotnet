@@ -22,7 +22,7 @@ namespace opticsdotnet.Lib
 
             foreach (NumItemMetricGroup numItemMetricGroup in groupsToMultiply)
             {
-                if (numItemMetricGroup.NumItemsIncludingContinuous.HasValue)
+                if (numItemMetricGroup.NumItemsIncludingContinuous.HasValue)//This is wrong since excluding cont does not always mean 1.
                 {
                     excludingContinuous *= numItemMetricGroup.NumItemsIncludingContinuous.Value;
                 }
