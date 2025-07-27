@@ -28,27 +28,6 @@ namespace opticsdotnet.Lib
                 {
                     continuousFound = true;
                 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-                if (numItemMetricGroup.NumItemsIncludingContinuous.HasValue)//This is wrong since excluding cont does not always mean 1.
-                {
-                    excludingContinuous *= numItemMetricGroup.NumItemsIncludingContinuous.Value;
-                }
-                else
-                {
-                    continuousFound = true;
-                }
             }
 
             BigInteger? includingContinuous = continuousFound ? null : excludingContinuous;
