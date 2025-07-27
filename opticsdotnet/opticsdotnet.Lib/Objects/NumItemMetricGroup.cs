@@ -22,7 +22,12 @@ namespace opticsdotnet.Lib
 
             foreach (NumItemMetricGroup numItemMetricGroup in groupsToMultiply)
             {
+                excludingContinuous *= numItemMetricGroup.NumItemsExcludingContinuous;
 
+                if (!numItemMetricGroup.NumItemsIncludingContinuous.HasValue)
+                {
+                    continuousFound = true;
+                }
 
 
 
