@@ -20,7 +20,7 @@ namespace opticsdotnet.Testing.ODN90
             bool b1 = v3.Equals(v3);
 
 
-            PossibleValueSet_Extensions.NumberOfPermutations([v1, v2]);
+            //PossibleValueSet_Extensions.NumberOfPermutations([v1, v2]);
 
             var v4 = new object[30];
             v4[0] = new NBK7();
@@ -66,7 +66,9 @@ namespace opticsdotnet.Testing.ODN90
 
             ITemplateSpot[] axiOpticalElementTemplates = new ITemplateSpot[]
             {
-               thirdLensTemplate
+                someElements,
+                someElements2,
+                thirdLensTemplate
             };
 
 

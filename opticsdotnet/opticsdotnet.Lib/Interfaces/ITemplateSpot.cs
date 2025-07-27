@@ -2,6 +2,7 @@
 {
     public interface ITemplateSpot
     {
+        public NumItemMetricGroup NumItemMetricGroup1 { get; }
         public Type ItemType { get; }
     }
 

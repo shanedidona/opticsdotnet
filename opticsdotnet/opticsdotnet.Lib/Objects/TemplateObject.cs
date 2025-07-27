@@ -20,5 +20,7 @@ namespace opticsdotnet.Lib
         }
 
         public Type ItemType => typeof(T);
+
+        public NumItemMetricGroup NumItemMetricGroup1 => new NumItemMetricGroup(PossibleValueSets.Select(x => x.NumItemMetricGroup1).ToArray());
     }
 }

@@ -2,6 +2,8 @@
 {
     public class AxiOpticalAssemblyTemplate
     {
+        public readonly NumItemMetricGroup NumItemMetricGroup1;
+
         ITemplateSpot<AxiDrift>[] AxiDriftTemplates;
         ITemplateSpot[] AxiOpticalElementTemplates;
 
@@ -34,6 +36,12 @@
 
             AxiDriftTemplates = axiDriftTemplates;
             AxiOpticalElementTemplates = axiOpticalElementTemplates;
+
+            List<ITemplateSpot> templateSpots = new List<ITemplateSpot>();
+            templateSpots.AddRange(AxiDriftTemplates);
+            templateSpots.AddRange(AxiOpticalElementTemplates);
+
+            NumItemMetricGroup1 = new NumItemMetricGroup(templateSpots.Select(x => x.NumItemMetricGroup1).ToArray());
 
 
 
