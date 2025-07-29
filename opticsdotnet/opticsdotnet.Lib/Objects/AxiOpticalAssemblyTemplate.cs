@@ -4,8 +4,8 @@
     {
         public readonly NumItemMetricGroup NumItemMetricGroup1;
 
-        ITemplateSpot<AxiDrift>[] AxiDriftTemplates;
-        ITemplateSpot[] AxiOpticalElementTemplates;
+        readonly ITemplateSpot<AxiDrift>[] AxiDriftTemplates;
+        readonly ITemplateSpot[] AxiOpticalElementTemplates;
 
         public AxiOpticalAssemblyTemplate(
                 ITemplateSpot<AxiDrift>[] axiDriftTemplates,
