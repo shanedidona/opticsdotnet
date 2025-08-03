@@ -92,14 +92,6 @@
 
 
 
-            CheckValidity(axiOpticalElementTemplates[0]);
-
-
-
-
-
-
-
 
 
 
