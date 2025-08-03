@@ -49,6 +49,7 @@
 
             JaggedPossibleValueSets = jaggedPossibleValueSetsList.ToArray();
 
+            var woooo = new NumItemMetricGroup(JaggedPossibleValueSets.Flatten2D().Select(x => x.NumItemMetricGroup1).ToArray());
 
 
 
