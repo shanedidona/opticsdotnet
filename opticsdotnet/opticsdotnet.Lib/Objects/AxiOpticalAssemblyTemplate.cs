@@ -165,23 +165,5 @@
         {
             throw new NotImplementedException();
         }
-            
-        static bool CheckValidity(ITemplateSpot templateSpot)
-        {
-            var wooo = templateSpot.ItemType;
-
-
-            object woo = new();
-            //
-
-
-
-
-
-
-
-            throw new NotImplementedException();
-
-        }
     }
 }
