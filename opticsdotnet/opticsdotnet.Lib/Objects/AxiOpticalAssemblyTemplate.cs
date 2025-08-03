@@ -37,6 +37,11 @@
             AxiDriftTemplates = axiDriftTemplates;
             AxiOpticalElementTemplates = axiOpticalElementTemplates;
 
+
+
+
+
+
             ITemplateSpot[] templateSpots = AxiDriftTemplates.Concat(AxiOpticalElementTemplates).ToArray();
 
             NumItemMetricGroup1 = new NumItemMetricGroup(templateSpots.Select(x => x.NumItemMetricGroup1).ToArray());
