@@ -150,15 +150,6 @@
 
 
 
-        public static bool CheckValidity(ITemplateSpot[] tree)
-        {
-            throw new NotImplementedException();
-            //foreach (templateSpot)
-
-
-
-
-        }
 
 
         public AxiOpticalSystem Generate1()
