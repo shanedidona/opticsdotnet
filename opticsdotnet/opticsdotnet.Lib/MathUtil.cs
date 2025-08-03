@@ -10,5 +10,16 @@
         {
             return value * value;
         }
+
+        public static IEnumerable<T> Flatten2D<T>(this IEnumerable<IEnumerable<T>> jagged)
+        {
+            foreach (IEnumerable<T> iEnumerable in jagged)
+            {
+                foreach (T value in jagged)
+                {
+                    yield return value;
+                }
+            }
+        }
     }
 }
