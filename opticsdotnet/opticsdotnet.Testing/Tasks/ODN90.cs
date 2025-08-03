@@ -64,7 +64,7 @@ namespace opticsdotnet.Testing.ODN90
                 drift4Choices
             };
 
-            ITemplateSpot[] axiOpticalElementTemplates = new ITemplateSpot[]
+            ITemplateSpot<IAxiOpticalElement>[] axiOpticalElementTemplates = new ITemplateSpot<IAxiOpticalElement>[]
             {
                 someElements,
                 someElements2,
