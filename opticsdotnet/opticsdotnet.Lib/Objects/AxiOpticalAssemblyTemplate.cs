@@ -133,19 +133,6 @@
 
 
 
-        public AxiOpticalAssemblyTemplate(
-            PossibleValueSet[] possibleValueSet,
-            IOpticalMaterial[] driftOpticalMaterials,
-            Type[] elementTypes
-            )
-        {
-
-
-
-
-
-        }
-
 
 
 
