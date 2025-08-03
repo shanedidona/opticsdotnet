@@ -15,7 +15,7 @@
         {
             foreach (IEnumerable<T> iEnumerable in jagged)
             {
-                foreach (T value in jagged)
+                foreach (T value in iEnumerable)
                 {
                     yield return value;
                 }
