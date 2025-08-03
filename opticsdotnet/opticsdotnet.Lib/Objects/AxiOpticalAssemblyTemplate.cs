@@ -80,10 +80,7 @@
 
 
 
-            //foreach (ITemplateSpot<AxiDrift> axiDriftTemplate in axiDriftTemplates)
-            //{
 
-            //}
 
 
 
