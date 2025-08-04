@@ -121,7 +121,7 @@
 
 
 
-        public AxiOpticalSystem Generate1()
+        public AxiOpticalSystem Generate1(int[] choiceIndices, double[] continuousValues)
         {
             throw new NotImplementedException();
         }
