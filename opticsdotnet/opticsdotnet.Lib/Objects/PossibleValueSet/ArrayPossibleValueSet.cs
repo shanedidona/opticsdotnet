@@ -8,6 +8,11 @@ namespace opticsdotnet.Lib
 
         public ArrayPossibleValueSet(T[] items)
         {
+            if (items.Length == 0)
+            {
+                throw new NotSupportedException("ArrayPossibleValueSet must have at least one item");
+            }
+
             Items = items;
 
             foreach (T item in items)
