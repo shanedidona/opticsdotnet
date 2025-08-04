@@ -8,6 +8,10 @@
         readonly ITemplateSpot[] AxiOpticalElementTemplates;
         readonly PossibleValueSet[][] JaggedPossibleValueSets;
 
+        readonly RangePossibleValueSet[] woooo;
+        readonly SingleValuePossibleValueSet[] woooooo2;
+        readonly ArrayPossibleValueSet[] woo3;
+
         public AxiOpticalAssemblyTemplate(
                 ITemplateSpot<AxiDrift>[] axiDriftTemplates,
                 ITemplateSpot[] axiOpticalElementTemplates
