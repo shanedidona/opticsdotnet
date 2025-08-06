@@ -94,48 +94,6 @@
 
 
 
-            foreach (PossibleValueSet[] possibleValueSetsForItem in jaggedPossibleValueSetsList)
-            {
-                foreach (PossibleValueSet possibleValueSet in possibleValueSetsForItem)
-                {
-                    if (!possibleValueSet.NumItemMetricGroup1.NumItemsIncludingContinuous.HasValue)
-                    {
-                        RangePossibleValueSets
-
-                        continue;
-                    }
-
-
-
-                    if (possibleValueSet.NumItemMetricGroup1.NumItemsIncludingContinuous == 1)
-                    {
-
-                    }
-
-                    if (possibleValueSet.NumItemMetricGroup1.NumItemsIncludingContinuous == 1)
-                    {
-
-                    }
-
-
-
-
-
-                    //1 case
-
-                    //null case
-
-                    //other than 1 case
-
-
-
-
-                }
-            }
-
-
-
-
 
 
 
