@@ -8,9 +8,9 @@
         readonly ITemplateSpot[] AxiOpticalElementTemplates;
         readonly PossibleValueSet[][] JaggedPossibleValueSets;
 
-        readonly RangePossibleValueSet[] woooo;
-        readonly SingleValuePossibleValueSet[] woooooo2;
-        readonly ArrayPossibleValueSet[] woo3;
+        readonly Dictionary<(int, int), RangePossibleValueSet> RangePossibleValueSets = new();
+        readonly Dictionary<(int, int), PossibleValueSet> SinglePossibleValueSets = new();
+        readonly Dictionary<(int, int), PossibleValueSet> ArrayPossibleValueSets = new();
 
         public AxiOpticalAssemblyTemplate(
                 ITemplateSpot<AxiDrift>[] axiDriftTemplates,
@@ -55,7 +55,83 @@
 
             NumItemMetricGroup1 = new NumItemMetricGroup(JaggedPossibleValueSets.Flatten2D().Select(x => x.NumItemMetricGroup1).ToArray());
 
+            for (int itemI = 0; itemI < JaggedPossibleValueSets.Length; itemI++)
+            {
+                for (int possibleValueSetI = 0; possibleValueSetI < JaggedPossibleValueSets[itemI].Length; possibleValueSetI++)
+                {
+                    PossibleValueSet possibleValueSet = JaggedPossibleValueSets[itemI][possibleValueSetI];
 
+                    if (!possibleValueSet.NumItemMetricGroup1.NumItemsIncludingContinuous.HasValue)
+                    {
+                        RangePossibleValueSets.Add((itemI, possibleValueSetI), (RangePossibleValueSet)possibleValueSet);
+                        continue;
+                    }
+
+                    if (possibleValueSet.NumItemMetricGroup1.NumItemsIncludingContinuous.Value == 1)
+                    {
+                        SinglePossibleValueSets.Add((itemI, possibleValueSetI), possibleValueSet);
+                        continue;
+                    }
+
+                    ArrayPossibleValueSets.Add((itemI, possibleValueSetI), possibleValueSet);
+                }
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            foreach (PossibleValueSet[] possibleValueSetsForItem in jaggedPossibleValueSetsList)
+            {
+                foreach (PossibleValueSet possibleValueSet in possibleValueSetsForItem)
+                {
+                    if (!possibleValueSet.NumItemMetricGroup1.NumItemsIncludingContinuous.HasValue)
+                    {
+                        RangePossibleValueSets
+
+                        continue;
+                    }
+
+
+
+                    if (possibleValueSet.NumItemMetricGroup1.NumItemsIncludingContinuous == 1)
+                    {
+
+                    }
+
+                    if (possibleValueSet.NumItemMetricGroup1.NumItemsIncludingContinuous == 1)
+                    {
+
+                    }
+
+
+
+
+
+                    //1 case
+
+                    //null case
+
+                    //other than 1 case
+
+
+
+
+                }
+            }
 
 
 
