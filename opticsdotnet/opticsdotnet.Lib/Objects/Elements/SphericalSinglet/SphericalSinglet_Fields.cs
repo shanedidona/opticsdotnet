@@ -1,6 +1,6 @@
 ﻿namespace opticsdotnet.Lib
 {
-    public sealed partial class SphericalSinglet : IAxiOpticalElement
+    public partial class SphericalSinglet : IAxiOpticalElement
     {
         readonly double CenterThickness;
         readonly double OuterRadius;

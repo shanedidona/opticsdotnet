@@ -3,7 +3,7 @@ using opticsdotnet.Lib.Mathematica;
 
 namespace opticsdotnet.Lib
 {
-    public sealed partial class SphericalSinglet : IAxiOpticalElement
+    public partial class SphericalSinglet : IAxiOpticalElement
     {
         public SphericalSinglet(IOpticalMaterial opticalMaterial, double centerThickness, double outerRadius, double? radius1, double? radius2)
         {
